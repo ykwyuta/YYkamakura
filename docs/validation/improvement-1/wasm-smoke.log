@@ -1,0 +1,5 @@
+
+> yykamakura@0.2.0 smoke
+> node tools/wasm-smoke.mjs
+
+Kamakura production Wasm: title, faction, start, all 63 hero images, help, history, save/load, compact draw passed.
