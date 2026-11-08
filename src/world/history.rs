@@ -705,6 +705,7 @@ impl World {
                     let t = self.years + yrs;
                     self.truce[a][b] = self.truce[a][b].max(t);
                     self.truce[b][a] = self.truce[b][a].max(t);
+                    self.settle_campaign_peace(a, b, t);
                     notes.push(tf!(
                         "{}と{}が{}年の休戦",
                         "{} and {} agree a {}-year truce",

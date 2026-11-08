@@ -38,6 +38,24 @@ impl World {
             && self.campaign_leader(a) == self.campaign_leader(b)
     }
 
+    /// Both negotiated and dated historical settlements bind the mobilised houses.
+    pub(super) fn settle_campaign_peace(&mut self, a: usize, b: usize, until: f32) {
+        let (a_leader, b_leader) = (self.campaign_leader(a), self.campaign_leader(b));
+        for x in 0..NATIONS.len() {
+            if x != a && !(a_leader.is_some() && self.campaign_leader(x) == a_leader) {
+                continue;
+            }
+            for y in 0..NATIONS.len() {
+                if y == b || (b_leader.is_some() && self.campaign_leader(y) == b_leader) {
+                    self.war[x][y] = false;
+                    self.war[y][x] = false;
+                    self.truce[x][y] = self.truce[x][y].max(until);
+                    self.truce[y][x] = self.truce[y][x].max(until);
+                }
+            }
+        }
+    }
+
     /// Symmetric collective defence and shared mobilisation; never transfers ownership.
     pub(super) fn update_campaign_allegiance(&mut self) {
         let members: Vec<_> = (0..NATIONS.len())
@@ -133,6 +151,22 @@ mod tests {
         w.years = 1181.0 - START_AD;
         assert_eq!(w.campaign_leader(HOJO), None);
         assert_eq!(w.campaign_leader(TAIRA), None);
+    }
+
+    #[test]
+    fn historical_court_settlement_stops_the_entire_coalition_war() {
+        let mut w = World::new(42);
+        w.years = 1186.0 - START_AD;
+        w.run_history();
+        w.update_campaign_allegiance();
+        assert!(w.at_war(MIURA, COURT));
+        w.years = 1192.0 + 6.0 / 12.0 - START_AD;
+        w.run_history();
+        w.update_campaign_allegiance();
+        for n in [MINAMOTO, HOJO, MIURA, CHIBA] {
+            assert!(!w.at_war(n, COURT));
+            assert!(w.truce[n][COURT] > w.years);
+        }
     }
     #[test]
     fn jokyu_calendar_allows_long_distance_march() {

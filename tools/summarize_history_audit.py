@@ -24,9 +24,13 @@ checks = collections.defaultdict(list)
 finals = {}
 annexations = collections.defaultdict(list)
 actor_changes = []
+mobilisation = {}
 for seed in seeds:
     states = read(seed, 'factions')
     assert len(states) == 15 * 40
+    eastern = [row for row in states if row['year'] == '1180' and row['month'] == '11'
+               and int(row['faction_id']) in (5, 6, 7)]
+    mobilisation[seed] = len(eastern) == 3 and all('平家' in row['enemies'].split(' / ') for row in eastern)
     for row in read(seed, 'checks'):
         checks[row['check']].append(row)
     finals[seed] = [row for row in states if row['year'] == '1221' and row['month'] == '7']
@@ -50,7 +54,7 @@ rates = {key: {'passed': sum(row['pass'] == 'true' for row in rows), 'trials': l
 summary = {'seeds': seeds, 'simulation': 'World::step, DT=1/30, ai_player=true, 1179-01 to 1221-07',
            'baseline_game_commit': run['source_head'],
            'checks': rates, 'annexations': annexations, 'changed_event_actors': actor_changes,
-           'final_factions': finals}
+           'final_factions': finals, '1180_joint_war_against_taira': mobilisation}
 if (raw / 'travel.json').exists():
     summary['travel'] = json.loads((raw / 'travel.json').read_text(encoding='utf-8'))
 (out / 'summary.json').write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding='utf-8')
@@ -75,13 +79,14 @@ labels = [
     ('1221_kyoto_kamakura_side', '1221年7月：鎌倉方が平安京を領有'),
 ]
 text = ['# 史実再現の検証：実測表', '',
-        f'対象はゲーム挙動のコミット `{run["source_head"][:7]}`。今回の検証では監査用コードだけを追加し、ルール・AI・年表の効果・時間・地形は変更していない。', '',
+        f'対象はゲーム挙動のコミット `{run["source_head"][:7]}`。この版の本番ルール・AI・年表・時間・地形を用い、監査の実行中は結果の強制変更を加えていない。', '',
         f'乱数は {", ".join(map(str, seeds))} の{len(seeds)}通り。全勢力AIで全期間を実際に進め、15時点で40勢力と63英雄を記録した。', '',
         '「成立」は表に記した時点の一致を意味する。日付が決まっている人物退場や初期領有による一致を、AIが歴史的展開を再現した証拠には数えない。', '',
         '| 判定項目 | 成立した試行 |', '|---|---:|']
 for key, label in labels:
     r = rates[key]
     text.append(f'| {label} | {r["passed"]}/{r["trials"]} |')
+text.append(f'| 1180年11月：北条・千葉・三浦がそろって平家と交戦 | {sum(mobilisation.values())}/{len(seeds)} |')
 text += ['', '## 1221年7月の支配拠点数', '',
          '| 乱数 | 源氏 | 北条 | 平家 | 奥州藤原 | 朝廷 | 存続勢力数 |', '|---|---:|---:|---:|---:|---:|---:|']
 for seed, rows in finals.items():
