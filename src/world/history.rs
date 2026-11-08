@@ -439,10 +439,10 @@ impl World {
     }
 
     fn fire_event(&mut self, e: &'static HEvent) {
-        let n = self.successor_of(e.nation);
+        let n = e.nation;
         // 新しい国の成立は、その国がまだ無くても起こる
         let founding = e.fx.iter().any(|f| matches!(*f, Fx::Found(x) if x == n));
-        let skipped = false;
+        let skipped = !self.nations[n].alive && !founding;
         let _ = founding;
         self.chronicle.push(Chron {
             ad: e.ad,
@@ -697,7 +697,6 @@ impl World {
                     }
                 }
                 Truce(a, b, yrs) => {
-                    let (a, b) = (self.successor_of(a), self.successor_of(b));
                     if !self.nations[a].alive || !self.nations[b].alive || a == b {
                         continue;
                     }

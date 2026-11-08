@@ -7,6 +7,7 @@ use crate::rng::Rng;
 use std::collections::VecDeque;
 
 mod campaign;
+mod allegiance;
 #[cfg(test)]
 mod audit;
 mod support;
@@ -1268,12 +1269,12 @@ impl World {
         }
     }
 
-    /// 1年あたりの秒数（大モンゴル国の時代は遅くなる）
+    /// Campaign months slow down during short historical wars.
     pub fn sec_per_year(&self) -> f32 {
         if self.era == Era::Rise {
-            SEC_PER_YEAR
+            SEC_PER_YEAR * self.campaign_calendar_scale()
         } else {
-            SEC_PER_YEAR * EMPIRE_SLOW
+            SEC_PER_YEAR * EMPIRE_SLOW * self.campaign_calendar_scale()
         }
     }
 
@@ -1303,7 +1304,8 @@ impl World {
     pub fn coalition_locked(&self, a: usize, b: usize) -> bool {
         self.coalitions.iter().any(|c| {
             (c.target == a && c.members.contains(&b)) || (c.target == b && c.members.contains(&a))
-        })
+        }) || (self.at_war(a, b)
+            && (self.campaign_leader(a).is_some() || self.campaign_leader(b).is_some()))
     }
 
     pub fn declare_war(&mut self, a: usize, b: usize, forced: bool) -> bool {
@@ -1311,6 +1313,9 @@ impl World {
             return false;
         }
         if !forced && self.truce[a][b] > self.years {
+            return false;
+        }
+        if !forced && self.campaign_allied(a, b) {
             return false;
         }
         self.war[a][b] = true;
@@ -2364,6 +2369,7 @@ impl World {
         self.stat_t -= dt;
         if self.stat_t <= 0.0 {
             self.stat_t = 0.25;
+            self.update_campaign_allegiance();
             self.refresh_traits();
             self.update_stats();
             self.assign_ferries();

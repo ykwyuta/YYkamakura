@@ -8,9 +8,10 @@ import json
 ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser()
 parser.add_argument('--seeds', default='1,42,2026,12345,8675309')
+parser.add_argument('--dir', type=Path, default=ROOT / 'docs' / 'validation')
 args = parser.parse_args()
 seeds = [int(x) for x in args.seeds.split(',')]
-out = ROOT / 'docs' / 'validation'
+out = args.dir
 raw = out / 'raw'
 run = json.loads((raw / 'run.json').read_text(encoding='utf-8'))
 assert seeds == run['seeds'], 'Requested seeds differ from the recorded run; regenerate the audit first'
@@ -108,8 +109,8 @@ if 'travel' in summary:
 text += ['', '## 注意', '',
          '- この検証の成功は「史実に一致した」という意味ではなく、シミュレーションを最後まで実行し証拠を出力できたという意味。',
          '- 5試行は挙動確認用の標本で、全乱数に対する確率推定ではない。',
-         '- 「鎌倉方」は源氏・北条・千葉・三浦・小山・宇都宮・安達・土肥・佐々木・新田・足利・平賀のいずれかが実際に領有する場合と定義した。主従制度の実装がないため、この分類自体は検証用の整理。',
-         '- 同盟は現在のゲームでは休戦。共同で対外戦をする仕組みの成立を保証しない。',
+         '- 「鎌倉方」は源氏・北条・千葉・三浦・小山・宇都宮・安達・土肥・佐々木・新田・足利・平賀のいずれかが実際に領有する場合と定義した。比較を保つため初回監査と同じ所有者分類を用いる。',
+         '- 休戦の成功だけでは共同出兵の成立は保証しない。交戦相手と攻略履歴も確認する。',
          '- 朝廷の負けを平安京の攻略で判定するのはゲーム内の代理指標。史実の朝廷制度そのものの消滅を意味しない。', '']
 (out / 'measurements.md').write_text('\n'.join(text), encoding='utf-8')
 print(f'Wrote {out / "measurements.md"}; {len(seeds)} seeds, {len(rates)} checks per seed')

@@ -132,8 +132,7 @@ impl World {
     }
 
     pub(super) fn historical_war(&mut self, a: usize, b: usize) -> bool {
-        let (a, b) = (self.successor_of(a), self.successor_of(b));
-        if a == b {
+        if a == b || !self.nations[a].alive || !self.nations[b].alive {
             return false;
         }
         self.truce[a][b] = 0.0;
@@ -464,7 +463,7 @@ mod tests {
         let mut w = World::new(12345);
         w.ai_player = true;
         let before = cities(&w);
-        let max_steps = ((END_AD - START_AD + 1.0) * SEC_PER_YEAR / DT) as usize;
+        let max_steps = ((END_AD - START_AD + 12.0) * SEC_PER_YEAR / DT) as usize;
         for _ in 0..max_steps {
             if w.game_over.is_some() {
                 break;

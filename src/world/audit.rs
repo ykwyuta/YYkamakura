@@ -3,6 +3,12 @@ use super::*;
 use std::fmt::Write;
 use std::path::Path;
 
+fn output_dir() -> std::path::PathBuf {
+    std::env::var_os("KAMAKURA_AUDIT_DIR")
+        .map(std::path::PathBuf::from)
+        .unwrap_or_else(|| Path::new(env!("CARGO_MANIFEST_DIR")).join("docs/validation/raw"))
+}
+
 const CHECKPOINTS: &[(i32, u8)] = &[
     (1179, 12),
     (1180, 11),
@@ -231,12 +237,12 @@ fn simulate(seed: u32, dir: &Path) {
     let mut heroes = "seed,year,month,hero_id,hero,owner_id,owner\n".to_string();
     let mut checks = "seed,year,month,check,pass,observed\n".to_string();
     let mut events =
-        "seed,year,month,event,original_actor,actual_actor,actor_matches\n".to_string();
+        "seed,year,month,event,original_actor,actual_actor,actor_matches,skipped\n".to_string();
     let mut changes = "seed,actual_ad,base,previous_owner,new_owner\n".to_string();
     let mut owned = w.blds.iter().map(|b| b.nation).collect::<Vec<_>>();
     let mut cp = 0;
     let mut event_i = 0;
-    let limit = ((END_AD - START_AD + 1.0) * SEC_PER_YEAR / DT) as usize;
+    let limit = ((END_AD - START_AD + 12.0) * SEC_PER_YEAR / DT) as usize;
     for _ in 0..limit {
         w.step();
         while event_i < w.chronicle.len() {
@@ -244,13 +250,14 @@ fn simulate(seed: u32, dir: &Path) {
             let original = &HISTORY[event_i];
             writeln!(
                 events,
-                "{seed},{},{},{},{},{},{}",
+                "{seed},{},{},{},{},{},{},{}",
                 event.ad,
                 event.month,
                 csv(event.title),
                 csv(w.nations[original.nation].name),
                 csv(w.nations[event.nation].name),
-                original.nation == event.nation
+                original.nation == event.nation,
+                event.skipped
             )
             .unwrap();
             event_i += 1;
@@ -314,7 +321,7 @@ fn simulate(seed: u32, dir: &Path) {
 #[test]
 #[ignore = "Multi-seed historical validation writes reproducible evidence to docs/validation/raw"]
 fn historical_campaign_audit() {
-    let dir = Path::new(env!("CARGO_MANIFEST_DIR")).join("docs/validation/raw");
+    let dir = output_dir();
     std::fs::create_dir_all(&dir).unwrap();
     let seeds = std::env::var("KAMAKURA_AUDIT_SEEDS")
         .unwrap_or("1,42,2026,12345,8675309".into())
@@ -345,9 +352,10 @@ fn historical_campaign_audit() {
 #[test]
 #[ignore = "Measures the campaign calendar against actual map-space movement"]
 fn historical_travel_audit() {
-    let dir = Path::new(env!("CARGO_MANIFEST_DIR")).join("docs/validation/raw");
+    let dir = output_dir();
     std::fs::create_dir_all(&dir).unwrap();
-    let w = World::new(12345);
+    let mut w = World::new(12345);
+    w.years = 1221.0 + 4.0 / 12.0 - START_AD;
     let position = |name: &str| {
         w.blds
             .iter()
@@ -359,8 +367,8 @@ fn historical_travel_audit() {
     };
     let distance = position("鎌倉").dist(position("平安京"));
     let speed = udef(22).speed;
-    let available = (END_AD - (1221.0 + 4.0 / 12.0)) * SEC_PER_YEAR;
-    let result=format!("{{\"seed\":12345,\"distance_tiles\":{distance},\"cavalry_speed_tiles_per_second\":{speed},\"unopposed_straight_line_seconds\":{},\"may_to_july_seconds\":{available},\"travel_game_months\":{},\"distance_reachable_tiles\":{},\"notes\":\"Hypothetical army departing Kamakura in May; ignores terrain, combat, pathfinding and transport delays\"}}\n",distance/speed,distance/speed/SEC_PER_YEAR*12.0,available*speed);
+    let available = (END_AD - (1221.0 + 4.0 / 12.0)) * w.sec_per_year();
+    let result=format!("{{\"seed\":12345,\"distance_tiles\":{distance},\"cavalry_speed_tiles_per_second\":{speed},\"unopposed_straight_line_seconds\":{},\"may_to_july_seconds\":{available},\"travel_game_months\":{},\"distance_reachable_tiles\":{},\"notes\":\"Hypothetical army departing Kamakura in May; calendar at May 1221; ignores terrain, combat, pathfinding and transport delays\"}}\n",distance/speed,distance/speed/w.sec_per_year()*12.0,available*speed);
     std::fs::write(dir.join("travel.json"), &result).unwrap();
     println!("{result}");
     assert!(distance.is_finite() && distance > 0.0 && speed > 0.0);

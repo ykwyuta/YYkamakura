@@ -453,7 +453,7 @@ fn diplomacy(w: &mut World, n: usize, a: &mut AiState, nsold: usize) {
     }
     // 宣戦
     let wars = (0..NATIONS.len()).filter(|&o| w.at_war(n, o)).count();
-    if wars > 0 || years < 12.0 || nsold < 5 {
+    if wars > 0 || years < 12.0 || nsold < 5 || w.campaign_leader(n).is_some() {
         return;
     }
     if !a.rng.chance(0.22 * a.aggr) {
@@ -529,9 +529,9 @@ fn command_army(w: &mut World, n: usize, a: &mut AiState, soldiers: &[(Handle, O
         return;
     }
     // 攻撃目標：連合の標的を優先
-    let mut target_nation = None;
+    let mut target_nation = w.campaign_target(n);
     for c in w.coalitions.iter() {
-        if c.members.contains(&n) && w.nations[c.target].alive {
+        if target_nation.is_none() && c.members.contains(&n) && w.nations[c.target].alive {
             target_nation = Some(c.target);
         }
     }
