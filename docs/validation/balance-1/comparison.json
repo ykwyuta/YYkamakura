@@ -1,0 +1,960 @@
+{
+  "phases": {
+    "before": {
+      "source_head": "35ee9277ebb00907a12a4ea6f781811af12ed876",
+      "seeds": [
+        1,
+        42,
+        2026,
+        12345,
+        8675309
+      ],
+      "tactical": {
+        "infantry_100_vs_100": {
+          "median_seconds": 21.867,
+          "left_wins": 3,
+          "right_wins": 2,
+          "unresolved": 0,
+          "observations": [
+            {
+              "seed": "1",
+              "case": "infantry_100_vs_100",
+              "elapsed": "20.633",
+              "first_loss": "1.433",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "39",
+              "captured": "false"
+            },
+            {
+              "seed": "42",
+              "case": "infantry_100_vs_100",
+              "elapsed": "21.867",
+              "first_loss": "1.467",
+              "winner": "left",
+              "left_personnel": "31",
+              "right_personnel": "0",
+              "captured": "false"
+            },
+            {
+              "seed": "2026",
+              "case": "infantry_100_vs_100",
+              "elapsed": "21.867",
+              "first_loss": "1.467",
+              "winner": "left",
+              "left_personnel": "32",
+              "right_personnel": "0",
+              "captured": "false"
+            },
+            {
+              "seed": "12345",
+              "case": "infantry_100_vs_100",
+              "elapsed": "21.833",
+              "first_loss": "1.433",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "32",
+              "captured": "false"
+            },
+            {
+              "seed": "8675309",
+              "case": "infantry_100_vs_100",
+              "elapsed": "21.867",
+              "first_loss": "1.467",
+              "winner": "left",
+              "left_personnel": "35",
+              "right_personnel": "0",
+              "captured": "false"
+            }
+          ]
+        },
+        "infantry_1000_vs_100": {
+          "median_seconds": 1.467,
+          "left_wins": 5,
+          "right_wins": 0,
+          "unresolved": 0,
+          "observations": [
+            {
+              "seed": "1",
+              "case": "infantry_1000_vs_100",
+              "elapsed": "2.667",
+              "first_loss": "1.433",
+              "winner": "left",
+              "left_personnel": "988",
+              "right_personnel": "0",
+              "captured": "false"
+            },
+            {
+              "seed": "42",
+              "case": "infantry_1000_vs_100",
+              "elapsed": "1.467",
+              "first_loss": "1.467",
+              "winner": "left",
+              "left_personnel": "1000",
+              "right_personnel": "0",
+              "captured": "false"
+            },
+            {
+              "seed": "2026",
+              "case": "infantry_1000_vs_100",
+              "elapsed": "1.467",
+              "first_loss": "1.467",
+              "winner": "left",
+              "left_personnel": "1000",
+              "right_personnel": "0",
+              "captured": "false"
+            },
+            {
+              "seed": "12345",
+              "case": "infantry_1000_vs_100",
+              "elapsed": "1.467",
+              "first_loss": "1.433",
+              "winner": "left",
+              "left_personnel": "991",
+              "right_personnel": "0",
+              "captured": "false"
+            },
+            {
+              "seed": "8675309",
+              "case": "infantry_1000_vs_100",
+              "elapsed": "2.667",
+              "first_loss": "1.467",
+              "winner": "left",
+              "left_personnel": "999",
+              "right_personnel": "0",
+              "captured": "false"
+            }
+          ]
+        },
+        "infantry_1000_vs_1000": {
+          "median_seconds": 21.867,
+          "left_wins": 3,
+          "right_wins": 2,
+          "unresolved": 0,
+          "observations": [
+            {
+              "seed": "1",
+              "case": "infantry_1000_vs_1000",
+              "elapsed": "20.633",
+              "first_loss": "1.433",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "392",
+              "captured": "false"
+            },
+            {
+              "seed": "42",
+              "case": "infantry_1000_vs_1000",
+              "elapsed": "21.867",
+              "first_loss": "1.467",
+              "winner": "left",
+              "left_personnel": "309",
+              "right_personnel": "0",
+              "captured": "false"
+            },
+            {
+              "seed": "2026",
+              "case": "infantry_1000_vs_1000",
+              "elapsed": "21.867",
+              "first_loss": "1.467",
+              "winner": "left",
+              "left_personnel": "323",
+              "right_personnel": "0",
+              "captured": "false"
+            },
+            {
+              "seed": "12345",
+              "case": "infantry_1000_vs_1000",
+              "elapsed": "21.833",
+              "first_loss": "1.433",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "323",
+              "captured": "false"
+            },
+            {
+              "seed": "8675309",
+              "case": "infantry_1000_vs_1000",
+              "elapsed": "21.867",
+              "first_loss": "1.467",
+              "winner": "left",
+              "left_personnel": "352",
+              "right_personnel": "0",
+              "captured": "false"
+            }
+          ]
+        },
+        "infantry_1000_vs_ten_100": {
+          "median_seconds": 22.433,
+          "left_wins": 0,
+          "right_wins": 5,
+          "unresolved": 0,
+          "observations": [
+            {
+              "seed": "1",
+              "case": "infantry_1000_vs_ten_100",
+              "elapsed": "21.767",
+              "first_loss": "1.400",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "388",
+              "captured": "false"
+            },
+            {
+              "seed": "42",
+              "case": "infantry_1000_vs_ten_100",
+              "elapsed": "27.967",
+              "first_loss": "1.400",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "227",
+              "captured": "false"
+            },
+            {
+              "seed": "2026",
+              "case": "infantry_1000_vs_ten_100",
+              "elapsed": "21.967",
+              "first_loss": "1.400",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "366",
+              "captured": "false"
+            },
+            {
+              "seed": "12345",
+              "case": "infantry_1000_vs_ten_100",
+              "elapsed": "22.433",
+              "first_loss": "1.400",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "370",
+              "captured": "false"
+            },
+            {
+              "seed": "8675309",
+              "case": "infantry_1000_vs_ten_100",
+              "elapsed": "23.700",
+              "first_loss": "1.400",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "335",
+              "captured": "false"
+            }
+          ]
+        },
+        "archers_100_vs_infantry_100": {
+          "median_seconds": 12.133,
+          "left_wins": 0,
+          "right_wins": 5,
+          "unresolved": 0,
+          "observations": [
+            {
+              "seed": "1",
+              "case": "archers_100_vs_infantry_100",
+              "elapsed": "10.933",
+              "first_loss": "0.400",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "60",
+              "captured": "false"
+            },
+            {
+              "seed": "42",
+              "case": "archers_100_vs_infantry_100",
+              "elapsed": "12.167",
+              "first_loss": "0.400",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "54",
+              "captured": "false"
+            },
+            {
+              "seed": "2026",
+              "case": "archers_100_vs_infantry_100",
+              "elapsed": "12.167",
+              "first_loss": "0.400",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "54",
+              "captured": "false"
+            },
+            {
+              "seed": "12345",
+              "case": "archers_100_vs_infantry_100",
+              "elapsed": "12.133",
+              "first_loss": "0.400",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "54",
+              "captured": "false"
+            },
+            {
+              "seed": "8675309",
+              "case": "archers_100_vs_infantry_100",
+              "elapsed": "10.967",
+              "first_loss": "0.400",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "60",
+              "captured": "false"
+            }
+          ]
+        },
+        "cavalry_100_vs_infantry_100": {
+          "median_seconds": 13.033,
+          "left_wins": 0,
+          "right_wins": 5,
+          "unresolved": 0,
+          "observations": [
+            {
+              "seed": "1",
+              "case": "cavalry_100_vs_infantry_100",
+              "elapsed": "13.033",
+              "first_loss": "0.433",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "53",
+              "captured": "false"
+            },
+            {
+              "seed": "42",
+              "case": "cavalry_100_vs_infantry_100",
+              "elapsed": "14.233",
+              "first_loss": "0.467",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "50",
+              "captured": "false"
+            },
+            {
+              "seed": "2026",
+              "case": "cavalry_100_vs_infantry_100",
+              "elapsed": "13.033",
+              "first_loss": "0.467",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "51",
+              "captured": "false"
+            },
+            {
+              "seed": "12345",
+              "case": "cavalry_100_vs_infantry_100",
+              "elapsed": "14.267",
+              "first_loss": "0.433",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "51",
+              "captured": "false"
+            },
+            {
+              "seed": "8675309",
+              "case": "cavalry_100_vs_infantry_100",
+              "elapsed": "13.033",
+              "first_loss": "0.467",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "56",
+              "captured": "false"
+            }
+          ]
+        },
+        "infantry_10000_vs_capital": {
+          "median_seconds": 6.733,
+          "left_wins": 5,
+          "right_wins": 0,
+          "unresolved": 0,
+          "observations": [
+            {
+              "seed": "1",
+              "case": "infantry_10000_vs_capital",
+              "elapsed": "6.700",
+              "first_loss": "4.100",
+              "winner": "left",
+              "left_personnel": "9985",
+              "right_personnel": "0",
+              "captured": "true"
+            },
+            {
+              "seed": "42",
+              "case": "infantry_10000_vs_capital",
+              "elapsed": "6.733",
+              "first_loss": "4.100",
+              "winner": "left",
+              "left_personnel": "9985",
+              "right_personnel": "0",
+              "captured": "true"
+            },
+            {
+              "seed": "2026",
+              "case": "infantry_10000_vs_capital",
+              "elapsed": "6.733",
+              "first_loss": "4.100",
+              "winner": "left",
+              "left_personnel": "9985",
+              "right_personnel": "0",
+              "captured": "true"
+            },
+            {
+              "seed": "12345",
+              "case": "infantry_10000_vs_capital",
+              "elapsed": "6.733",
+              "first_loss": "4.100",
+              "winner": "left",
+              "left_personnel": "9985",
+              "right_personnel": "0",
+              "captured": "true"
+            },
+            {
+              "seed": "8675309",
+              "case": "infantry_10000_vs_capital",
+              "elapsed": "7.933",
+              "first_loss": "4.100",
+              "winner": "left",
+              "left_personnel": "9985",
+              "right_personnel": "0",
+              "captured": "true"
+            }
+          ]
+        }
+      },
+      "early_food_below_one": 7,
+      "early_food_observations": 200,
+      "kyoto": [
+        {
+          "seed": 1,
+          "owner": "朝廷",
+          "leader": -1,
+          "kamakura_side": false
+        },
+        {
+          "seed": 42,
+          "owner": "朝廷",
+          "leader": -1,
+          "kamakura_side": false
+        },
+        {
+          "seed": 2026,
+          "owner": "熊谷氏",
+          "leader": 5,
+          "kamakura_side": true
+        },
+        {
+          "seed": 12345,
+          "owner": "朝廷",
+          "leader": -1,
+          "kamakura_side": false
+        },
+        {
+          "seed": 8675309,
+          "owner": "北条氏",
+          "leader": 5,
+          "kamakura_side": true
+        }
+      ],
+      "deadline_checks": {
+        "pre_uprising_minamoto_survives": 5,
+        "1180_kamakura_minamoto_control": 5,
+        "1180_alliance_5": 5,
+        "1180_alliance_7": 5,
+        "1180_alliance_6": 5,
+        "1183_taira_leave_rokuhara": 0,
+        "1184_kiso_defeated": 0,
+        "1185_taira_defeated": 0,
+        "1187_yoshitsune_with_fujiwara": 5,
+        "1189_fujiwara_defeated": 0,
+        "1189_hiraizumi_kamakura_side": 0,
+        "1199_yoritomo_dead": 5,
+        "1199_kamakura_side_controls_kamakura": 2,
+        "1203_hiki_defeated": 0,
+        "1205_hatakeyama_defeated": 0,
+        "1213_wada_defeated": 1,
+        "1219_sanetomo_dead": 5,
+        "1219_hojo_survives": 5,
+        "1221_court_survives_before_war": 5,
+        "1221_hojo_exists_at_declaration": 5,
+        "1221_court_hojo_actual_war": 5,
+        "1221_kyoto_kamakura_side": 1,
+        "1221_kyoto_minamoto_or_hojo": 1
+      }
+    },
+    "after": {
+      "source_head": "496cdbe93a7f4666627ce887006ddd8199053371",
+      "seeds": [
+        1,
+        42,
+        2026,
+        12345,
+        8675309
+      ],
+      "tactical": {
+        "infantry_100_vs_100": {
+          "median_seconds": 21.867,
+          "left_wins": 3,
+          "right_wins": 2,
+          "unresolved": 0,
+          "observations": [
+            {
+              "seed": "1",
+              "case": "infantry_100_vs_100",
+              "elapsed": "20.633",
+              "first_loss": "1.433",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "39",
+              "captured": "false"
+            },
+            {
+              "seed": "42",
+              "case": "infantry_100_vs_100",
+              "elapsed": "21.867",
+              "first_loss": "1.467",
+              "winner": "left",
+              "left_personnel": "31",
+              "right_personnel": "0",
+              "captured": "false"
+            },
+            {
+              "seed": "2026",
+              "case": "infantry_100_vs_100",
+              "elapsed": "21.867",
+              "first_loss": "1.467",
+              "winner": "left",
+              "left_personnel": "32",
+              "right_personnel": "0",
+              "captured": "false"
+            },
+            {
+              "seed": "12345",
+              "case": "infantry_100_vs_100",
+              "elapsed": "21.833",
+              "first_loss": "1.433",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "32",
+              "captured": "false"
+            },
+            {
+              "seed": "8675309",
+              "case": "infantry_100_vs_100",
+              "elapsed": "21.867",
+              "first_loss": "1.467",
+              "winner": "left",
+              "left_personnel": "35",
+              "right_personnel": "0",
+              "captured": "false"
+            }
+          ]
+        },
+        "infantry_1000_vs_100": {
+          "median_seconds": 1.467,
+          "left_wins": 5,
+          "right_wins": 0,
+          "unresolved": 0,
+          "observations": [
+            {
+              "seed": "1",
+              "case": "infantry_1000_vs_100",
+              "elapsed": "2.667",
+              "first_loss": "1.433",
+              "winner": "left",
+              "left_personnel": "988",
+              "right_personnel": "0",
+              "captured": "false"
+            },
+            {
+              "seed": "42",
+              "case": "infantry_1000_vs_100",
+              "elapsed": "1.467",
+              "first_loss": "1.467",
+              "winner": "left",
+              "left_personnel": "1000",
+              "right_personnel": "0",
+              "captured": "false"
+            },
+            {
+              "seed": "2026",
+              "case": "infantry_1000_vs_100",
+              "elapsed": "1.467",
+              "first_loss": "1.467",
+              "winner": "left",
+              "left_personnel": "1000",
+              "right_personnel": "0",
+              "captured": "false"
+            },
+            {
+              "seed": "12345",
+              "case": "infantry_1000_vs_100",
+              "elapsed": "1.467",
+              "first_loss": "1.433",
+              "winner": "left",
+              "left_personnel": "991",
+              "right_personnel": "0",
+              "captured": "false"
+            },
+            {
+              "seed": "8675309",
+              "case": "infantry_1000_vs_100",
+              "elapsed": "2.667",
+              "first_loss": "1.467",
+              "winner": "left",
+              "left_personnel": "999",
+              "right_personnel": "0",
+              "captured": "false"
+            }
+          ]
+        },
+        "infantry_1000_vs_1000": {
+          "median_seconds": 21.867,
+          "left_wins": 3,
+          "right_wins": 2,
+          "unresolved": 0,
+          "observations": [
+            {
+              "seed": "1",
+              "case": "infantry_1000_vs_1000",
+              "elapsed": "20.633",
+              "first_loss": "1.433",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "392",
+              "captured": "false"
+            },
+            {
+              "seed": "42",
+              "case": "infantry_1000_vs_1000",
+              "elapsed": "21.867",
+              "first_loss": "1.467",
+              "winner": "left",
+              "left_personnel": "309",
+              "right_personnel": "0",
+              "captured": "false"
+            },
+            {
+              "seed": "2026",
+              "case": "infantry_1000_vs_1000",
+              "elapsed": "21.867",
+              "first_loss": "1.467",
+              "winner": "left",
+              "left_personnel": "323",
+              "right_personnel": "0",
+              "captured": "false"
+            },
+            {
+              "seed": "12345",
+              "case": "infantry_1000_vs_1000",
+              "elapsed": "21.833",
+              "first_loss": "1.433",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "323",
+              "captured": "false"
+            },
+            {
+              "seed": "8675309",
+              "case": "infantry_1000_vs_1000",
+              "elapsed": "21.867",
+              "first_loss": "1.467",
+              "winner": "left",
+              "left_personnel": "352",
+              "right_personnel": "0",
+              "captured": "false"
+            }
+          ]
+        },
+        "infantry_1000_vs_ten_100": {
+          "median_seconds": 22.433,
+          "left_wins": 0,
+          "right_wins": 5,
+          "unresolved": 0,
+          "observations": [
+            {
+              "seed": "1",
+              "case": "infantry_1000_vs_ten_100",
+              "elapsed": "21.767",
+              "first_loss": "1.400",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "388",
+              "captured": "false"
+            },
+            {
+              "seed": "42",
+              "case": "infantry_1000_vs_ten_100",
+              "elapsed": "27.967",
+              "first_loss": "1.400",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "227",
+              "captured": "false"
+            },
+            {
+              "seed": "2026",
+              "case": "infantry_1000_vs_ten_100",
+              "elapsed": "21.967",
+              "first_loss": "1.400",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "366",
+              "captured": "false"
+            },
+            {
+              "seed": "12345",
+              "case": "infantry_1000_vs_ten_100",
+              "elapsed": "22.433",
+              "first_loss": "1.400",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "370",
+              "captured": "false"
+            },
+            {
+              "seed": "8675309",
+              "case": "infantry_1000_vs_ten_100",
+              "elapsed": "23.700",
+              "first_loss": "1.400",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "335",
+              "captured": "false"
+            }
+          ]
+        },
+        "archers_100_vs_infantry_100": {
+          "median_seconds": 12.133,
+          "left_wins": 0,
+          "right_wins": 5,
+          "unresolved": 0,
+          "observations": [
+            {
+              "seed": "1",
+              "case": "archers_100_vs_infantry_100",
+              "elapsed": "10.933",
+              "first_loss": "0.400",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "60",
+              "captured": "false"
+            },
+            {
+              "seed": "42",
+              "case": "archers_100_vs_infantry_100",
+              "elapsed": "12.167",
+              "first_loss": "0.400",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "54",
+              "captured": "false"
+            },
+            {
+              "seed": "2026",
+              "case": "archers_100_vs_infantry_100",
+              "elapsed": "12.167",
+              "first_loss": "0.400",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "54",
+              "captured": "false"
+            },
+            {
+              "seed": "12345",
+              "case": "archers_100_vs_infantry_100",
+              "elapsed": "12.133",
+              "first_loss": "0.400",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "54",
+              "captured": "false"
+            },
+            {
+              "seed": "8675309",
+              "case": "archers_100_vs_infantry_100",
+              "elapsed": "10.967",
+              "first_loss": "0.400",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "60",
+              "captured": "false"
+            }
+          ]
+        },
+        "cavalry_100_vs_infantry_100": {
+          "median_seconds": 13.033,
+          "left_wins": 0,
+          "right_wins": 5,
+          "unresolved": 0,
+          "observations": [
+            {
+              "seed": "1",
+              "case": "cavalry_100_vs_infantry_100",
+              "elapsed": "13.033",
+              "first_loss": "0.433",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "53",
+              "captured": "false"
+            },
+            {
+              "seed": "42",
+              "case": "cavalry_100_vs_infantry_100",
+              "elapsed": "14.233",
+              "first_loss": "0.467",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "50",
+              "captured": "false"
+            },
+            {
+              "seed": "2026",
+              "case": "cavalry_100_vs_infantry_100",
+              "elapsed": "13.033",
+              "first_loss": "0.467",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "51",
+              "captured": "false"
+            },
+            {
+              "seed": "12345",
+              "case": "cavalry_100_vs_infantry_100",
+              "elapsed": "14.267",
+              "first_loss": "0.433",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "51",
+              "captured": "false"
+            },
+            {
+              "seed": "8675309",
+              "case": "cavalry_100_vs_infantry_100",
+              "elapsed": "13.033",
+              "first_loss": "0.467",
+              "winner": "right",
+              "left_personnel": "0",
+              "right_personnel": "56",
+              "captured": "false"
+            }
+          ]
+        },
+        "infantry_10000_vs_capital": {
+          "median_seconds": 19.933,
+          "left_wins": 5,
+          "right_wins": 0,
+          "unresolved": 0,
+          "observations": [
+            {
+              "seed": "1",
+              "case": "infantry_10000_vs_capital",
+              "elapsed": "19.900",
+              "first_loss": "4.100",
+              "winner": "left",
+              "left_personnel": "9941",
+              "right_personnel": "0",
+              "captured": "true"
+            },
+            {
+              "seed": "42",
+              "case": "infantry_10000_vs_capital",
+              "elapsed": "19.933",
+              "first_loss": "4.100",
+              "winner": "left",
+              "left_personnel": "9941",
+              "right_personnel": "0",
+              "captured": "true"
+            },
+            {
+              "seed": "2026",
+              "case": "infantry_10000_vs_capital",
+              "elapsed": "19.933",
+              "first_loss": "4.100",
+              "winner": "left",
+              "left_personnel": "9941",
+              "right_personnel": "0",
+              "captured": "true"
+            },
+            {
+              "seed": "12345",
+              "case": "infantry_10000_vs_capital",
+              "elapsed": "19.933",
+              "first_loss": "4.100",
+              "winner": "left",
+              "left_personnel": "9941",
+              "right_personnel": "0",
+              "captured": "true"
+            },
+            {
+              "seed": "8675309",
+              "case": "infantry_10000_vs_capital",
+              "elapsed": "21.133",
+              "first_loss": "4.100",
+              "winner": "left",
+              "left_personnel": "9933",
+              "right_personnel": "0",
+              "captured": "true"
+            }
+          ]
+        }
+      },
+      "early_food_below_one": 5,
+      "early_food_observations": 200,
+      "kyoto": [
+        {
+          "seed": 1,
+          "owner": "三浦氏",
+          "leader": 5,
+          "kamakura_side": true
+        },
+        {
+          "seed": 42,
+          "owner": "三浦氏",
+          "leader": 5,
+          "kamakura_side": true
+        },
+        {
+          "seed": 2026,
+          "owner": "千葉氏",
+          "leader": 5,
+          "kamakura_side": true
+        },
+        {
+          "seed": 12345,
+          "owner": "新田氏",
+          "leader": 5,
+          "kamakura_side": true
+        },
+        {
+          "seed": 8675309,
+          "owner": "三浦氏",
+          "leader": 5,
+          "kamakura_side": true
+        }
+      ],
+      "deadline_checks": {
+        "pre_uprising_minamoto_survives": 5,
+        "1180_kamakura_minamoto_control": 5,
+        "1180_alliance_5": 5,
+        "1180_alliance_7": 5,
+        "1180_alliance_6": 5,
+        "1183_taira_leave_rokuhara": 5,
+        "1184_kiso_defeated": 0,
+        "1185_taira_defeated": 0,
+        "1187_yoshitsune_with_fujiwara": 5,
+        "1189_fujiwara_defeated": 0,
+        "1189_hiraizumi_kamakura_side": 0,
+        "1199_yoritomo_dead": 5,
+        "1199_kamakura_side_controls_kamakura": 5,
+        "1203_hiki_defeated": 0,
+        "1205_hatakeyama_defeated": 0,
+        "1213_wada_defeated": 0,
+        "1219_sanetomo_dead": 5,
+        "1219_hojo_survives": 5,
+        "1221_court_survives_before_war": 5,
+        "1221_hojo_exists_at_declaration": 5,
+        "1221_court_hojo_actual_war": 5,
+        "1221_kyoto_kamakura_side": 5,
+        "1221_kyoto_minamoto_or_hojo": 0
+      }
+    }
+  },
+  "field_cases_identical": true,
+  "notes": "Controlled flat-ground combat uses production unit updates; campaigns use full World::step. Five seeds are exploratory, not a human win-rate estimate."
+}
