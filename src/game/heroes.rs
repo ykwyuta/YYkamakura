@@ -12,7 +12,7 @@ impl Game {
         self.art
             .draw_stone_panel(&self.gfx, x0, y0, x0 + pw, y0 + ph);
         self.gfx.text_shadow(
-            "英雄図鑑 — 54人",
+            "英雄図鑑 — 63人",
             x0 + 20.0,
             y0 + 10.0,
             300.0,
@@ -103,14 +103,25 @@ impl Game {
                 tx,
                 y + 92.0,
                 tw,
-                45.0,
+                23.0,
                 Font::Small,
                 [0.7, 0.9, 0.85, 1.0],
             );
+            if let Some(role) = support_of(k) {
+                self.gfx.text(
+                    role.description,
+                    tx,
+                    y + 116.0,
+                    tw,
+                    38.0,
+                    Font::Small,
+                    [0.8, 0.86, 1.0, 1.0],
+                );
+            }
             self.gfx.text(
                 &format!("出自：{}", NATIONS[home].name),
                 tx,
-                y + rh - 40.0,
+                y + rh - 30.0,
                 tw,
                 23.0,
                 Font::Small,

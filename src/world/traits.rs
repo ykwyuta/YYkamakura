@@ -128,6 +128,7 @@ impl World {
             for t in traits_of(i, ad) {
                 (t.fx)(&mut m);
             }
+            self.apply_hero_support(i, &mut m);
             self.nations[i].tm = m;
         }
     }

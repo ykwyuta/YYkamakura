@@ -278,6 +278,7 @@ pub const HISTORY: &[HEvent] = &[
         "後白河院が頼朝追討の院宣を出し、兄弟の関係が決裂する。",
         [War(MINAMOTO, COURT), DefectHero(35, COURT)]
     ),
+    ev!(1186, 4, MINAMOTO, Sage, "静御前の舞", "静が鶴岡八幡宮で舞い、政子がその心情に理解を示す。文化による結束をゲーム上の効果として表す。", [Figure("鶴岡八幡宮の舞", 0.05, 0.08, 1.0)]),
     ev!(
         1187,
         2,
@@ -377,6 +378,7 @@ pub const HISTORY: &[HEvent] = &[
         "後鳥羽院が北条義時追討を命じる。朝廷の滅亡禁止が解除される。",
         [War(COURT, HOJO), War(COURT, MINAMOTO)]
     ),
+    ev!(1221, 5, HOJO, Minister, "北条政子の訴え", "政子が頼朝以来の恩義を説き、御家人たちの結束を促す。", [Figure("政子の結束", 0.0, 0.15, 0.2)]),
     ev!(
         1221,
         6,

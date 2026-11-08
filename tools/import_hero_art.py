@@ -1,4 +1,4 @@
-"""Compile the six generated hero atlases without changing their painted content.
+"""Compile the generated hero atlases without changing their painted content.
 
 Only lossless cell extraction, transparent padding, resizing and BGRA encoding.
 The original generated PNGs remain beside the compiled asset.
@@ -15,7 +15,7 @@ def compile_atlases():
     names = json.loads((ASSETS / 'roster.json').read_text(encoding='utf-8'))
     raw = bytearray()
     entries = []
-    catalog = Image.new('RGBA', (9 * SIZE, 6 * (SIZE + 26)), '#10222c')
+    catalog = Image.new('RGBA', (9 * SIZE, ((len(names) + 8) // 9) * (SIZE + 26)), '#10222c')
     from PIL import ImageDraw, ImageFont
     draw = ImageDraw.Draw(catalog)
     try:

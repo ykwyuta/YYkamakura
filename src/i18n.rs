@@ -4,6 +4,10 @@
 //! キーはデータに書かれた日本語そのもの。`lang::tx` が引く。
 
 pub const DICT: &[(&str, &str, &str)] = &[
+    ("政務支援", "Political support", "政务支援"),
+    ("芸能支援", "Cultural support", "文化支援"),
+    ("政治と家政で勢力を支える非戦闘の英雄", "A noncombat hero supporting politics and household administration", "以政治和家政支援势力的非战斗英雄"),
+    ("舞と文化によって勢力の士気を支える非戦闘の英雄", "A noncombat hero inspiring morale through dance and culture", "以舞蹈和文化鼓舞士气的非战斗英雄"),
     ("モンゴル", "Mongols", "蒙古"),
     ("宋", "Song", "宋"),
     ("金", "Jin", "金"),

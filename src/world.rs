@@ -7,6 +7,8 @@ use crate::rng::Rng;
 use std::collections::VecDeque;
 
 mod campaign;
+mod support;
+pub use support::support_of;
 mod history;
 pub use campaign::HERO_LIVES;
 mod conquest;
@@ -741,6 +743,7 @@ impl World {
         w.update_stats();
         w.refresh_traits();
         w.update_campaign_heroes();
+        w.refresh_traits();
         w
     }
 
@@ -2359,6 +2362,7 @@ impl World {
         self.stat_t -= dt;
         if self.stat_t <= 0.0 {
             self.stat_t = 0.25;
+            self.refresh_traits();
             self.update_stats();
             self.assign_ferries();
         }

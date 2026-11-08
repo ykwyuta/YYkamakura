@@ -430,5 +430,77 @@
     "row": 2,
     "column": 2,
     "sprite": "hero-53.png"
+  },
+  {
+    "id": 54,
+    "name": "北条政子",
+    "sheet": 7,
+    "row": 0,
+    "column": 0,
+    "sprite": "hero-54.png"
+  },
+  {
+    "id": 55,
+    "name": "静御前",
+    "sheet": 7,
+    "row": 0,
+    "column": 1,
+    "sprite": "hero-55.png"
+  },
+  {
+    "id": 56,
+    "name": "巴御前",
+    "sheet": 7,
+    "row": 0,
+    "column": 2,
+    "sprite": "hero-56.png"
+  },
+  {
+    "id": 57,
+    "name": "丹後局",
+    "sheet": 7,
+    "row": 1,
+    "column": 0,
+    "sprite": "hero-57.png"
+  },
+  {
+    "id": 58,
+    "name": "比企尼",
+    "sheet": 7,
+    "row": 1,
+    "column": 1,
+    "sprite": "hero-58.png"
+  },
+  {
+    "id": 59,
+    "name": "二位尼（平時子）",
+    "sheet": 7,
+    "row": 1,
+    "column": 2,
+    "sprite": "hero-59.png"
+  },
+  {
+    "id": 60,
+    "name": "建礼門院徳子",
+    "sheet": 7,
+    "row": 2,
+    "column": 0,
+    "sprite": "hero-60.png"
+  },
+  {
+    "id": 61,
+    "name": "牧の方",
+    "sheet": 7,
+    "row": 2,
+    "column": 1,
+    "sprite": "hero-61.png"
+  },
+  {
+    "id": 62,
+    "name": "阿波局",
+    "sheet": 7,
+    "row": 2,
+    "column": 2,
+    "sprite": "hero-62.png"
   }
 ]

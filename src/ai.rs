@@ -87,7 +87,7 @@ fn think(w: &mut World, n: usize, a: &mut AiState) {
             ships.push((h, u.order, u.pos, u.cargo.len()));
         } else if u.kind.military() {
             soldiers.push((h, u.order, u.pos, u.power));
-        } else {
+        } else if u.hero == NONE {
             if let Order::Gather { src, .. } = u.order {
                 gathering[src.res()] += 1;
             }
