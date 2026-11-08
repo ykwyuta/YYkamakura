@@ -89,7 +89,7 @@ fn snapshot(
             .join(" / ");
         writeln!(
             states,
-            "{seed},{y},{m},{n},{},{},{},{},{},{:.3},{},{},{},{},{},{},{},{}",
+            "{seed},{y},{m},{n},{},{},{},{},{},{:.3},{},{},{},{},{},{},{},{},{:.3},{:.3},{:.3},{:.3}",
             csv(w.nations[n].name),
             w.nations[n].alive,
             cities[n],
@@ -103,7 +103,11 @@ fn snapshot(
             army.ships,
             army.commanders,
             w.campaign_leader(n).map_or(-1, |leader| leader as i32),
-            w.allied_personnel(n)
+            w.allied_personnel(n),
+            w.nations[n].res[0],
+            w.nations[n].income[0],
+            w.nations[n].upkeep,
+            w.nations[n].res[2]
         )
         .unwrap();
     }
@@ -244,7 +248,7 @@ fn snapshot(
 fn simulate(seed: u32, dir: &Path) {
     let mut w = World::new(seed);
     w.ai_player = true;
-    let mut states="seed,year,month,faction_id,faction,alive,seats,successor_id,successor,strength,soldiers,enemies,personnel,establishment,fleets,commanders,campaign_leader,allied_personnel\n".to_string();
+    let mut states="seed,year,month,faction_id,faction,alive,seats,successor_id,successor,strength,soldiers,enemies,personnel,establishment,fleets,commanders,campaign_leader,allied_personnel,food,food_income,upkeep,iron\n".to_string();
     let mut heroes = "seed,year,month,hero_id,hero,owner_id,owner\n".to_string();
     let mut checks = "seed,year,month,check,pass,observed\n".to_string();
     let mut events =

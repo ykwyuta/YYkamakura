@@ -12,6 +12,8 @@ mod manpower;
 pub use manpower::{ArmyStrength, COMPANY_MEN};
 #[cfg(test)]
 mod audit;
+#[cfg(test)]
+mod balance_audit;
 mod support;
 pub use support::support_of;
 mod history;
@@ -2390,11 +2392,7 @@ impl World {
         self.update_buildings(dt);
         self.rebuild_city_list();
         self.rebuild_grid();
-        for i in 0..self.units.len() {
-            if self.units[i].on_map() {
-                self.update_unit(i, dt);
-            }
-        }
+        self.update_units(dt);
         // 船に乗っている兵は船とともに動く
         for i in 0..self.units.len() {
             if let (true, Some(sh)) = (self.units[i].alive, self.units[i].aboard) {
@@ -2875,6 +2873,14 @@ impl World {
         }
         self.request_path(i, gt);
         false
+    }
+
+    fn update_units(&mut self, dt: f32) {
+        for i in 0..self.units.len() {
+            if self.units[i].on_map() {
+                self.update_unit(i, dt);
+            }
+        }
     }
 
     fn update_unit(&mut self, i: usize, dt: f32) {
