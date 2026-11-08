@@ -78,6 +78,14 @@ impl Game {
         self.gfx
             .text(&s, lx0 + 12.0, y, lw - 24.0, 20.0, Font::Small, tc);
         y += 22.0;
+        let army = self.world.army_strength(pl);
+        let muster = tf!("兵員 {}／{}人　陣営計{}人\n陸上{}部隊・{}船団・英雄{}人（別枠）",
+            "Soldiers {}/{}; allies {}\n{} formations, {} fleets, {} heroes (separate)",
+            "兵员{}／{}人　阵营共{}人\n{}部队、{}船队、英雄{}人（另计）",
+            army.personnel, army.establishment, self.world.allied_personnel(pl),
+            army.companies, army.ships, army.commanders);
+        self.gfx.text(&muster, lx0 + 12.0, y, lw - 24.0, 42.0, Font::Small, tc);
+        y += 44.0;
         // 国の特徴
         let yb = self.world.year_ad();
         for t in all_traits_of(pl) {
@@ -185,7 +193,7 @@ impl Game {
                 .filter(|f| f.until > years)
                 .map(|f| crate::lang::tx(f.name))
                 .collect();
-            let s = format!("{}　{}", crate::lang::tx(n.name), crate::lang::tx(n.house));
+            let s = format!("{}　{}　{}人", crate::lang::tx(n.name), crate::lang::tx(n.house), self.world.army_strength(o).personnel);
             let c = n.color;
             self.gfx
                 .fill_rect(lx0 + 12.0, y + 4.0, lx0 + 24.0, y + 16.0, c4(c, 1.0));

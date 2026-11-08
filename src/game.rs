@@ -1483,19 +1483,20 @@ impl Game {
     }
 
     /// 兵の数の表示（傭兵がいれば「＋傭兵の数」を添える。傭兵は上限の外）
-    fn soldier_text(&self, n: u32, cap: u32) -> String {
-        let pl = self.world.player;
-        let m = self
-            .world
-            .units
-            .iter()
-            .filter(|u| u.on_map() && u.nation as usize == pl && u.merc_until > 0.0)
-            .count();
-        if m > 0 {
-            format!("{}/{}+{}", n, cap, m)
-        } else {
-            format!("{}/{}", n, cap)
-        }
+    fn soldier_text(&self, _n: u32, _cap: u32) -> String {
+        let men = self.world.army_strength(self.world.player).personnel;
+        if men >= 10_000 { tf!("{:.1}万", "{:.0}k", "{:.1}万", if crate::lang::lang().code() == "en" { men as f32 / 1000.0 } else { men as f32 / 10000.0 }) }
+        else { men.to_string() }
+    }
+
+    fn army_tooltip(&self) -> String {
+        let n = self.world.player;
+        let a = self.world.army_strength(n);
+        tf!("兵員 {}／定員{}人、陸上部隊{}、船団{}、英雄{}人\n編成枠 {}/{}（船団含む）。同陣営の兵員合計{}人。\n通常編成は100人。戦役招集では大きな部隊にまとめる。英雄・労働者・船団は兵員に重複加算しない。",
+            "Soldiers {}/{}; formations {}, fleets {}, heroes {}\nSlots {}/{} (including fleets). Allied soldiers {}.\nNormal formation: 100 soldiers. Campaign levies group larger formations. Heroes, workers and fleets are counted separately.",
+            "兵员{}／定员{}人；部队{}、船队{}、英雄{}人\n编成位{}/{}（含船队）。同阵营兵员共{}人。\n通常编成100人。战役征召合并大部队，英雄、劳工与船队不重复计入兵员。",
+            a.personnel, a.establishment, a.companies, a.ships, a.commanders,
+            self.world.nations[n].soldiers, self.world.nations[n].mil_cap(), self.world.allied_personnel(n))
     }
 
     fn all_military(&self) -> Vec<Handle> {
@@ -4695,12 +4696,7 @@ impl Game {
                 key: 0,
                 enabled: true,
                 act: Act::SelectAllMilitary,
-                tip: t!(
-                    "軍事ユニット全体（全軍）を選択する",
-                    "Select all soldiers",
-                    "选择全部军事单位（全军）"
-                )
-                .to_string(),
+                tip: self.army_tooltip(),
             });
             x += 96.0;
 
@@ -5618,9 +5614,9 @@ impl Game {
                 )
             };
             let lines = tf!(
-                "兵力 {:.0}/{:.0}　　能力 {:.1}（時代上限 {:.1}）\n状態：{}{}",
+                "耐久 {:.0}/{:.0}　　能力 {:.1}（時代上限 {:.1}）\n状態：{}{}",
                 "HP {:.0}/{:.0}    Power {:.1} (era limit {:.1})\nStatus: {}{}",
-                "兵力 {:.0}/{:.0}　　能力 {:.1}（时代上限 {:.1}）\n状态：{}{}",
+                "耐久 {:.0}/{:.0}　　能力 {:.1}（时代上限 {:.1}）\n状态：{}{}",
                 u.hp.max(0.0),
                 u.max_hp(),
                 u.power,
@@ -5638,6 +5634,10 @@ impl Game {
                     String::new()
                 }
             );
+            let lines = if u.is_company() {
+                tf!("兵員 {}／{}人　能力{:.1}\n状態：{}", "Soldiers {}/{}  Quality {:.1}\nStatus: {}", "兵员{}／{}人　素质{:.1}\n状态：{}",
+                    u.personnel(), u.establishment, u.power, self.order_text(u))
+            } else { lines };
             let desc = if (u.hero as usize) < HEROES.len() {
                 crate::lang::tx(HEROES[u.hero as usize].desc)
             } else if u.divine {
@@ -5650,9 +5650,9 @@ impl Game {
                     "{}\n{}",
                     lines,
                     tf!(
-                        "乗船 {}/{}",
-                        "Aboard {}/{}",
-                        "载员 {}/{}",
+                        "乗船 {}/{}部隊",
+                        "Aboard {}/{} formations",
+                        "搭载{}/{}部队",
                         u.cargo.len(),
                         SHIP_CAP
                     )
@@ -5678,12 +5678,20 @@ impl Game {
             let mut pw = 0.0;
             let mut hp = 0.0;
             let mut mhp = 0.0;
+            let mut men = 0;
+            let mut establishment = 0;
+            let mut commanders = 0;
+            let mut fleets = 0;
             for &h in self.sel.iter() {
                 let u = self.world.unit(h).unwrap();
                 cnt[u.kind as usize] += 1;
                 pw += u.power;
                 hp += u.hp;
                 mhp += u.max_hp();
+                men += u.personnel();
+                if u.is_company() { establishment += u.establishment; }
+                if u.hero != NONE { commanders += 1; }
+                if u.kind.naval() { fleets += 1; }
             }
             let title = tf!(
                 "{} 部隊を編制選択中",
@@ -5750,13 +5758,10 @@ impl Game {
                 }
             }
             let s = tf!(
-                "総能力 {:.1}（平均 {:.2}）　　総兵力 {:.0}/{:.0}",
-                "Total power {:.1} (avg {:.2})    Total HP {:.0}/{:.0}",
-                "总能力 {:.1}（平均 {:.2}）　　总兵力 {:.0}/{:.0}",
-                pw,
-                pw / self.sel.len() as f32,
-                hp,
-                mhp
+                "兵員 {}／{}人　英雄{}人　船団{}　平均能力{:.1}",
+                "Soldiers {}/{}; heroes {}; fleets {}; avg quality {:.1}",
+                "兵员{}／{}人　英雄{}人　船队{}　平均素质{:.1}",
+                men, establishment, commanders, fleets, pw / self.sel.len() as f32
             );
             self.gfx.text(&s, x, y + 76.0, wd, 30.0, Font::Normal, tc);
             let f = (hp / mhp.max(1.0)).clamp(0.0, 1.0);
@@ -6153,7 +6158,7 @@ impl Game {
                 t!("鍛錬", "Train", "锻炼")
             };
             let (x0, y0, x1, y1) = pos(i);
-            self.add_button(x0, y0, x1, y1, label, &Self::cost_str(up_cost), 'T' as u32, true, Act::Upgrade, t!("選択部隊の能力を +0.5 高める（自国領内のみ）。兵は戦闘力と兵力、民は採集量が上がる。費用は現在の能力に比例し、糧・木・鉄のうち蓄えの多いものから優先して払う。", "Raises the selected units' power by +0.5 (inside your territory only). Soldiers gain strength and HP, workers gather more. The cost grows with power and is paid mostly from whichever of food, wood and iron you have most of.", "使所选单位能力+0.5（仅限己方领土内）。士兵提升战斗力与兵力，民提升采集量。费用与当前能力成正比，优先从粮、木、铁中储量较多者支付。"));
+            self.add_button(x0, y0, x1, y1, label, &Self::cost_str(up_cost), 'T' as u32, true, Act::Upgrade, t!("選択部隊の能力を +0.5 高める（自国領内のみ）。兵は戦闘力と耐久、民は採集量が上がる。兵員数は増えない。費用は現在の能力に比例し、糧・木・鉄のうち蓄えの多いものから優先して払う。", "Raises the selected units' power by +0.5 (inside your territory only). Soldiers gain strength and HP, workers gather more. The cost grows with power and is paid mostly from whichever of food, wood and iron you have most of.", "使所选单位能力+0.5（仅限己方领土内）。士兵提升战斗力与兵力，民提升采集量。费用与当前能力成正比，优先从粮、木、铁中储量较多者支付。"));
             i += 1;
             let (x0, y0, x1, y1) = pos(i);
             let (cl, ct) = if any_mil && !any_worker {
@@ -6484,13 +6489,16 @@ impl Game {
                     } else {
                         String::new()
                     };
+                    let formation = if d.class.military() && !d.class.naval() {
+                        t!("\n新規編成100人。訓練で人数は増えない。", "\nNew formation: 100 soldiers. Training improves quality, not headcount.", "\n新编部队100人。训练不增加人数。")
+                    } else { "" };
                     let stats = if d.class == UnitKind::Worker {
                         String::new()
                     } else {
                         tf!(
-                            "\n兵力{:.0}　攻撃{:.0}　射程{:.1}　速さ{:.1}",
+                            "\n耐久{:.0}　攻撃{:.0}　射程{:.1}　速さ{:.1}",
                             "\nHP {:.0}   Attack {:.0}   Range {:.1}   Speed {:.1}",
-                            "\n兵力{:.0}　攻击{:.0}　射程{:.1}　速度{:.1}",
+                            "\n耐久{:.0}　攻击{:.0}　射程{:.1}　速度{:.1}",
                             d.hp,
                             d.atk,
                             d.range,
@@ -6503,11 +6511,11 @@ impl Game {
                         "{}：{}{}{}\n训练时间 {:.0}秒　维持费 {}",
                         crate::lang::tx(d.name),
                         crate::lang::tx(d.desc),
-                        stats,
+                        format!("{}{}", stats, formation),
                         from,
                         d.time,
                         if d.class.military() {
-                            t!("糧0.07/秒×能力", "0.07 food/s × power", "粮0.07/秒×能力")
+                            t!("糧0.07/秒×能力×兵員/100（船団は1編成分）", "0.07 food/s × quality × soldiers/100 (fleet: one formation)", "粮0.07/秒×素质×兵员/100（船队按1编成）")
                         } else {
                             t!("なし", "none", "无")
                         }
@@ -7093,8 +7101,8 @@ impl Game {
             y0 + ph - 14.0,
         );
         let text = t!(
-            "■ 1179〜1221年の日本。全国の既存拠点を争奪し、1221年7月に最多の拠点を持つ勢力が勝利。同数首位も勝利。併合されると併合先を引き継いで続行する。\n\n■ 新しい邑・街は作れず、拠点の焼き払いも不可。民は田・兵営・要塞・港を建設できる。糧・木・鉄を集め、武士・和弓兵・騎馬武者・軍船を訓練する。船は6人を運ぶ。\n\n■ 各家の英雄は固有。敗れると現在所属する勢力の拠点で即時復活し、史実の死去時期に退場する。全拠点を失った勢力は、英雄・兵・資源とともに攻略者へ併合。英雄の無所属召喚はない。\n\n■ 同盟と裏切りは史実の年・月に発生。同盟は休戦として表現し、その期間は攻撃できない。先に併合された家のイベントは継承勢力が引き受ける。同じ勢力内の対立は独立勢力への復活を伴わない。F3で年表。\n\n■ 朝廷は1221年5月の承久の乱発生まで、最後の拠点を奪われず併合もされない。乱発生後は攻略可能。\n\n■ 左クリックで選択、右クリックで移動・攻撃・採集。選択中は時間停止。矢印・中ドラッグで地図移動、ホイールで拡大縮小、Homeで本拠へ。A進軍、S停止、T訓練、Space一時停止、＋−速度、F2外交、F3歴史、F5保存、F11全画面。保存形式はKamakura専用。\n\n■ 史実の年表を軸にした仮想戦記です。初期領有・勢力の独立性・不詳人物の活動期間はゲーム上の整理。詳細はdocs/history.md。",
-            "1179–1221 Japan. Capture fixed bases; no new towns or razing. The house with most bases at July 1221 wins (ties win). Heroes revive at their current house's base until their historical death. Losing all bases transfers the house and heroes to the conqueror; you continue with the successor. Alliances and betrayals occur on their historical month. The Court cannot be annexed before May 1221. Left click select; right click orders; arrows pan; wheel zoom; Home capital; Space pause; F2 diplomacy; F3 history; F5 save. Selected troops pause time. See docs/history.md for scenario assumptions.",
+            "■ 1179〜1221年の日本。全国の既存拠点を争奪し、1221年7月に最多の拠点を持つ勢力が勝利。同数首位も勝利。併合されると併合先を引き継いで続行する。\n\n■ 新しい邑・街は作れず、拠点の焼き払いも不可。民は田・兵営・要塞・港を建設できる。糧・木・鉄を集め、武士・和弓兵・騎馬武者・軍船団を訓練する。基本は1部隊100人、大軍は百人組をまとめて表示。船団は6部隊を運ぶ。兵員・英雄・船団は別集計。\n\n■ 各家の英雄は固有。敗れると現在所属する勢力の拠点で即時復活し、史実の死去時期に退場する。全拠点を失った勢力は、英雄・兵・資源とともに攻略者へ併合。英雄の無所属召喚はない。\n\n■ 同盟と裏切りは史実の年・月に発生。鎌倉方は共同出兵・共同和平。滅亡済みの家の政治事件は未発生となる。F3で人数と年表。招集規模は史料記載を基準に採用した設定値で実数確定ではない。\n\n■ 朝廷は1221年5月の承久の乱発生まで、最後の拠点を奪われず併合もされない。乱発生後は攻略可能。\n\n■ 左クリックで選択、右クリックで移動・攻撃・採集。選択中は時間停止。矢印・中ドラッグで地図移動、ホイールで拡大縮小、Homeで本拠へ。A進軍、S停止、T訓練、Space一時停止、＋−速度、F2外交、F3歴史、F5保存、F11全画面。補充は自国拠点で糧・鉄を消費。訓練では兵員数は増えない。旧第2版の保存も読込可能。\n\n■ 史実の年表を軸にした仮想戦記です。初期領有・勢力の独立性・不詳人物の活動期間はゲーム上の整理。詳細はdocs/history.md。",
+            "1179–1221 Japan. Capture fixed bases; no new towns or razing. The house with most bases at July 1221 wins (ties win). Heroes revive at their current house's base until their historical death. Losing all bases transfers the house and heroes to the conqueror; you continue with the successor. Alliances and betrayals occur on their historical month. The Court cannot be annexed before May 1221. Left click select; right click orders; arrows pan; wheel zoom; Home capital; Space pause; F2 diplomacy; F3 history; F5 save. Selected troops pause time. Normal formations have 100 soldiers; campaign levies group larger formations. Losses reduce headcount and firepower. Replacements need a base, food and equipment. Heroes and fleets are separate. See docs/manpower.md for source-based scenario strengths.",
             "1179至1221年的日本。争夺固定据点，不能新建或烧毁城邑。1221年7月据点最多者获胜（并列也胜）。英雄战败后在所属势力据点复活，史实死期退场。失去全部据点则连同英雄被兼并，玩家接续兼并者。史实月份发生同盟与背叛。朝廷至1221年5月前不能灭亡。左键选择、右键指令、方向键移动、滚轮缩放、Space暂停、F2外交、F3历史、F5存档。"
         );
         // 入りきらなければ小さい字にする

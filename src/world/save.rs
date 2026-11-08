@@ -9,7 +9,7 @@ use crate::ai::AiState;
 use crate::save::{RResult, Reader, Writer};
 
 /// 記録形式の版（中身の並びを変えたら上げる）
-pub const SAVE_VERSION: u32 = 2;
+pub const SAVE_VERSION: u32 = 3;
 
 fn bad(what: &str) -> String {
     tf!(
@@ -279,6 +279,10 @@ fn r_banner(r: &mut Reader) -> RResult<Banner> {
 impl World {
     /// World の状態を書き出す
     pub fn save_to(&self, w: &mut Writer) {
+        self.save_to_version(w, SAVE_VERSION);
+    }
+
+    pub(crate) fn save_to_version(&self, w: &mut Writer, version: u32) {
         let n = MAP_W * MAP_H;
         // ---- 地図（地形・森の残量・銅山の残量）
         let terr: Vec<u8> = self.map.terrain.iter().map(|&t| terrain_u8(t)).collect();
@@ -310,6 +314,7 @@ impl World {
             w_v2(w, u.pos);
             w.f32(u.hp);
             w.f32(u.power);
+            if version >= 3 { w.u32(u.establishment); }
             w_order(w, u.order);
             w_ov2(w, u.resume);
             w.f32(u.cooldown);
@@ -534,6 +539,13 @@ impl World {
 
     /// 記録から World を復元する（地図は種から作り直す）
     pub fn load_from(seed: u32, r: &mut Reader) -> RResult<World> {
+        Self::load_from_version(seed, r, SAVE_VERSION)
+    }
+
+    pub fn load_from_version(seed: u32, r: &mut Reader, version: u32) -> RResult<World> {
+        if version != 2 && version != SAVE_VERSION {
+            return Err(bad("save version"));
+        }
         let mut w = World::new(seed);
         let n = MAP_W * MAP_H;
         // ---- 地図
@@ -579,6 +591,7 @@ impl World {
                 pos: v2(0.0, 0.0),
                 hp: 0.0,
                 power: 1.0,
+                establishment: 0,
                 order: Order::Idle,
                 resume: None,
                 path: Vec::new(),
@@ -612,6 +625,11 @@ impl World {
                 u.pos = r_v2(r)?;
                 u.hp = r.f32()?;
                 u.power = r.f32()?;
+                u.establishment = if version >= 3 { r.u32()? }
+                    else if u.kind.military() && !u.kind.naval() { COMPANY_MEN } else { 0 };
+                if u.establishment > super::manpower::MAX_FORMATION_MEN {
+                    return Err(bad("formation establishment"));
+                }
                 u.order = r_order(r, nmines)?;
                 u.resume = r_ov2(r)?;
                 u.cooldown = r.f32()?;
@@ -624,6 +642,9 @@ impl World {
                 u.merc_until = r.f32()?;
                 u.divine = r.bool()?;
                 u.hero = r.u8()?;
+                if u.is_company() && u.establishment == 0 {
+                    return Err(bad("empty formation establishment"));
+                }
                 let k = r.len(1000)?;
                 for _ in 0..k {
                     u.build_queue.push_back(r_h(r)?);

@@ -461,6 +461,8 @@ pub const DICT: &[(&str, &str, &str)] = &[
     ("騎馬武者", "Mounted samurai", "骑马武者"),
     ("馬上から大鎧で弓を射る鎌倉の武士", "Kamakura warriors in great armour who shoot from the saddle", "身披大铠、马上射箭的镰仓武士"),
     ("軍船", "War boat", "军船"),
+    ("軍船団", "War fleet", "军船队"),
+    ("6部隊を運ぶ日本の軍船団。乗船中の兵員も所属軍に一度だけ計上する", "A Japanese fleet carrying six formations. Embarked soldiers count once in their army.", "运送六支部队的日本船队，搭载兵员只计入所属军队一次。"),
     ("兵6人を乗せて海を渡る日本の船", "A Japanese ship that carries 6 troops across the sea", "可载6名士兵渡海的日本船"),
     ("戦象", "War elephants", "战象"),
     ("象に乗って突き進む。遅いが強く、城門も破る", "Elephants that crash forward — slow but powerful, they even break gates", "乘象冲锋，虽慢却强，能破城门"),

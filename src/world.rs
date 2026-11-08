@@ -8,6 +8,8 @@ use std::collections::VecDeque;
 
 mod campaign;
 mod allegiance;
+mod manpower;
+pub use manpower::{ArmyStrength, COMPANY_MEN};
 #[cfg(test)]
 mod audit;
 mod support;
@@ -303,6 +305,8 @@ pub struct Unit {
     pub pos: V2,
     pub hp: f32,
     pub power: f32,
+    /// Establishment in people; independent of training quality and ownership.
+    pub establishment: u32,
     pub order: Order,
     pub resume: Option<V2>,
     pub path: Vec<(i16, i16)>,
@@ -339,7 +343,7 @@ impl Unit {
         udef(self.ut)
     }
     pub fn max_hp(&self) -> f32 {
-        self.def().hp * self.power
+        self.def().hp * self.power * self.formation_mass()
     }
     pub fn reset_nav(&mut self) {
         self.path.clear();
@@ -744,9 +748,11 @@ impl World {
         }
         w.recompute_territory();
         w.update_stats();
+        w.initialize_manpower();
         w.refresh_traits();
         w.update_campaign_heroes();
         w.refresh_traits();
+        w.update_stats();
         w
     }
 
@@ -826,6 +832,7 @@ impl World {
             pos,
             hp: d.hp * power,
             power,
+            establishment: if d.class.military() && !d.class.naval() { COMPANY_MEN } else { 0 },
             order: Order::Idle,
             resume: None,
             path: Vec::new(),
@@ -1500,8 +1507,8 @@ impl World {
                 n.mil_power += u.power * (u.hp / u.max_hp()).max(0.2);
             } else if u.kind.military() {
                 n.soldiers += 1;
-                n.mil_power += u.power * (u.hp / u.max_hp()).max(0.2);
-                n.upkeep += 0.07 * u.power;
+                n.mil_power += u.power * u.fighting_mass();
+                n.upkeep += 0.07 * u.power * if u.is_company() { u.personnel() as f32 / COMPANY_MEN as f32 } else { 1.0 };
             } else {
                 n.workers += 1;
                 n.eco_power += u.power;
@@ -1783,7 +1790,7 @@ impl World {
         } else {
             1.0
         };
-        let total = (40.0 * p * m).round();
+        let total = (40.0 * p * m * u.formation_mass()).round();
         // 蓄えの多い資源から優先して払う（資源の偏りで余らせないため）。蓄えが乏しいときは兵は糧・銅、民は糧・木が基本
         let base = if u.kind.military() {
             [25.0, 0.0, 15.0]
@@ -1920,6 +1927,7 @@ impl World {
             UT_WORKER
         };
         u.kind = udef(u.ut).class;
+        u.establishment = if to_mil { COMPANY_MEN } else { 0 };
         u.hp = ratio * u.max_hp();
         u.order = Order::Idle;
         u.carry = 0.0;
@@ -2469,6 +2477,7 @@ impl World {
             }
         }
         self.income_t += dt;
+        self.reinforce_companies(dt);
         if self.income_t >= 5.0 {
             for n in self.nations.iter_mut() {
                 for k in 0..3 {
@@ -2891,7 +2900,9 @@ impl World {
                 let (x, y) = self.units[i].pos.tile();
                 if Map::inb(x, y) && self.owner[Map::idx(x, y)] as usize == ni {
                     let u = &mut self.units[i];
-                    u.hp = (u.hp + u.max_hp() * 0.01 * dt).min(u.max_hp());
+                    if !u.is_company() {
+                        u.hp = (u.hp + u.max_hp() * 0.01 * dt).min(u.max_hp());
+                    }
                 }
             }
             Order::Move(g) => {
@@ -2981,7 +2992,7 @@ impl World {
                         } else {
                             1.0
                         };
-                        let atk = def.atk * self.units[i].power * mods * self.rng.range(0.85, 1.15);
+                        let atk = def.atk * self.units[i].power * self.units[i].fighting_mass() * mods * self.rng.range(0.85, 1.15);
                         let me = self.uh(i);
                         if def.range > 1.5 {
                             self.shots.push(Shot {
@@ -3641,11 +3652,8 @@ mod tests {
     #[test]
     fn upgrade_cost_follows_stock() {
         let mut w = World::new(12345);
-        let i = (0..w.units.len())
-            .find(|&i| {
-                w.units[i].alive && w.units[i].nation == SONG as u8 && w.units[i].kind.military()
-            })
-            .unwrap();
+        // Test resource allocation on a standard 100-person company.
+        let i = w.spawn_unit(SONG, 20, w.nations[SONG].home, 1.0).idx as usize;
         let p = w.units[i].power;
         let total = (40.0 * p * w.nations[SONG].tm.upgrade).round();
         // 木が余っていれば木で多く払う

@@ -254,9 +254,9 @@ impl Game {
                 [0.95, 0.92, 0.85, 1.0],
             );
             let tip = if act == Act::SelectAllWorkers {
-                t!("民全体を選ぶ", "Select all workers", "选择全部民")
+                t!("民全体を選ぶ", "Select all workers", "选择全部民").to_string()
             } else {
-                t!("全軍を選ぶ", "Select all soldiers", "选择全军")
+                self.army_tooltip()
             };
             self.buttons.push(Button {
                 x0: x,

@@ -110,14 +110,14 @@ impl Game {
         let mut r = Reader::new(data);
         if r.bytes(4).ok() != Some(&MAGIC[..]) {
             return Err(t!(
-                "モンゴル帝国の記録ではない",
-                "This is not a Mongol Empire save",
-                "这不是蒙古帝国的存档"
+                "Kamakuraの記録ではない",
+                "This is not a Kamakura save",
+                "这不是Kamakura的存档"
             )
             .into());
         }
         let ver = r.u32()?;
-        if ver != SAVE_VERSION {
+        if ver != 2 && ver != SAVE_VERSION {
             return Err(tf!(
                 "記録の形式が違う（記録は第{}版、このゲームは第{}版）",
                 "Different save format (the save is version {}, this game is version {})",
@@ -162,7 +162,7 @@ impl Game {
             }
             groups.push(g);
         }
-        let world = World::load_from(seed, &mut r)?;
+        let world = World::load_from_version(seed, &mut r, ver)?;
 
         // ---- 対局の画面に戻す
         self.world = world;

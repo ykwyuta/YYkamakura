@@ -129,6 +129,8 @@ pub enum Fx {
     Jingkang,
     /// A named hero changes allegiance at a historical date.
     DefectHero(u8, usize),
+    /// Dated recruitment to a source-based scenario strength; keeps conquered houses extinct.
+    Muster(usize, u32, bool),
     /// 神風（日本の近海の敵船が沈む）
     Kamikaze,
 }
@@ -194,8 +196,8 @@ pub const HISTORY: &[HEvent] = &[
         4,
         Hero,
         "富士川と甲斐源氏",
-        "甲斐源氏が頼朝と共同して平家に対抗。",
-        [Truce(MINAMOTO, TAKEDA, 6.0), War(TAKEDA, TAIRA)]
+        "甲斐源氏が頼朝と共同して平家に対抗。房総結集後の史料規模に合わせ、鎌倉方に合計3万人を目標とする招集を行う（実数確定値ではない）。",
+        [Truce(MINAMOTO, TAKEDA, 6.0), War(TAKEDA, TAIRA), Muster(MINAMOTO, 30_000, true)]
     ),
     ev!(
         1181,
@@ -375,8 +377,8 @@ pub const HISTORY: &[HEvent] = &[
         19,
         Hero,
         "承久の乱",
-        "後鳥羽院が北条義時追討を命じる。朝廷の滅亡禁止が解除される。",
-        [War(COURT, HOJO), War(COURT, MINAMOTO)]
+        "後鳥羽院が北条義時追討を命じる。朝廷の滅亡禁止が解除。史料記載の規模を採用し、幕府方19万人・朝廷方2万3千人を目標に招集する。実数は諸説あり、勝敗は戦闘で決まる。",
+        [War(COURT, HOJO), War(COURT, MINAMOTO), Muster(HOJO, 190_000, true), Muster(COURT, 23_000, false)]
     ),
     ev!(1221, 5, HOJO, Minister, "北条政子の訴え", "政子が頼朝以来の恩義を説き、御家人たちの結束を促す。", [Figure("政子の結束", 0.0, 0.15, 0.2)]),
     ev!(
@@ -461,6 +463,12 @@ impl World {
         let mut notes: Vec<String> = Vec::new();
         for fx in e.fx.iter() {
             match *fx {
+                Muster(house, target, allies) => {
+                    if self.nations[house].alive {
+                        let recruited = self.muster_campaign(house, target, allies);
+                        notes.push(format!("史料規模による招集：目標{}人、追加{}人（英雄別枠）", target, recruited));
+                    }
+                }
                 DefectHero(h, target) => {
                     let target = self.successor_of(target);
                     if let Some(i) = self.units.iter().position(|u| u.alive && u.hero == h) {
