@@ -1,0 +1,67 @@
+name: build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+
+      - uses: Swatinem/rust-cache@v2
+
+      - name: Test
+        run: cargo test --release --locked --lib
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Browser recovery tests
+        run: npm test
+
+      - name: Build (WebAssembly)
+        run: npm run build
+
+      - name: Production Wasm smoke
+        run: npm run smoke
+
+      - name: Upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: yykamakura-web
+          path: dist
+
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: Swatinem/rust-cache@v2
+
+      - name: Build
+        run: cargo build --release --locked --bin yykamakura-win
+
+      - name: Test
+        # Windows 版の描画・記録の層を含めて単体テストを通す（long_sim は短く）
+        env:
+          SIM_YEARS: "30"
+        run: cargo test --release --locked --lib
+
+      - name: Upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: yykamakura-windows
+          path: |
+            target/release/yykamakura-win.exe
+            target/release/yykamakura_win.pdb
+            README.md

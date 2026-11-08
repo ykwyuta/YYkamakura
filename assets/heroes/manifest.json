@@ -1,0 +1,434 @@
+[
+  {
+    "id": 0,
+    "name": "源頼朝",
+    "sheet": 1,
+    "row": 0,
+    "column": 0,
+    "sprite": "hero-00.png"
+  },
+  {
+    "id": 1,
+    "name": "平清盛",
+    "sheet": 1,
+    "row": 0,
+    "column": 1,
+    "sprite": "hero-01.png"
+  },
+  {
+    "id": 2,
+    "name": "源義仲",
+    "sheet": 1,
+    "row": 0,
+    "column": 2,
+    "sprite": "hero-02.png"
+  },
+  {
+    "id": 3,
+    "name": "藤原秀衡",
+    "sheet": 1,
+    "row": 1,
+    "column": 0,
+    "sprite": "hero-03.png"
+  },
+  {
+    "id": 4,
+    "name": "武田信義",
+    "sheet": 1,
+    "row": 1,
+    "column": 1,
+    "sprite": "hero-04.png"
+  },
+  {
+    "id": 5,
+    "name": "北条時政",
+    "sheet": 1,
+    "row": 1,
+    "column": 2,
+    "sprite": "hero-05.png"
+  },
+  {
+    "id": 6,
+    "name": "三浦義明",
+    "sheet": 1,
+    "row": 2,
+    "column": 0,
+    "sprite": "hero-06.png"
+  },
+  {
+    "id": 7,
+    "name": "千葉常胤",
+    "sheet": 1,
+    "row": 2,
+    "column": 1,
+    "sprite": "hero-07.png"
+  },
+  {
+    "id": 8,
+    "name": "上総広常",
+    "sheet": 1,
+    "row": 2,
+    "column": 2,
+    "sprite": "hero-08.png"
+  },
+  {
+    "id": 9,
+    "name": "比企能員",
+    "sheet": 2,
+    "row": 0,
+    "column": 0,
+    "sprite": "hero-09.png"
+  },
+  {
+    "id": 10,
+    "name": "畠山重忠",
+    "sheet": 2,
+    "row": 0,
+    "column": 1,
+    "sprite": "hero-10.png"
+  },
+  {
+    "id": 11,
+    "name": "和田義盛",
+    "sheet": 2,
+    "row": 0,
+    "column": 2,
+    "sprite": "hero-11.png"
+  },
+  {
+    "id": 12,
+    "name": "小山政光",
+    "sheet": 2,
+    "row": 1,
+    "column": 0,
+    "sprite": "hero-12.png"
+  },
+  {
+    "id": 13,
+    "name": "宇都宮朝綱",
+    "sheet": 2,
+    "row": 1,
+    "column": 1,
+    "sprite": "hero-13.png"
+  },
+  {
+    "id": 14,
+    "name": "佐竹隆義",
+    "sheet": 2,
+    "row": 1,
+    "column": 2,
+    "sprite": "hero-14.png"
+  },
+  {
+    "id": 15,
+    "name": "那須与一",
+    "sheet": 2,
+    "row": 2,
+    "column": 0,
+    "sprite": "hero-15.png"
+  },
+  {
+    "id": 16,
+    "name": "菊池隆直",
+    "sheet": 2,
+    "row": 2,
+    "column": 1,
+    "sprite": "hero-16.png"
+  },
+  {
+    "id": 17,
+    "name": "緒方惟義",
+    "sheet": 2,
+    "row": 2,
+    "column": 2,
+    "sprite": "hero-17.png"
+  },
+  {
+    "id": 18,
+    "name": "原田種直",
+    "sheet": 3,
+    "row": 0,
+    "column": 0,
+    "sprite": "hero-18.png"
+  },
+  {
+    "id": 19,
+    "name": "後白河院",
+    "sheet": 3,
+    "row": 0,
+    "column": 1,
+    "sprite": "hero-19.png"
+  },
+  {
+    "id": 20,
+    "name": "河野通清",
+    "sheet": 3,
+    "row": 0,
+    "column": 2,
+    "sprite": "hero-20.png"
+  },
+  {
+    "id": 21,
+    "name": "熊谷直実",
+    "sheet": 3,
+    "row": 1,
+    "column": 0,
+    "sprite": "hero-21.png"
+  },
+  {
+    "id": 22,
+    "name": "安達盛長",
+    "sheet": 3,
+    "row": 1,
+    "column": 1,
+    "sprite": "hero-22.png"
+  },
+  {
+    "id": 23,
+    "name": "土肥実平",
+    "sheet": 3,
+    "row": 1,
+    "column": 2,
+    "sprite": "hero-23.png"
+  },
+  {
+    "id": 24,
+    "name": "佐々木秀義",
+    "sheet": 3,
+    "row": 2,
+    "column": 0,
+    "sprite": "hero-24.png"
+  },
+  {
+    "id": 25,
+    "name": "浅利義遠",
+    "sheet": 3,
+    "row": 2,
+    "column": 1,
+    "sprite": "hero-25.png"
+  },
+  {
+    "id": 26,
+    "name": "城資永",
+    "sheet": 3,
+    "row": 2,
+    "column": 2,
+    "sprite": "hero-26.png"
+  },
+  {
+    "id": 27,
+    "name": "渋谷重国",
+    "sheet": 4,
+    "row": 0,
+    "column": 0,
+    "sprite": "hero-27.png"
+  },
+  {
+    "id": 28,
+    "name": "新田義重",
+    "sheet": 4,
+    "row": 0,
+    "column": 1,
+    "sprite": "hero-28.png"
+  },
+  {
+    "id": 29,
+    "name": "足利義兼",
+    "sheet": 4,
+    "row": 0,
+    "column": 2,
+    "sprite": "hero-29.png"
+  },
+  {
+    "id": 30,
+    "name": "大庭景親",
+    "sheet": 4,
+    "row": 1,
+    "column": 0,
+    "sprite": "hero-30.png"
+  },
+  {
+    "id": 31,
+    "name": "湯浅宗重",
+    "sheet": 4,
+    "row": 1,
+    "column": 1,
+    "sprite": "hero-31.png"
+  },
+  {
+    "id": 32,
+    "name": "湛増",
+    "sheet": 4,
+    "row": 1,
+    "column": 2,
+    "sprite": "hero-32.png"
+  },
+  {
+    "id": 33,
+    "name": "平教経",
+    "sheet": 4,
+    "row": 2,
+    "column": 0,
+    "sprite": "hero-33.png"
+  },
+  {
+    "id": 34,
+    "name": "平宗盛",
+    "sheet": 4,
+    "row": 2,
+    "column": 1,
+    "sprite": "hero-34.png"
+  },
+  {
+    "id": 35,
+    "name": "源義経",
+    "sheet": 4,
+    "row": 2,
+    "column": 2,
+    "sprite": "hero-35.png"
+  },
+  {
+    "id": 36,
+    "name": "藤原泰衡",
+    "sheet": 5,
+    "row": 0,
+    "column": 0,
+    "sprite": "hero-36.png"
+  },
+  {
+    "id": 37,
+    "name": "北条義時",
+    "sheet": 5,
+    "row": 0,
+    "column": 1,
+    "sprite": "hero-37.png"
+  },
+  {
+    "id": 38,
+    "name": "北条泰時",
+    "sheet": 5,
+    "row": 0,
+    "column": 2,
+    "sprite": "hero-38.png"
+  },
+  {
+    "id": 39,
+    "name": "後鳥羽院",
+    "sheet": 5,
+    "row": 1,
+    "column": 0,
+    "sprite": "hero-39.png"
+  },
+  {
+    "id": 40,
+    "name": "三浦義澄",
+    "sheet": 5,
+    "row": 1,
+    "column": 1,
+    "sprite": "hero-40.png"
+  },
+  {
+    "id": 41,
+    "name": "三浦義村",
+    "sheet": 5,
+    "row": 1,
+    "column": 2,
+    "sprite": "hero-41.png"
+  },
+  {
+    "id": 42,
+    "name": "河野通信",
+    "sheet": 5,
+    "row": 2,
+    "column": 0,
+    "sprite": "hero-42.png"
+  },
+  {
+    "id": 43,
+    "name": "源頼家",
+    "sheet": 5,
+    "row": 2,
+    "column": 1,
+    "sprite": "hero-43.png"
+  },
+  {
+    "id": 44,
+    "name": "源実朝",
+    "sheet": 5,
+    "row": 2,
+    "column": 2,
+    "sprite": "hero-44.png"
+  },
+  {
+    "id": 45,
+    "name": "妹尾兼康",
+    "sheet": 6,
+    "row": 0,
+    "column": 0,
+    "sprite": "hero-45.png"
+  },
+  {
+    "id": 46,
+    "name": "田口成良",
+    "sheet": 6,
+    "row": 0,
+    "column": 1,
+    "sprite": "hero-46.png"
+  },
+  {
+    "id": 47,
+    "name": "山鹿秀遠",
+    "sheet": 6,
+    "row": 0,
+    "column": 2,
+    "sprite": "hero-47.png"
+  },
+  {
+    "id": 48,
+    "name": "秋月種雄",
+    "sheet": 6,
+    "row": 1,
+    "column": 0,
+    "sprite": "hero-48.png"
+  },
+  {
+    "id": 49,
+    "name": "阿蘇惟泰",
+    "sheet": 6,
+    "row": 1,
+    "column": 1,
+    "sprite": "hero-49.png"
+  },
+  {
+    "id": 50,
+    "name": "平賀義信",
+    "sheet": 6,
+    "row": 1,
+    "column": 2,
+    "sprite": "hero-50.png"
+  },
+  {
+    "id": 51,
+    "name": "平知盛",
+    "sheet": 6,
+    "row": 2,
+    "column": 0,
+    "sprite": "hero-51.png"
+  },
+  {
+    "id": 52,
+    "name": "平重衡",
+    "sheet": 6,
+    "row": 2,
+    "column": 1,
+    "sprite": "hero-52.png"
+  },
+  {
+    "id": 53,
+    "name": "平重盛",
+    "sheet": 6,
+    "row": 2,
+    "column": 2,
+    "sprite": "hero-53.png"
+  }
+]

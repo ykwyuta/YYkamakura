@@ -1,0 +1,13 @@
+{
+  "name": "yykamakura",
+  "private": true,
+  "version": "0.2.0",
+  "description": "Kamakura — 挙兵前夜から承久の乱へ（Rust → WebAssembly）",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "preview": "python -m http.server 8766 --bind 127.0.0.1 --directory dist",
+    "test": "node tools/test-browser-recovery.cjs",
+    "smoke": "node tools/wasm-smoke.mjs",
+    "deploy": "bash build.sh && npx wrangler deploy"
+  }
+}
