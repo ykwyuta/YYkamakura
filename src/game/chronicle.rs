@@ -30,7 +30,7 @@ impl Game {
             Font::Big,
             [1.0, 0.85, 0.5, 1.0],
         );
-        self.gfx.text(t!("同盟・離反・政変を史実の年と月に記録。併合された家の出来事は継承勢力が引き受ける。", "The rise of heroes, philosophers and statesmen, and changes of ruling house by revolt and usurpation (they happen in their historical year; not for fallen states)", "英雄、诸子百家、政治家的登场，以及叛乱、篡位造成的君主家更替（于史实年份发生，已灭亡国家的事件不会发生）"), x0 + 100.0, y0 + 16.0, pw - 220.0, 24.0, Font::Small, [0.85, 0.82, 0.75, 1.0]);
+        self.gfx.text(t!("同盟・離反・政変を史実の年月に記録。鎌倉方は共同出兵し、滅亡済みの家の政治事件は未発生とする。", "Dated alliances and conflicts. Kamakura houses share wars; political events for fallen houses are skipped.", "按史实年月记录同盟与冲突。镰仓各家共同出兵；已灭亡家族的政治事件不发生。"), x0 + 100.0, y0 + 16.0, pw - 220.0, 24.0, Font::Small, [0.85, 0.82, 0.75, 1.0]);
         self.add_button(
             x0 + pw - 90.0,
             y0 + 10.0,

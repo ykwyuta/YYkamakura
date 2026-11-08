@@ -1,5 +1,29 @@
 //! コンピュータ国家の思考
 
+#[cfg(test)]
+mod campaign_tests {
+    use super::*;
+    use crate::geo::{COURT, HOJO, TAIRA};
+
+    #[test]
+    fn one_local_raider_does_not_cancel_the_kyoto_expedition() {
+        let mut w = World::new(42);
+        w.years = 1221.0 + 4.0 / 12.0 - START_AD;
+        w.declare_war(HOJO, COURT, true);
+        w.declare_war(HOJO, TAIRA, true);
+        let home = w.nations[HOJO].home;
+        let troops: Vec<_> = (0..9).map(|_| w.spawn_unit(HOJO, 22, home, 1.0)).collect();
+        w.spawn_unit(TAIRA, 22, home + v2(3.0, 0.0), 1.0);
+        let soldiers = troops.iter().map(|&h| {
+            let u = w.unit(h).unwrap(); (h, u.order, u.pos, u.power)
+        }).collect::<Vec<_>>();
+        command_army(&mut w, HOJO, &mut AiState::new(42), &soldiers);
+        let expedition = troops.iter().filter(|&&h| matches!(w.unit(h).unwrap().order,
+            Order::AttackMove(p) if p.dist(home) > 100.0)).count();
+        assert!(expedition >= 6, "only {expedition} troops received the expedition objective");
+    }
+}
+
 use crate::geo::{Map, NATIONS};
 use crate::rng::Rng;
 use crate::world::*;
@@ -496,6 +520,40 @@ fn command_army(w: &mut World, n: usize, a: &mut AiState, soldiers: &[(Handle, O
         return;
     }
     let home = w.nations[n].home;
+    // Expeditionary armies must not all turn back for a single raider behind them.
+    // Keep a local reserve; send the rest towards the shared campaign objective.
+    if let Some(target) = w.campaign_target(n) {
+        if a.attack_t > 0.0 {
+            return;
+        }
+        let objective = w.blds.iter()
+            .filter(|b| b.alive && b.kind.city() && b.nation as usize == target
+                && w.same_land(b.center(), home))
+            .min_by(|a, b| a.center().dist(home).total_cmp(&b.center().dist(home)))
+            .map(|b| b.center());
+        if let Some(goal) = objective {
+            let threat = w.units.iter().find(|u| u.on_map()
+                && w.at_war(n, u.nation as usize) && u.pos.dist(home) < 20.0)
+                .map(|u| u.pos);
+            let mut reserve = Vec::new();
+            if let Some(threat) = threat {
+                let mut local: Vec<_> = soldiers.iter()
+                    .filter(|s| s.2.dist(home) < 25.0).collect();
+                local.sort_by(|a, b| a.2.dist(threat).total_cmp(&b.2.dist(threat)));
+                reserve = local.into_iter().take((soldiers.len() / 3).max(1))
+                    .map(|s| s.0).collect();
+                w.order_move(&reserve, threat, true);
+            }
+            let expedition: Vec<_> = soldiers.iter().filter(|s| !reserve.contains(&s.0)
+                && (s.1 == Order::Idle || matches!(s.1, Order::AttackMove(p) if p.dist(goal) > 6.0)))
+                .map(|s| s.0).collect();
+            if !expedition.is_empty() {
+                w.order_move(&expedition, goal, true);
+            }
+            a.attack_t = 4.0;
+            return;
+        }
+    }
     // 領内の侵入者
     let mut intruder: Option<V2> = None;
     for u in w.units.iter() {
