@@ -1,0 +1,59 @@
+
+> yykamakura@0.2.0 test
+> node tools/test-browser-recovery.cjs
+
+TAP version 13
+# Subtest: refresh removes only game assets and preserves query/hash and save stores
+ok 1 - refresh removes only game assets and preserves query/hash and save stores
+  ---
+  duration_ms: 3.7943
+  ...
+# Subtest: cancel does not touch caches or navigate
+ok 2 - cancel does not touch caches or navigate
+  ---
+  duration_ms: 0.7557
+  ...
+# Subtest: title state restores the touch layout after play without changing device mode
+ok 3 - title state restores the touch layout after play without changing device mode
+  ---
+  duration_ms: 1.3617
+  ...
+# Subtest: offline keeps the game open and makes the button usable again
+ok 4 - offline keeps the game open and makes the button usable again
+  ---
+  duration_ms: 0.9305
+  ...
+# Subtest: restricted or missing CacheStorage still refreshes via network
+ok 5 - restricted or missing CacheStorage still refreshes via network
+  ---
+  duration_ms: 1.3457
+  ...
+# Subtest: memory-only saves prevent reload before cache changes
+ok 6 - memory-only saves prevent reload before cache changes
+  ---
+  duration_ms: 1.0793
+  ...
+# Subtest: reload waits until pending saves commit
+ok 7 - reload waits until pending saves commit
+  ---
+  duration_ms: 5.8158
+  ...
+# Subtest: a failed save blocks reload; a successful retry allows it
+ok 8 - a failed save blocks reload; a successful retry allows it
+  ---
+  duration_ms: 1.4122
+  ...
+# Subtest: HTML, Wasm and build packaging use the recovery path
+ok 9 - HTML, Wasm and build packaging use the recovery path
+  ---
+  duration_ms: 1.9676
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 24.4726

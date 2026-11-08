@@ -1,0 +1,530 @@
+   Compiling yykamakura v0.1.0 (D:\workspace\YYHistory\YYkamakura)
+warning: unused import: `ArmyStrength`
+  --> src\world.rs:12:20
+   |
+12 | pub use manpower::{ArmyStrength, COMPANY_MEN};
+   |                    ^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused macro definition: `td`
+  --> src\world\trade.rs:43:14
+   |
+43 | macro_rules! td {
+   |              ^^
+   |
+   = note: `#[warn(unused_macros)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `history::Fx`
+  --> src\world.rs:31:9
+   |
+31 | pub use history::Fx;
+   |         ^^^^^^^^^^^
+
+warning: variants `Raze` and `SummonHero` are never constructed
+   --> src\game.rs:96:5
+    |
+ 88 | enum Act {
+    |      --- variants in this enum
+...
+ 96 |     Raze,
+    |     ^^^^
+...
+141 |     SummonHero(usize),
+    |     ^^^^^^^^^^
+    |
+    = note: `Act` has derived impls for the traits `Debug` and `Clone`, but these are intentionally ignored during dead code analysis
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: method `hit_kind` is never used
+   --> src\game\mobile.rs:135:12
+    |
+ 13 | impl Game {
+    | --------- method in this implementation
+...
+135 |     pub fn hit_kind(&self, px: f32, py: f32) -> u32 {
+    |            ^^^^^^^^
+
+warning: constant `MAP_SCALE` is never used
+ --> src\geo.rs:7:11
+  |
+7 | pub const MAP_SCALE: usize = 1;
+  |           ^^^^^^^^^
+
+warning: constant `XIXIA` is never used
+    --> src\geo.rs:1189:11
+     |
+1189 | pub const XIXIA: usize = 4;
+     |           ^^^^^
+
+warning: constant `DALI` is never used
+    --> src\geo.rs:1192:11
+     |
+1192 | pub const DALI: usize = 7;
+     |           ^^^^
+
+warning: constant `DAIVIET` is never used
+    --> src\geo.rs:1193:11
+     |
+1193 | pub const DAIVIET: usize = 8;
+     |           ^^^^^^^
+
+warning: constant `TIBET` is never used
+    --> src\geo.rs:1194:11
+     |
+1194 | pub const TIBET: usize = 9;
+     |           ^^^^^
+
+warning: constant `NAIMAN` is never used
+    --> src\geo.rs:1195:11
+     |
+1195 | pub const NAIMAN: usize = 10;
+     |           ^^^^^^
+
+warning: constant `KERAIT` is never used
+    --> src\geo.rs:1196:11
+     |
+1196 | pub const KERAIT: usize = 11;
+     |           ^^^^^^
+
+warning: constant `TATAR` is never used
+    --> src\geo.rs:1197:11
+     |
+1197 | pub const TATAR: usize = 12;
+     |           ^^^^^
+
+warning: constant `MERKIT` is never used
+    --> src\geo.rs:1198:11
+     |
+1198 | pub const MERKIT: usize = 13;
+     |           ^^^^^^
+
+warning: constant `UYGHUR` is never used
+    --> src\geo.rs:1199:11
+     |
+1199 | pub const UYGHUR: usize = 14;
+     |           ^^^^^^
+
+warning: constant `QARAKHITAI` is never used
+    --> src\geo.rs:1200:11
+     |
+1200 | pub const QARAKHITAI: usize = 15;
+     |           ^^^^^^^^^^
+
+warning: constant `KUYE` is never used
+    --> src\geo.rs:1201:11
+     |
+1201 | pub const KUYE: usize = 16;
+     |           ^^^^
+
+warning: constant `KHWAREZM` is never used
+    --> src\geo.rs:1202:11
+     |
+1202 | pub const KHWAREZM: usize = 17;
+     |           ^^^^^^^^
+
+warning: constant `SELJUK` is never used
+    --> src\geo.rs:1203:11
+     |
+1203 | pub const SELJUK: usize = 18;
+     |           ^^^^^^
+
+warning: constant `ABBASID` is never used
+    --> src\geo.rs:1204:11
+     |
+1204 | pub const ABBASID: usize = 19;
+     |           ^^^^^^^
+
+warning: constant `GHURID` is never used
+    --> src\geo.rs:1205:11
+     |
+1205 | pub const GHURID: usize = 20;
+     |           ^^^^^^
+
+warning: constant `EGYPT` is never used
+    --> src\geo.rs:1206:11
+     |
+1206 | pub const EGYPT: usize = 21;
+     |           ^^^^^
+
+warning: constant `JERUSALEM` is never used
+    --> src\geo.rs:1207:11
+     |
+1207 | pub const JERUSALEM: usize = 22;
+     |           ^^^^^^^^^
+
+warning: constant `RUM` is never used
+    --> src\geo.rs:1208:11
+     |
+1208 | pub const RUM: usize = 23;
+     |           ^^^
+
+warning: constant `BYZANTIUM` is never used
+    --> src\geo.rs:1209:11
+     |
+1209 | pub const BYZANTIUM: usize = 24;
+     |           ^^^^^^^^^
+
+warning: constant `GEORGIA` is never used
+    --> src\geo.rs:1210:11
+     |
+1210 | pub const GEORGIA: usize = 25;
+     |           ^^^^^^^
+
+warning: constant `KIPCHAK` is never used
+    --> src\geo.rs:1211:11
+     |
+1211 | pub const KIPCHAK: usize = 26;
+     |           ^^^^^^^
+
+warning: constant `BULGAR` is never used
+    --> src\geo.rs:1212:11
+     |
+1212 | pub const BULGAR: usize = 27;
+     |           ^^^^^^
+
+warning: constant `KIEV` is never used
+    --> src\geo.rs:1213:11
+     |
+1213 | pub const KIEV: usize = 28;
+     |           ^^^^
+
+warning: constant `VLADIMIR` is never used
+    --> src\geo.rs:1214:11
+     |
+1214 | pub const VLADIMIR: usize = 29;
+     |           ^^^^^^^^
+
+warning: constant `NOVGOROD` is never used
+    --> src\geo.rs:1215:11
+     |
+1215 | pub const NOVGOROD: usize = 30;
+     |           ^^^^^^^^
+
+warning: constant `POLAND` is never used
+    --> src\geo.rs:1216:11
+     |
+1216 | pub const POLAND: usize = 31;
+     |           ^^^^^^
+
+warning: constant `HUNGARY` is never used
+    --> src\geo.rs:1217:11
+     |
+1217 | pub const HUNGARY: usize = 32;
+     |           ^^^^^^^
+
+warning: constant `SATAKE` is never used
+    --> src\geo.rs:1699:11
+     |
+1699 | pub const SATAKE: usize = 14;
+     |           ^^^^^^
+
+warning: constant `NASU` is never used
+    --> src\geo.rs:1700:11
+     |
+1700 | pub const NASU: usize = 15;
+     |           ^^^^
+
+warning: constant `HARADA` is never used
+    --> src\geo.rs:1703:11
+     |
+1703 | pub const HARADA: usize = 18;
+     |           ^^^^^^
+
+warning: constant `ASARI` is never used
+    --> src\geo.rs:1710:11
+     |
+1710 | pub const ASARI: usize = 25;
+     |           ^^^^^
+
+warning: constant `YUASA` is never used
+    --> src\geo.rs:1716:11
+     |
+1716 | pub const YUASA: usize = 31;
+     |           ^^^^^
+
+warning: constant `NOTO` is never used
+    --> src\geo.rs:1718:11
+     |
+1718 | pub const NOTO: usize = 33;
+     |           ^^^^
+
+warning: methods `line_clear`, `share_cap`, and `start_coalition` are never used
+    --> src\world.rs:1159:12
+     |
+ 565 | impl World {
+     | ---------- methods in this implementation
+...
+1159 |     pub fn line_clear(&self, a: V2, b: V2) -> bool {
+     |            ^^^^^^^^^^
+...
+2316 |     fn share_cap(&mut self, n: usize, by: usize) {
+     |        ^^^^^^^^^
+...
+3314 |     fn start_coalition(&mut self, kind: CoalKind, target: usize) {
+     |        ^^^^^^^^^^^^^^^
+
+warning: field `label` is never read
+ --> src\world\support.rs:6:9
+  |
+4 | pub struct HeroSupport {
+  |            ----------- field in this struct
+5 |     pub hero: u8,
+6 |     pub label: &'static str,
+  |         ^^^^^
+
+warning: variants `Revolt`, `Usurp`, `Restore`, and `Disaster` are never constructed
+  --> src\world\history.rs:61:5
+   |
+53 | pub enum HKind {
+   |          ----- variants in this enum
+...
+61 |     Revolt,
+   |     ^^^^^^
+62 |     /// 簒奪・乗っ取り（君主家の交代）
+63 |     Usurp,
+   |     ^^^^^
+64 |     /// 旧君主家の復辟
+65 |     Restore,
+   |     ^^^^^^^
+66 |     /// 大敗・災厄
+67 |     Disaster,
+   |     ^^^^^^^^
+   |
+   = note: `HKind` has derived impls for the traits `Debug` and `Clone`, but these are intentionally ignored during dead code analysis
+
+warning: multiple variants are never constructed
+   --> src\world\history.rs:101:5
+    |
+ 97 | pub enum Fx {
+    |          -- variants in this enum
+...
+101 |     Dismiss(&'static str),
+    |     ^^^^^^^
+102 |     /// 資源を得る
+103 |     Grant(f32, f32, f32),
+    |     ^^^^^
+104 |     /// 全兵の能力を上げる（時代上限まで）
+105 |     Train(f32),
+    |     ^^^^^
+106 |     /// 都に戈兵を召集
+107 |     Levy(u32),
+    |     ^^^^
+108 |     /// 兵の一部が離反・戦死する
+109 |     Purge(f32),
+    |     ^^^^^
+110 |     /// 蓄えの一部を失う
+111 |     Plunder(f32),
+    |     ^^^^^^^
+...
+115 |     Hezong(usize),
+    |     ^^^^^^
+116 |     /// 自国を標的とする連合を解散させる（連衡）
+117 |     Breakup,
+    |     ^^^^^^^
+...
+123 |     Bias(f32),
+    |     ^^^^
+...
+127 |     Found(usize),
+    |     ^^^^^
+128 |     /// 靖康の変（宋が南宋に）
+129 |     Jingkang,
+    |     ^^^^^^^^
+...
+135 |     Kamikaze,
+    |     ^^^^^^^^
+    |
+    = note: `Fx` has derived impls for the traits `Debug` and `Clone`, but these are intentionally ignored during dead code analysis
+
+warning: constant `QIN` is never used
+ --> src\world\descent.rs:6:7
+  |
+6 | const QIN: usize = MONGOL;
+  |       ^^^
+
+warning: constant `KARAKORUM` is never used
+  --> src\world\descent.rs:10:11
+   |
+10 | pub const KARAKORUM: (f32, f32) = (102.8, 47.2);
+   |           ^^^^^^^^^
+
+warning: constant `DIVINE_POWER` is never used
+  --> src\world\descent.rs:12:7
+   |
+12 | const DIVINE_POWER: f32 = 12.0;
+   |       ^^^^^^^^^^^^
+
+warning: constant `DIVINE_MAX` is never used
+  --> src\world\descent.rs:14:7
+   |
+14 | const DIVINE_MAX: usize = 90;
+   |       ^^^^^^^^^^
+
+warning: methods `begin_descent`, `revive_qin`, `spawn_divine`, and `yearly_descent` are never used
+   --> src\world\descent.rs:35:19
+    |
+ 26 | impl World {
+    | ---------- methods in this implementation
+...
+ 35 |     pub(super) fn begin_descent(&mut self) {
+    |                   ^^^^^^^^^^^^^
+...
+ 94 |     fn revive_qin(&mut self) {
+    |        ^^^^^^^^^^
+...
+133 |     fn spawn_divine(&mut self, city: Handle, n: usize) {
+    |        ^^^^^^^^^^^^
+...
+146 |     pub(super) fn yearly_descent(&mut self) {
+    |                   ^^^^^^^^^^^^^^
+
+warning: constant `HERO_GUARD` is never used
+  --> src\world\heroes.rs:10:11
+   |
+10 | pub const HERO_GUARD: f32 = 15.0;
+   |           ^^^^^^^^^^
+
+warning: constant `I` is never used
+  --> src\world\heroes.rs:41:7
+   |
+41 | const I: u8 = UT_INF;
+   |       ^
+
+warning: constant `A` is never used
+  --> src\world\heroes.rs:42:7
+   |
+42 | const A: u8 = UT_ARC;
+   |       ^
+
+warning: constant `C` is never used
+  --> src\world\heroes.rs:43:7
+   |
+43 | const C: u8 = UT_CAV;
+   |       ^
+
+warning: constant `H` is never used
+  --> src\world\heroes.rs:44:7
+   |
+44 | const H: u8 = UT_HORSE_ARCHER;
+   |       ^
+
+warning: method `hero_guarded` is never used
+   --> src\world\heroes.rs:599:12
+    |
+490 | impl World {
+    | ---------- method in this implementation
+...
+599 |     pub fn hero_guarded(&self, bi: usize) -> bool {
+    |            ^^^^^^^^^^^^
+
+warning: field `host` is never read
+  --> src\world\trade.rs:39:9
+   |
+29 | pub struct TribeDef {
+   |            -------- field in this struct
+...
+39 |     pub host: f32,
+   |         ^^^^
+
+warning: methods `yearly_trade` and `tribe_act` are never used
+   --> src\world\trade.rs:696:19
+    |
+184 | impl World {
+    | ---------- methods in this implementation
+...
+696 |     pub(super) fn yearly_trade(&mut self) {
+    |                   ^^^^^^^^^^^^
+...
+733 |     fn tribe_act(&mut self, t: usize) {
+    |        ^^^^^^^^^
+
+warning: constant `ALL` is never used
+  --> src\world\traits.rs:53:7
+   |
+53 | const ALL: (i32, i32) = (1115, 1294);
+   |       ^^^
+
+warning: constant `INF` is never used
+  --> src\world\traits.rs:54:7
+   |
+54 | const INF: usize = 1;
+   |       ^^^
+
+warning: constant `ARC` is never used
+  --> src\world\traits.rs:55:7
+   |
+55 | const ARC: usize = 2;
+   |       ^^^
+
+warning: constant `CAVK` is never used
+  --> src\world\traits.rs:56:7
+   |
+56 | const CAVK: usize = 3;
+   |       ^^^^
+
+warning: function `horse` is never used
+  --> src\world\traits.rs:71:4
+   |
+71 | fn horse(m: &mut TraitMods) {
+   |    ^^^^^
+
+warning: function `path_reach` is never used
+    --> src\world.rs:3499:8
+     |
+3499 |     fn path_reach(w: &World, a: usize, b: usize) -> i32 {
+     |        ^^^^^^^^^^
+
+warning: `yykamakura` (lib test) generated 62 warnings (run `cargo fix --lib -p yykamakura --tests` to apply 2 suggestions)
+    Finished `release` profile [optimized + debuginfo] target(s) in 21.37s
+     Running unittests src\lib.rs (target\release\deps\yykamakura-e8e2a5231f8c9b3f.exe)
+
+running 46 tests
+test crashlog::tests::fixed_buffer_spills_instead_of_cutting_characters ... ok
+test crashlog::tests::previous_run_is_judged_by_its_last_words ... ok
+test world::audit::historical_campaign_audit ... ignored, Multi-seed historical validation writes reproducible evidence to docs/validation/raw
+test world::audit::historical_travel_audit ... ignored, Measures the campaign calendar against actual map-space movement
+test game::tutorial::tests::tutorial_translated ... ok
+test i18n::tests::shared_unit_translations ... ok
+test art::historical::tests::atlas_layout_and_nation_coverage ... ok
+test world::campaign::tests::fixed_seats_cannot_be_built_razed_or_demolished ... ok
+test world::allegiance::tests::historical_court_settlement_stops_the_entire_coalition_war ... ok
+test world::campaign::tests::month_table_is_sorted_and_each_hero_has_an_original_house ... ok
+test world::campaign::tests::all_fixed_seats_and_native_heroes_exist ... ok
+test ai::campaign_tests::one_local_raider_does_not_cancel_the_kyoto_expedition ... ok
+test world::allegiance::tests::mobilisation_preserves_houses_and_breaks_at_political_conflicts ... ok
+test world::allegiance::tests::extinct_actor_is_recorded_as_skipped_without_reassigning_political_power ... ok
+test world::allegiance::tests::jokyu_calendar_allows_long_distance_march ... ok
+test world::campaign::tests::capturing_one_seat_does_not_annex_house_with_another_seat ... ok
+test world::allegiance::tests::conquest_does_not_inherit_historical_allegiance ... ok
+test world::campaign::tests::capturing_last_seat_annexes_heroes_and_player_and_preserves_base_count ... ok
+test world::campaign::tests::dated_alliance_and_betrayal_apply_even_to_the_player ... ok
+test world::campaign::tests::hero_revives_with_same_identity_until_death_and_never_returns_after ... ok
+test world::campaign::tests::court_protection_covers_capture_annex_and_elimination_until_may_1221 ... ok
+test world::campaign::tests::campaign_ends_in_july_1221_and_clock_stops ... ok
+test world::campaign::tests::multiple_heroes_and_non_kanto_houses_are_playable ... ok
+test world::support::tests::women_have_distinct_combat_political_and_cultural_roles ... ok
+test world::manpower::tests::casualties_reduce_people_and_firepower_and_training_creates_nobody ... ok
+test world::manpower::tests::embarkation_and_hero_revival_do_not_duplicate_people ... ok
+test world::tests::history_table ... ok
+test world::manpower::tests::replacements_need_equipment_food_and_an_owned_base ... ok
+test world::manpower::tests::levy_keeps_losses_and_never_recruits_a_conquered_house ... ok
+test world::manpower::tests::jokyu_levies_match_source_scale_without_new_seats_or_thousands_of_sprites ... ok
+test world::manpower::tests::opening_benchmark_and_normal_recruitment_are_people_not_sprites ... ok
+test world::units::tests::rosters_match_nations ... ok
+test world::campaign::tests::yoshitsune_changes_allegiance_and_dies_in_april_1189 ... ok
+test world::allegiance::tests::allegiance_and_calendar_resume_from_save_without_new_state ... ok
+test world::support::tests::masako_support_is_real_and_follows_annexation_and_revival ... ok
+test world::support::tests::shizuka_appears_in_1186_and_dance_is_recorded_once ... ok
+test world::support::tests::tokiko_support_ends_with_historical_death ... ok
+test world::tests::fort_cap_and_shoots ... ok
+test world::tests::upgrade_cost_follows_stock ... ok
+test world::campaign::tests::annexation_chain_and_death_state_survive_save_load ... ok
+test world::tests::peace_needs_player_answer ... ok
+test world::manpower::tests::version_two_saves_migrate_to_hundred_person_companies ... ok
+test world::manpower::tests::save_preserves_large_formations_losses_and_event_once_state ... ok
+test world::tests::build_queue_in_order ... ok
+test world::tests::resume_interrupted_build ... ok
+test world::save::tests::save_roundtrip ... ok
+
+test result: ok. 44 passed; 0 failed; 2 ignored; 0 measured; 1 filtered out; finished in 1.00s

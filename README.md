@@ -50,6 +50,8 @@ Kamakura専用の `YYKM` ヘッダー・v2形式、拡張子 `.yyksav`。Windows
 
 **史実への近さは改善途中です。** 初回検証で見つかった共同出兵・遠征AI・戦役の時間配分を修正しました。勝敗と領地は戦闘で決まるため、修正した仕組みの正常動作と歴史的な結果の一致を分けて評価しています。[改善後の再検証](docs/validation/improvement-1/README.md)と[初回の基準記録](docs/validation/README.md)を参照してください。
 
+兵員数を導入した最新版は[人数と戦役の再検証](docs/validation/manpower-1/README.md)を参照。承久の乱の開始時に幕府方約19万人・朝廷2万3千人を確認しましたが、これは史料規模に合わせた招集であり、実数が確定した値や出陣・勝利の保証ではありません。
+
 ```powershell
 cargo test --release --locked --lib
 npm test
