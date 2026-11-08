@@ -111,6 +111,13 @@ mod tests {
             assert!(!w.declare_war(n, MINAMOTO, false));
             assert!(w.nations[n].alive);
         }
+        w.make_peace(HOJO, TAIRA, 1.0);
+        w.update_campaign_allegiance();
+        assert!(!w.at_war(MINAMOTO, TAIRA));
+        assert!(!w.at_war(CHIBA, TAIRA));
+        w.historical_war(MINAMOTO, TAIRA);
+        w.update_campaign_allegiance();
+        assert!(w.at_war(MIURA, TAIRA));
         w.years = 1213.0 + 4.0 / 12.0 - START_AD;
         w.run_history();
         w.update_campaign_allegiance();

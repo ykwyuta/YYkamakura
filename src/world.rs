@@ -1353,6 +1353,22 @@ impl World {
         self.war[b][a] = false;
         self.truce[a][b] = self.years + truce_years;
         self.truce[b][a] = self.years + truce_years;
+        // A negotiated settlement binds the same houses as shared mobilisation.
+        // Otherwise another member's war would reopen it at the next diplomacy update.
+        let (a_leader, b_leader) = (self.campaign_leader(a), self.campaign_leader(b));
+        for x in 0..NATIONS.len() {
+            if x != a && !(a_leader.is_some() && self.campaign_leader(x) == a_leader) {
+                continue;
+            }
+            for y in 0..NATIONS.len() {
+                if y == b || (b_leader.is_some() && self.campaign_leader(y) == b_leader) {
+                    self.war[x][y] = false;
+                    self.war[y][x] = false;
+                    self.truce[x][y] = self.years + truce_years;
+                    self.truce[y][x] = self.years + truce_years;
+                }
+            }
+        }
         if a == self.player || b == self.player {
             let o = if a == self.player { b } else { a };
             self.peace_offer[o] = false;
