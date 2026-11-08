@@ -1,0 +1,4394 @@
+{
+  "seeds": [
+    1,
+    42,
+    2026,
+    12345,
+    8675309
+  ],
+  "simulation": "World::step, DT=1/30, ai_player=true, 1179-01 to 1221-07",
+  "baseline_game_commit": "700fed48ecc02b1ac68ccd07287310a8361f64f5",
+  "checks": {
+    "pre_uprising_minamoto_survives": {
+      "passed": 5,
+      "trials": 5,
+      "observations": [
+        {
+          "seed": "1",
+          "year": "1179",
+          "month": "12",
+          "check": "pre_uprising_minamoto_survives",
+          "pass": "true",
+          "observed": "alive=true seats=2 successor=源氏（頼朝）"
+        },
+        {
+          "seed": "42",
+          "year": "1179",
+          "month": "12",
+          "check": "pre_uprising_minamoto_survives",
+          "pass": "true",
+          "observed": "alive=true seats=2 successor=源氏（頼朝）"
+        },
+        {
+          "seed": "2026",
+          "year": "1179",
+          "month": "12",
+          "check": "pre_uprising_minamoto_survives",
+          "pass": "true",
+          "observed": "alive=true seats=2 successor=源氏（頼朝）"
+        },
+        {
+          "seed": "12345",
+          "year": "1179",
+          "month": "12",
+          "check": "pre_uprising_minamoto_survives",
+          "pass": "true",
+          "observed": "alive=true seats=2 successor=源氏（頼朝）"
+        },
+        {
+          "seed": "8675309",
+          "year": "1179",
+          "month": "12",
+          "check": "pre_uprising_minamoto_survives",
+          "pass": "true",
+          "observed": "alive=true seats=2 successor=源氏（頼朝）"
+        }
+      ]
+    },
+    "1180_kamakura_minamoto_control": {
+      "passed": 5,
+      "trials": 5,
+      "observations": [
+        {
+          "seed": "1",
+          "year": "1180",
+          "month": "11",
+          "check": "1180_kamakura_minamoto_control",
+          "pass": "true",
+          "observed": "源氏（頼朝）"
+        },
+        {
+          "seed": "42",
+          "year": "1180",
+          "month": "11",
+          "check": "1180_kamakura_minamoto_control",
+          "pass": "true",
+          "observed": "源氏（頼朝）"
+        },
+        {
+          "seed": "2026",
+          "year": "1180",
+          "month": "11",
+          "check": "1180_kamakura_minamoto_control",
+          "pass": "true",
+          "observed": "源氏（頼朝）"
+        },
+        {
+          "seed": "12345",
+          "year": "1180",
+          "month": "11",
+          "check": "1180_kamakura_minamoto_control",
+          "pass": "true",
+          "observed": "源氏（頼朝）"
+        },
+        {
+          "seed": "8675309",
+          "year": "1180",
+          "month": "11",
+          "check": "1180_kamakura_minamoto_control",
+          "pass": "true",
+          "observed": "源氏（頼朝）"
+        }
+      ]
+    },
+    "1180_alliance_5": {
+      "passed": 5,
+      "trials": 5,
+      "observations": [
+        {
+          "seed": "1",
+          "year": "1180",
+          "month": "11",
+          "check": "1180_alliance_5",
+          "pass": "true",
+          "observed": "源氏（頼朝） / 北条氏"
+        },
+        {
+          "seed": "42",
+          "year": "1180",
+          "month": "11",
+          "check": "1180_alliance_5",
+          "pass": "true",
+          "observed": "源氏（頼朝） / 北条氏"
+        },
+        {
+          "seed": "2026",
+          "year": "1180",
+          "month": "11",
+          "check": "1180_alliance_5",
+          "pass": "true",
+          "observed": "源氏（頼朝） / 北条氏"
+        },
+        {
+          "seed": "12345",
+          "year": "1180",
+          "month": "11",
+          "check": "1180_alliance_5",
+          "pass": "true",
+          "observed": "源氏（頼朝） / 北条氏"
+        },
+        {
+          "seed": "8675309",
+          "year": "1180",
+          "month": "11",
+          "check": "1180_alliance_5",
+          "pass": "true",
+          "observed": "源氏（頼朝） / 北条氏"
+        }
+      ]
+    },
+    "1180_alliance_7": {
+      "passed": 5,
+      "trials": 5,
+      "observations": [
+        {
+          "seed": "1",
+          "year": "1180",
+          "month": "11",
+          "check": "1180_alliance_7",
+          "pass": "true",
+          "observed": "源氏（頼朝） / 千葉氏"
+        },
+        {
+          "seed": "42",
+          "year": "1180",
+          "month": "11",
+          "check": "1180_alliance_7",
+          "pass": "true",
+          "observed": "源氏（頼朝） / 千葉氏"
+        },
+        {
+          "seed": "2026",
+          "year": "1180",
+          "month": "11",
+          "check": "1180_alliance_7",
+          "pass": "true",
+          "observed": "源氏（頼朝） / 千葉氏"
+        },
+        {
+          "seed": "12345",
+          "year": "1180",
+          "month": "11",
+          "check": "1180_alliance_7",
+          "pass": "true",
+          "observed": "源氏（頼朝） / 千葉氏"
+        },
+        {
+          "seed": "8675309",
+          "year": "1180",
+          "month": "11",
+          "check": "1180_alliance_7",
+          "pass": "true",
+          "observed": "源氏（頼朝） / 千葉氏"
+        }
+      ]
+    },
+    "1180_alliance_6": {
+      "passed": 5,
+      "trials": 5,
+      "observations": [
+        {
+          "seed": "1",
+          "year": "1180",
+          "month": "11",
+          "check": "1180_alliance_6",
+          "pass": "true",
+          "observed": "源氏（頼朝） / 三浦氏"
+        },
+        {
+          "seed": "42",
+          "year": "1180",
+          "month": "11",
+          "check": "1180_alliance_6",
+          "pass": "true",
+          "observed": "源氏（頼朝） / 三浦氏"
+        },
+        {
+          "seed": "2026",
+          "year": "1180",
+          "month": "11",
+          "check": "1180_alliance_6",
+          "pass": "true",
+          "observed": "源氏（頼朝） / 三浦氏"
+        },
+        {
+          "seed": "12345",
+          "year": "1180",
+          "month": "11",
+          "check": "1180_alliance_6",
+          "pass": "true",
+          "observed": "源氏（頼朝） / 三浦氏"
+        },
+        {
+          "seed": "8675309",
+          "year": "1180",
+          "month": "11",
+          "check": "1180_alliance_6",
+          "pass": "true",
+          "observed": "源氏（頼朝） / 三浦氏"
+        }
+      ]
+    },
+    "1183_taira_leave_rokuhara": {
+      "passed": 0,
+      "trials": 5,
+      "observations": [
+        {
+          "seed": "1",
+          "year": "1183",
+          "month": "8",
+          "check": "1183_taira_leave_rokuhara",
+          "pass": "false",
+          "observed": "平家"
+        },
+        {
+          "seed": "42",
+          "year": "1183",
+          "month": "8",
+          "check": "1183_taira_leave_rokuhara",
+          "pass": "false",
+          "observed": "平家"
+        },
+        {
+          "seed": "2026",
+          "year": "1183",
+          "month": "8",
+          "check": "1183_taira_leave_rokuhara",
+          "pass": "false",
+          "observed": "平家"
+        },
+        {
+          "seed": "12345",
+          "year": "1183",
+          "month": "8",
+          "check": "1183_taira_leave_rokuhara",
+          "pass": "false",
+          "observed": "平家"
+        },
+        {
+          "seed": "8675309",
+          "year": "1183",
+          "month": "8",
+          "check": "1183_taira_leave_rokuhara",
+          "pass": "false",
+          "observed": "平家"
+        }
+      ]
+    },
+    "1184_kiso_defeated": {
+      "passed": 0,
+      "trials": 5,
+      "observations": [
+        {
+          "seed": "1",
+          "year": "1184",
+          "month": "2",
+          "check": "1184_kiso_defeated",
+          "pass": "false",
+          "observed": "alive=true seats=1 successor=木曽源氏"
+        },
+        {
+          "seed": "42",
+          "year": "1184",
+          "month": "2",
+          "check": "1184_kiso_defeated",
+          "pass": "false",
+          "observed": "alive=true seats=1 successor=木曽源氏"
+        },
+        {
+          "seed": "2026",
+          "year": "1184",
+          "month": "2",
+          "check": "1184_kiso_defeated",
+          "pass": "false",
+          "observed": "alive=true seats=1 successor=木曽源氏"
+        },
+        {
+          "seed": "12345",
+          "year": "1184",
+          "month": "2",
+          "check": "1184_kiso_defeated",
+          "pass": "false",
+          "observed": "alive=true seats=1 successor=木曽源氏"
+        },
+        {
+          "seed": "8675309",
+          "year": "1184",
+          "month": "2",
+          "check": "1184_kiso_defeated",
+          "pass": "false",
+          "observed": "alive=true seats=1 successor=木曽源氏"
+        }
+      ]
+    },
+    "1185_taira_defeated": {
+      "passed": 0,
+      "trials": 5,
+      "observations": [
+        {
+          "seed": "1",
+          "year": "1185",
+          "month": "4",
+          "check": "1185_taira_defeated",
+          "pass": "false",
+          "observed": "alive=true seats=4 successor=平家"
+        },
+        {
+          "seed": "42",
+          "year": "1185",
+          "month": "4",
+          "check": "1185_taira_defeated",
+          "pass": "false",
+          "observed": "alive=true seats=4 successor=平家"
+        },
+        {
+          "seed": "2026",
+          "year": "1185",
+          "month": "4",
+          "check": "1185_taira_defeated",
+          "pass": "false",
+          "observed": "alive=true seats=4 successor=平家"
+        },
+        {
+          "seed": "12345",
+          "year": "1185",
+          "month": "4",
+          "check": "1185_taira_defeated",
+          "pass": "false",
+          "observed": "alive=true seats=4 successor=平家"
+        },
+        {
+          "seed": "8675309",
+          "year": "1185",
+          "month": "4",
+          "check": "1185_taira_defeated",
+          "pass": "false",
+          "observed": "alive=true seats=4 successor=平家"
+        }
+      ]
+    },
+    "1187_yoshitsune_with_fujiwara": {
+      "passed": 5,
+      "trials": 5,
+      "observations": [
+        {
+          "seed": "1",
+          "year": "1187",
+          "month": "3",
+          "check": "1187_yoshitsune_with_fujiwara",
+          "pass": "true",
+          "observed": "Some(\"奥州藤原氏\")"
+        },
+        {
+          "seed": "42",
+          "year": "1187",
+          "month": "3",
+          "check": "1187_yoshitsune_with_fujiwara",
+          "pass": "true",
+          "observed": "Some(\"奥州藤原氏\")"
+        },
+        {
+          "seed": "2026",
+          "year": "1187",
+          "month": "3",
+          "check": "1187_yoshitsune_with_fujiwara",
+          "pass": "true",
+          "observed": "Some(\"奥州藤原氏\")"
+        },
+        {
+          "seed": "12345",
+          "year": "1187",
+          "month": "3",
+          "check": "1187_yoshitsune_with_fujiwara",
+          "pass": "true",
+          "observed": "Some(\"奥州藤原氏\")"
+        },
+        {
+          "seed": "8675309",
+          "year": "1187",
+          "month": "3",
+          "check": "1187_yoshitsune_with_fujiwara",
+          "pass": "true",
+          "observed": "Some(\"奥州藤原氏\")"
+        }
+      ]
+    },
+    "1189_fujiwara_defeated": {
+      "passed": 0,
+      "trials": 5,
+      "observations": [
+        {
+          "seed": "1",
+          "year": "1189",
+          "month": "10",
+          "check": "1189_fujiwara_defeated",
+          "pass": "false",
+          "observed": "alive=true seats=3 successor=奥州藤原氏"
+        },
+        {
+          "seed": "42",
+          "year": "1189",
+          "month": "10",
+          "check": "1189_fujiwara_defeated",
+          "pass": "false",
+          "observed": "alive=true seats=3 successor=奥州藤原氏"
+        },
+        {
+          "seed": "2026",
+          "year": "1189",
+          "month": "10",
+          "check": "1189_fujiwara_defeated",
+          "pass": "false",
+          "observed": "alive=true seats=3 successor=奥州藤原氏"
+        },
+        {
+          "seed": "12345",
+          "year": "1189",
+          "month": "10",
+          "check": "1189_fujiwara_defeated",
+          "pass": "false",
+          "observed": "alive=true seats=3 successor=奥州藤原氏"
+        },
+        {
+          "seed": "8675309",
+          "year": "1189",
+          "month": "10",
+          "check": "1189_fujiwara_defeated",
+          "pass": "false",
+          "observed": "alive=true seats=3 successor=奥州藤原氏"
+        }
+      ]
+    },
+    "1189_hiraizumi_kamakura_side": {
+      "passed": 0,
+      "trials": 5,
+      "observations": [
+        {
+          "seed": "1",
+          "year": "1189",
+          "month": "10",
+          "check": "1189_hiraizumi_kamakura_side",
+          "pass": "false",
+          "observed": "奥州藤原氏"
+        },
+        {
+          "seed": "42",
+          "year": "1189",
+          "month": "10",
+          "check": "1189_hiraizumi_kamakura_side",
+          "pass": "false",
+          "observed": "奥州藤原氏"
+        },
+        {
+          "seed": "2026",
+          "year": "1189",
+          "month": "10",
+          "check": "1189_hiraizumi_kamakura_side",
+          "pass": "false",
+          "observed": "奥州藤原氏"
+        },
+        {
+          "seed": "12345",
+          "year": "1189",
+          "month": "10",
+          "check": "1189_hiraizumi_kamakura_side",
+          "pass": "false",
+          "observed": "奥州藤原氏"
+        },
+        {
+          "seed": "8675309",
+          "year": "1189",
+          "month": "10",
+          "check": "1189_hiraizumi_kamakura_side",
+          "pass": "false",
+          "observed": "奥州藤原氏"
+        }
+      ]
+    },
+    "1199_yoritomo_dead": {
+      "passed": 5,
+      "trials": 5,
+      "observations": [
+        {
+          "seed": "1",
+          "year": "1199",
+          "month": "2",
+          "check": "1199_yoritomo_dead",
+          "pass": "true",
+          "observed": "None"
+        },
+        {
+          "seed": "42",
+          "year": "1199",
+          "month": "2",
+          "check": "1199_yoritomo_dead",
+          "pass": "true",
+          "observed": "None"
+        },
+        {
+          "seed": "2026",
+          "year": "1199",
+          "month": "2",
+          "check": "1199_yoritomo_dead",
+          "pass": "true",
+          "observed": "None"
+        },
+        {
+          "seed": "12345",
+          "year": "1199",
+          "month": "2",
+          "check": "1199_yoritomo_dead",
+          "pass": "true",
+          "observed": "None"
+        },
+        {
+          "seed": "8675309",
+          "year": "1199",
+          "month": "2",
+          "check": "1199_yoritomo_dead",
+          "pass": "true",
+          "observed": "None"
+        }
+      ]
+    },
+    "1199_kamakura_side_controls_kamakura": {
+      "passed": 2,
+      "trials": 5,
+      "observations": [
+        {
+          "seed": "1",
+          "year": "1199",
+          "month": "2",
+          "check": "1199_kamakura_side_controls_kamakura",
+          "pass": "true",
+          "observed": "源氏（頼朝）"
+        },
+        {
+          "seed": "42",
+          "year": "1199",
+          "month": "2",
+          "check": "1199_kamakura_side_controls_kamakura",
+          "pass": "false",
+          "observed": "奥州藤原氏"
+        },
+        {
+          "seed": "2026",
+          "year": "1199",
+          "month": "2",
+          "check": "1199_kamakura_side_controls_kamakura",
+          "pass": "false",
+          "observed": "奥州藤原氏"
+        },
+        {
+          "seed": "12345",
+          "year": "1199",
+          "month": "2",
+          "check": "1199_kamakura_side_controls_kamakura",
+          "pass": "true",
+          "observed": "源氏（頼朝）"
+        },
+        {
+          "seed": "8675309",
+          "year": "1199",
+          "month": "2",
+          "check": "1199_kamakura_side_controls_kamakura",
+          "pass": "false",
+          "observed": "奥州藤原氏"
+        }
+      ]
+    },
+    "1203_hiki_defeated": {
+      "passed": 0,
+      "trials": 5,
+      "observations": [
+        {
+          "seed": "1",
+          "year": "1203",
+          "month": "10",
+          "check": "1203_hiki_defeated",
+          "pass": "false",
+          "observed": "alive=true seats=1 successor=比企氏"
+        },
+        {
+          "seed": "42",
+          "year": "1203",
+          "month": "10",
+          "check": "1203_hiki_defeated",
+          "pass": "false",
+          "observed": "alive=true seats=1 successor=比企氏"
+        },
+        {
+          "seed": "2026",
+          "year": "1203",
+          "month": "10",
+          "check": "1203_hiki_defeated",
+          "pass": "false",
+          "observed": "alive=true seats=1 successor=比企氏"
+        },
+        {
+          "seed": "12345",
+          "year": "1203",
+          "month": "10",
+          "check": "1203_hiki_defeated",
+          "pass": "false",
+          "observed": "alive=true seats=1 successor=比企氏"
+        },
+        {
+          "seed": "8675309",
+          "year": "1203",
+          "month": "10",
+          "check": "1203_hiki_defeated",
+          "pass": "false",
+          "observed": "alive=true seats=1 successor=比企氏"
+        }
+      ]
+    },
+    "1205_hatakeyama_defeated": {
+      "passed": 0,
+      "trials": 5,
+      "observations": [
+        {
+          "seed": "1",
+          "year": "1205",
+          "month": "7",
+          "check": "1205_hatakeyama_defeated",
+          "pass": "false",
+          "observed": "alive=true seats=1 successor=畠山氏"
+        },
+        {
+          "seed": "42",
+          "year": "1205",
+          "month": "7",
+          "check": "1205_hatakeyama_defeated",
+          "pass": "false",
+          "observed": "alive=true seats=1 successor=畠山氏"
+        },
+        {
+          "seed": "2026",
+          "year": "1205",
+          "month": "7",
+          "check": "1205_hatakeyama_defeated",
+          "pass": "false",
+          "observed": "alive=true seats=1 successor=畠山氏"
+        },
+        {
+          "seed": "12345",
+          "year": "1205",
+          "month": "7",
+          "check": "1205_hatakeyama_defeated",
+          "pass": "false",
+          "observed": "alive=true seats=2 successor=畠山氏"
+        },
+        {
+          "seed": "8675309",
+          "year": "1205",
+          "month": "7",
+          "check": "1205_hatakeyama_defeated",
+          "pass": "false",
+          "observed": "alive=true seats=1 successor=畠山氏"
+        }
+      ]
+    },
+    "1213_wada_defeated": {
+      "passed": 0,
+      "trials": 5,
+      "observations": [
+        {
+          "seed": "1",
+          "year": "1213",
+          "month": "6",
+          "check": "1213_wada_defeated",
+          "pass": "false",
+          "observed": "alive=true seats=1 successor=和田氏"
+        },
+        {
+          "seed": "42",
+          "year": "1213",
+          "month": "6",
+          "check": "1213_wada_defeated",
+          "pass": "false",
+          "observed": "alive=true seats=1 successor=和田氏"
+        },
+        {
+          "seed": "2026",
+          "year": "1213",
+          "month": "6",
+          "check": "1213_wada_defeated",
+          "pass": "false",
+          "observed": "alive=true seats=1 successor=和田氏"
+        },
+        {
+          "seed": "12345",
+          "year": "1213",
+          "month": "6",
+          "check": "1213_wada_defeated",
+          "pass": "false",
+          "observed": "alive=true seats=1 successor=和田氏"
+        },
+        {
+          "seed": "8675309",
+          "year": "1213",
+          "month": "6",
+          "check": "1213_wada_defeated",
+          "pass": "false",
+          "observed": "alive=true seats=1 successor=和田氏"
+        }
+      ]
+    },
+    "1219_sanetomo_dead": {
+      "passed": 5,
+      "trials": 5,
+      "observations": [
+        {
+          "seed": "1",
+          "year": "1219",
+          "month": "2",
+          "check": "1219_sanetomo_dead",
+          "pass": "true",
+          "observed": "None"
+        },
+        {
+          "seed": "42",
+          "year": "1219",
+          "month": "2",
+          "check": "1219_sanetomo_dead",
+          "pass": "true",
+          "observed": "None"
+        },
+        {
+          "seed": "2026",
+          "year": "1219",
+          "month": "2",
+          "check": "1219_sanetomo_dead",
+          "pass": "true",
+          "observed": "None"
+        },
+        {
+          "seed": "12345",
+          "year": "1219",
+          "month": "2",
+          "check": "1219_sanetomo_dead",
+          "pass": "true",
+          "observed": "None"
+        },
+        {
+          "seed": "8675309",
+          "year": "1219",
+          "month": "2",
+          "check": "1219_sanetomo_dead",
+          "pass": "true",
+          "observed": "None"
+        }
+      ]
+    },
+    "1219_hojo_survives": {
+      "passed": 5,
+      "trials": 5,
+      "observations": [
+        {
+          "seed": "1",
+          "year": "1219",
+          "month": "2",
+          "check": "1219_hojo_survives",
+          "pass": "true",
+          "observed": "alive=true seats=2 successor=北条氏"
+        },
+        {
+          "seed": "42",
+          "year": "1219",
+          "month": "2",
+          "check": "1219_hojo_survives",
+          "pass": "true",
+          "observed": "alive=true seats=1 successor=北条氏"
+        },
+        {
+          "seed": "2026",
+          "year": "1219",
+          "month": "2",
+          "check": "1219_hojo_survives",
+          "pass": "true",
+          "observed": "alive=true seats=3 successor=北条氏"
+        },
+        {
+          "seed": "12345",
+          "year": "1219",
+          "month": "2",
+          "check": "1219_hojo_survives",
+          "pass": "true",
+          "observed": "alive=true seats=1 successor=北条氏"
+        },
+        {
+          "seed": "8675309",
+          "year": "1219",
+          "month": "2",
+          "check": "1219_hojo_survives",
+          "pass": "true",
+          "observed": "alive=true seats=1 successor=北条氏"
+        }
+      ]
+    },
+    "1221_court_survives_before_war": {
+      "passed": 5,
+      "trials": 5,
+      "observations": [
+        {
+          "seed": "1",
+          "year": "1221",
+          "month": "4",
+          "check": "1221_court_survives_before_war",
+          "pass": "true",
+          "observed": "alive=true seats=1 successor=朝廷"
+        },
+        {
+          "seed": "42",
+          "year": "1221",
+          "month": "4",
+          "check": "1221_court_survives_before_war",
+          "pass": "true",
+          "observed": "alive=true seats=1 successor=朝廷"
+        },
+        {
+          "seed": "2026",
+          "year": "1221",
+          "month": "4",
+          "check": "1221_court_survives_before_war",
+          "pass": "true",
+          "observed": "alive=true seats=2 successor=朝廷"
+        },
+        {
+          "seed": "12345",
+          "year": "1221",
+          "month": "4",
+          "check": "1221_court_survives_before_war",
+          "pass": "true",
+          "observed": "alive=true seats=1 successor=朝廷"
+        },
+        {
+          "seed": "8675309",
+          "year": "1221",
+          "month": "4",
+          "check": "1221_court_survives_before_war",
+          "pass": "true",
+          "observed": "alive=true seats=1 successor=朝廷"
+        }
+      ]
+    },
+    "1221_hojo_exists_at_declaration": {
+      "passed": 5,
+      "trials": 5,
+      "observations": [
+        {
+          "seed": "1",
+          "year": "1221",
+          "month": "5",
+          "check": "1221_hojo_exists_at_declaration",
+          "pass": "true",
+          "observed": "alive=true seats=2 successor=北条氏"
+        },
+        {
+          "seed": "42",
+          "year": "1221",
+          "month": "5",
+          "check": "1221_hojo_exists_at_declaration",
+          "pass": "true",
+          "observed": "alive=true seats=1 successor=北条氏"
+        },
+        {
+          "seed": "2026",
+          "year": "1221",
+          "month": "5",
+          "check": "1221_hojo_exists_at_declaration",
+          "pass": "true",
+          "observed": "alive=true seats=3 successor=北条氏"
+        },
+        {
+          "seed": "12345",
+          "year": "1221",
+          "month": "5",
+          "check": "1221_hojo_exists_at_declaration",
+          "pass": "true",
+          "observed": "alive=true seats=1 successor=北条氏"
+        },
+        {
+          "seed": "8675309",
+          "year": "1221",
+          "month": "5",
+          "check": "1221_hojo_exists_at_declaration",
+          "pass": "true",
+          "observed": "alive=true seats=1 successor=北条氏"
+        }
+      ]
+    },
+    "1221_court_hojo_actual_war": {
+      "passed": 5,
+      "trials": 5,
+      "observations": [
+        {
+          "seed": "1",
+          "year": "1221",
+          "month": "5",
+          "check": "1221_court_hojo_actual_war",
+          "pass": "true",
+          "observed": "court=true hojo=true direct_war=true successor_hojo=北条氏"
+        },
+        {
+          "seed": "42",
+          "year": "1221",
+          "month": "5",
+          "check": "1221_court_hojo_actual_war",
+          "pass": "true",
+          "observed": "court=true hojo=true direct_war=true successor_hojo=北条氏"
+        },
+        {
+          "seed": "2026",
+          "year": "1221",
+          "month": "5",
+          "check": "1221_court_hojo_actual_war",
+          "pass": "true",
+          "observed": "court=true hojo=true direct_war=true successor_hojo=北条氏"
+        },
+        {
+          "seed": "12345",
+          "year": "1221",
+          "month": "5",
+          "check": "1221_court_hojo_actual_war",
+          "pass": "true",
+          "observed": "court=true hojo=true direct_war=true successor_hojo=北条氏"
+        },
+        {
+          "seed": "8675309",
+          "year": "1221",
+          "month": "5",
+          "check": "1221_court_hojo_actual_war",
+          "pass": "true",
+          "observed": "court=true hojo=true direct_war=true successor_hojo=北条氏"
+        }
+      ]
+    },
+    "1221_kyoto_kamakura_side": {
+      "passed": 0,
+      "trials": 5,
+      "observations": [
+        {
+          "seed": "1",
+          "year": "1221",
+          "month": "7",
+          "check": "1221_kyoto_kamakura_side",
+          "pass": "false",
+          "observed": "朝廷"
+        },
+        {
+          "seed": "42",
+          "year": "1221",
+          "month": "7",
+          "check": "1221_kyoto_kamakura_side",
+          "pass": "false",
+          "observed": "朝廷"
+        },
+        {
+          "seed": "2026",
+          "year": "1221",
+          "month": "7",
+          "check": "1221_kyoto_kamakura_side",
+          "pass": "false",
+          "observed": "朝廷"
+        },
+        {
+          "seed": "12345",
+          "year": "1221",
+          "month": "7",
+          "check": "1221_kyoto_kamakura_side",
+          "pass": "false",
+          "observed": "朝廷"
+        },
+        {
+          "seed": "8675309",
+          "year": "1221",
+          "month": "7",
+          "check": "1221_kyoto_kamakura_side",
+          "pass": "false",
+          "observed": "朝廷"
+        }
+      ]
+    },
+    "1221_kyoto_minamoto_or_hojo": {
+      "passed": 0,
+      "trials": 5,
+      "observations": [
+        {
+          "seed": "1",
+          "year": "1221",
+          "month": "7",
+          "check": "1221_kyoto_minamoto_or_hojo",
+          "pass": "false",
+          "observed": "朝廷"
+        },
+        {
+          "seed": "42",
+          "year": "1221",
+          "month": "7",
+          "check": "1221_kyoto_minamoto_or_hojo",
+          "pass": "false",
+          "observed": "朝廷"
+        },
+        {
+          "seed": "2026",
+          "year": "1221",
+          "month": "7",
+          "check": "1221_kyoto_minamoto_or_hojo",
+          "pass": "false",
+          "observed": "朝廷"
+        },
+        {
+          "seed": "12345",
+          "year": "1221",
+          "month": "7",
+          "check": "1221_kyoto_minamoto_or_hojo",
+          "pass": "false",
+          "observed": "朝廷"
+        },
+        {
+          "seed": "8675309",
+          "year": "1221",
+          "month": "7",
+          "check": "1221_kyoto_minamoto_or_hojo",
+          "pass": "false",
+          "observed": "朝廷"
+        }
+      ]
+    }
+  },
+  "annexations": {
+    "上総氏": [
+      {
+        "seed": 1,
+        "ad": 1183.916626,
+        "by": "源氏（頼朝）"
+      },
+      {
+        "seed": 42,
+        "ad": 1183.916626,
+        "by": "源氏（頼朝）"
+      },
+      {
+        "seed": 2026,
+        "ad": 1183.916626,
+        "by": "源氏（頼朝）"
+      },
+      {
+        "seed": 12345,
+        "ad": 1183.916626,
+        "by": "源氏（頼朝）"
+      },
+      {
+        "seed": 8675309,
+        "ad": 1183.916626,
+        "by": "源氏（頼朝）"
+      }
+    ],
+    "木曽源氏": [
+      {
+        "seed": 1,
+        "ad": 1187.894775,
+        "by": "源氏（頼朝）"
+      },
+      {
+        "seed": 42,
+        "ad": 1186.736084,
+        "by": "源氏（頼朝）"
+      },
+      {
+        "seed": 2026,
+        "ad": 1188.085693,
+        "by": "朝廷"
+      },
+      {
+        "seed": 12345,
+        "ad": 1187.54834,
+        "by": "源氏（頼朝）"
+      },
+      {
+        "seed": 8675309,
+        "ad": 1192.762329,
+        "by": "那須氏"
+      }
+    ],
+    "菊池氏": [
+      {
+        "seed": 1,
+        "ad": 1194.025269,
+        "by": "阿蘇氏"
+      },
+      {
+        "seed": 42,
+        "ad": 1192.202026,
+        "by": "秋月氏"
+      },
+      {
+        "seed": 2026,
+        "ad": 1192.803345,
+        "by": "原田氏"
+      },
+      {
+        "seed": 8675309,
+        "ad": 1204.357422,
+        "by": "阿蘇氏"
+      }
+    ],
+    "佐々木氏": [
+      {
+        "seed": 1,
+        "ad": 1196.705811,
+        "by": "能登平氏"
+      },
+      {
+        "seed": 42,
+        "ad": 1210.609375,
+        "by": "能登平氏"
+      },
+      {
+        "seed": 2026,
+        "ad": 1199.153076,
+        "by": "能登平氏"
+      },
+      {
+        "seed": 12345,
+        "ad": 1204.473999,
+        "by": "能登平氏"
+      }
+    ],
+    "湯浅氏": [
+      {
+        "seed": 1,
+        "ad": 1201.05481,
+        "by": "熊野水軍"
+      },
+      {
+        "seed": 12345,
+        "ad": 1209.812378,
+        "by": "平家"
+      },
+      {
+        "seed": 8675309,
+        "ad": 1208.115479,
+        "by": "佐々木氏"
+      }
+    ],
+    "甲斐源氏": [
+      {
+        "seed": 1,
+        "ad": 1202.494629,
+        "by": "浅利氏"
+      },
+      {
+        "seed": 42,
+        "ad": 1210.555908,
+        "by": "北条氏"
+      },
+      {
+        "seed": 2026,
+        "ad": 1193.103882,
+        "by": "平賀氏"
+      },
+      {
+        "seed": 12345,
+        "ad": 1191.935425,
+        "by": "北条氏"
+      },
+      {
+        "seed": 8675309,
+        "ad": 1211.145996,
+        "by": "佐々木氏"
+      }
+    ],
+    "城氏": [
+      {
+        "seed": 1,
+        "ad": 1203.036255,
+        "by": "奥州藤原氏"
+      },
+      {
+        "seed": 42,
+        "ad": 1193.124023,
+        "by": "那須氏"
+      },
+      {
+        "seed": 2026,
+        "ad": 1204.665039,
+        "by": "奥州藤原氏"
+      },
+      {
+        "seed": 12345,
+        "ad": 1192.710938,
+        "by": "那須氏"
+      },
+      {
+        "seed": 8675309,
+        "ad": 1188.205078,
+        "by": "木曽源氏"
+      }
+    ],
+    "熊谷氏": [
+      {
+        "seed": 1,
+        "ad": 1207.821167,
+        "by": "宇都宮氏"
+      },
+      {
+        "seed": 42,
+        "ad": 1207.981567,
+        "by": "千葉氏"
+      },
+      {
+        "seed": 2026,
+        "ad": 1218.98999,
+        "by": "北条氏"
+      },
+      {
+        "seed": 12345,
+        "ad": 1208.679932,
+        "by": "新田氏"
+      },
+      {
+        "seed": 8675309,
+        "ad": 1207.958618,
+        "by": "土肥氏"
+      }
+    ],
+    "能登平氏": [
+      {
+        "seed": 1,
+        "ad": 1209.574219,
+        "by": "平家"
+      }
+    ],
+    "畠山氏": [
+      {
+        "seed": 1,
+        "ad": 1212.092285,
+        "by": "佐竹氏"
+      },
+      {
+        "seed": 42,
+        "ad": 1207.135254,
+        "by": "三浦氏"
+      },
+      {
+        "seed": 2026,
+        "ad": 1207.101929,
+        "by": "北条氏"
+      },
+      {
+        "seed": 12345,
+        "ad": 1207.896851,
+        "by": "三浦氏"
+      },
+      {
+        "seed": 8675309,
+        "ad": 1215.652588,
+        "by": "宇都宮氏"
+      }
+    ],
+    "和田氏": [
+      {
+        "seed": 1,
+        "ad": 1213.541992,
+        "by": "北条氏"
+      },
+      {
+        "seed": 42,
+        "ad": 1214.72229,
+        "by": "佐竹氏"
+      },
+      {
+        "seed": 2026,
+        "ad": 1213.768311,
+        "by": "平賀氏"
+      },
+      {
+        "seed": 12345,
+        "ad": 1214.270996,
+        "by": "土肥氏"
+      },
+      {
+        "seed": 8675309,
+        "ad": 1213.587769,
+        "by": "安達氏"
+      }
+    ],
+    "新田氏": [
+      {
+        "seed": 1,
+        "ad": 1214.615356,
+        "by": "源氏（頼朝）"
+      },
+      {
+        "seed": 42,
+        "ad": 1206.570068,
+        "by": "小山氏"
+      },
+      {
+        "seed": 2026,
+        "ad": 1220.979736,
+        "by": "三浦氏"
+      },
+      {
+        "seed": 8675309,
+        "ad": 1216.318359,
+        "by": "安達氏"
+      }
+    ],
+    "比企氏": [
+      {
+        "seed": 1,
+        "ad": 1215.217285,
+        "by": "足利氏"
+      },
+      {
+        "seed": 42,
+        "ad": 1205.607788,
+        "by": "大庭氏"
+      },
+      {
+        "seed": 2026,
+        "ad": 1205.586304,
+        "by": "三浦氏"
+      },
+      {
+        "seed": 12345,
+        "ad": 1206.882446,
+        "by": "佐竹氏"
+      },
+      {
+        "seed": 8675309,
+        "ad": 1214.647949,
+        "by": "宇都宮氏"
+      }
+    ],
+    "大庭氏": [
+      {
+        "seed": 1,
+        "ad": 1216.073364,
+        "by": "千葉氏"
+      },
+      {
+        "seed": 42,
+        "ad": 1220.16333,
+        "by": "安達氏"
+      },
+      {
+        "seed": 2026,
+        "ad": 1203.788818,
+        "by": "三浦氏"
+      },
+      {
+        "seed": 12345,
+        "ad": 1203.81311,
+        "by": "浅利氏"
+      },
+      {
+        "seed": 8675309,
+        "ad": 1220.12793,
+        "by": "安達氏"
+      }
+    ],
+    "熊野水軍": [
+      {
+        "seed": 1,
+        "ad": 1216.414917,
+        "by": "平家"
+      },
+      {
+        "seed": 42,
+        "ad": 1201.869873,
+        "by": "佐々木氏"
+      },
+      {
+        "seed": 2026,
+        "ad": 1199.198975,
+        "by": "湯浅氏"
+      },
+      {
+        "seed": 12345,
+        "ad": 1199.820312,
+        "by": "佐々木氏"
+      },
+      {
+        "seed": 8675309,
+        "ad": 1205.676514,
+        "by": "佐々木氏"
+      }
+    ],
+    "山鹿氏": [
+      {
+        "seed": 1,
+        "ad": 1218.682373,
+        "by": "原田氏"
+      }
+    ],
+    "足利氏": [
+      {
+        "seed": 42,
+        "ad": 1209.61792,
+        "by": "佐竹氏"
+      },
+      {
+        "seed": 12345,
+        "ad": 1204.832275,
+        "by": "畠山氏"
+      }
+    ],
+    "土肥氏": [
+      {
+        "seed": 42,
+        "ad": 1209.662354,
+        "by": "三浦氏"
+      },
+      {
+        "seed": 8675309,
+        "ad": 1214.782715,
+        "by": "渋谷氏"
+      }
+    ],
+    "渋谷氏": [
+      {
+        "seed": 42,
+        "ad": 1215.676147,
+        "by": "北条氏"
+      }
+    ],
+    "浅利氏": [
+      {
+        "seed": 42,
+        "ad": 1217.416016,
+        "by": "小山氏"
+      },
+      {
+        "seed": 2026,
+        "ad": 1195.028442,
+        "by": "能登平氏"
+      }
+    ],
+    "平賀氏": [
+      {
+        "seed": 42,
+        "ad": 1217.564575,
+        "by": "千葉氏"
+      },
+      {
+        "seed": 12345,
+        "ad": 1209.674194,
+        "by": "千葉氏"
+      }
+    ],
+    "宇都宮氏": [
+      {
+        "seed": 42,
+        "ad": 1219.60437,
+        "by": "佐竹氏"
+      },
+      {
+        "seed": 12345,
+        "ad": 1212.324951,
+        "by": "佐竹氏"
+      }
+    ],
+    "安達氏": [
+      {
+        "seed": 2026,
+        "ad": 1200.363281,
+        "by": "足利氏"
+      },
+      {
+        "seed": 12345,
+        "ad": 1202.531494,
+        "by": "渋谷氏"
+      }
+    ],
+    "妹尾氏": [
+      {
+        "seed": 2026,
+        "ad": 1210.798218,
+        "by": "平家"
+      }
+    ],
+    "源氏（頼朝）": [
+      {
+        "seed": 2026,
+        "ad": 1213.957153,
+        "by": "佐竹氏"
+      }
+    ],
+    "阿蘇氏": [
+      {
+        "seed": 12345,
+        "ad": 1207.007446,
+        "by": "菊池氏"
+      }
+    ],
+    "小山氏": [
+      {
+        "seed": 12345,
+        "ad": 1210.602417,
+        "by": "新田氏"
+      }
+    ],
+    "秋月氏": [
+      {
+        "seed": 12345,
+        "ad": 1218.642822,
+        "by": "菊池氏"
+      }
+    ],
+    "三浦氏": [
+      {
+        "seed": 8675309,
+        "ad": 1219.001709,
+        "by": "安達氏"
+      }
+    ]
+  },
+  "changed_event_actors": [
+    {
+      "seed": "2026",
+      "year": "1219",
+      "month": "1",
+      "event": "実朝暗殺",
+      "original_actor": "源氏（頼朝）",
+      "actual_actor": "佐竹氏",
+      "actor_matches": "false"
+    }
+  ],
+  "final_factions": {
+    "1": [
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "0",
+        "faction": "源氏（頼朝）",
+        "alive": "true",
+        "seats": "4",
+        "successor_id": "0",
+        "successor": "源氏（頼朝）",
+        "strength": "1030.230",
+        "soldiers": "25",
+        "enemies": "朝廷 / 渋谷氏"
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "1",
+        "faction": "平家",
+        "alive": "true",
+        "seats": "5",
+        "successor_id": "1",
+        "successor": "平家",
+        "strength": "1546.598",
+        "soldiers": "41",
+        "enemies": "田口氏"
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "2",
+        "faction": "木曽源氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "0",
+        "successor": "源氏（頼朝）",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "3",
+        "faction": "奥州藤原氏",
+        "alive": "true",
+        "seats": "5",
+        "successor_id": "3",
+        "successor": "奥州藤原氏",
+        "strength": "2080.040",
+        "soldiers": "23",
+        "enemies": ""
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "4",
+        "faction": "甲斐源氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "25",
+        "successor": "浅利氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "5",
+        "faction": "北条氏",
+        "alive": "true",
+        "seats": "2",
+        "successor_id": "5",
+        "successor": "北条氏",
+        "strength": "670.009",
+        "soldiers": "13",
+        "enemies": "朝廷 / 渋谷氏"
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "6",
+        "faction": "三浦氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "6",
+        "successor": "三浦氏",
+        "strength": "181.240",
+        "soldiers": "7",
+        "enemies": "平賀氏"
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "7",
+        "faction": "千葉氏",
+        "alive": "true",
+        "seats": "2",
+        "successor_id": "7",
+        "successor": "千葉氏",
+        "strength": "805.666",
+        "soldiers": "13",
+        "enemies": "渋谷氏"
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "8",
+        "faction": "上総氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "0",
+        "successor": "源氏（頼朝）",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "9",
+        "faction": "比企氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "29",
+        "successor": "足利氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "10",
+        "faction": "畠山氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "14",
+        "successor": "佐竹氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "11",
+        "faction": "和田氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "5",
+        "successor": "北条氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "12",
+        "faction": "小山氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "12",
+        "successor": "小山氏",
+        "strength": "317.661",
+        "soldiers": "3",
+        "enemies": "那須氏"
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "13",
+        "faction": "宇都宮氏",
+        "alive": "true",
+        "seats": "2",
+        "successor_id": "13",
+        "successor": "宇都宮氏",
+        "strength": "974.783",
+        "soldiers": "13",
+        "enemies": "渋谷氏"
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "14",
+        "faction": "佐竹氏",
+        "alive": "true",
+        "seats": "2",
+        "successor_id": "14",
+        "successor": "佐竹氏",
+        "strength": "1016.967",
+        "soldiers": "14",
+        "enemies": "渋谷氏"
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "15",
+        "faction": "那須氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "15",
+        "successor": "那須氏",
+        "strength": "276.340",
+        "soldiers": "2",
+        "enemies": "小山氏"
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "16",
+        "faction": "菊池氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "38",
+        "successor": "阿蘇氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "17",
+        "faction": "緒方氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "17",
+        "successor": "緒方氏",
+        "strength": "167.000",
+        "soldiers": "6",
+        "enemies": ""
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "18",
+        "faction": "原田氏",
+        "alive": "true",
+        "seats": "2",
+        "successor_id": "18",
+        "successor": "原田氏",
+        "strength": "596.443",
+        "soldiers": "12",
+        "enemies": "秋月氏"
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "19",
+        "faction": "朝廷",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "19",
+        "successor": "朝廷",
+        "strength": "251.280",
+        "soldiers": "7",
+        "enemies": "源氏（頼朝） / 北条氏"
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "20",
+        "faction": "河野氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "20",
+        "successor": "河野氏",
+        "strength": "433.560",
+        "soldiers": "7",
+        "enemies": "妹尾氏"
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "21",
+        "faction": "熊谷氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "13",
+        "successor": "宇都宮氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "22",
+        "faction": "安達氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "22",
+        "successor": "安達氏",
+        "strength": "570.845",
+        "soldiers": "7",
+        "enemies": "渋谷氏"
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "23",
+        "faction": "土肥氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "23",
+        "successor": "土肥氏",
+        "strength": "584.125",
+        "soldiers": "7",
+        "enemies": "渋谷氏"
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "24",
+        "faction": "佐々木氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "1",
+        "successor": "平家",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "25",
+        "faction": "浅利氏",
+        "alive": "true",
+        "seats": "3",
+        "successor_id": "25",
+        "successor": "浅利氏",
+        "strength": "833.630",
+        "soldiers": "17",
+        "enemies": "渋谷氏"
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "26",
+        "faction": "城氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "3",
+        "successor": "奥州藤原氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "27",
+        "faction": "渋谷氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "27",
+        "successor": "渋谷氏",
+        "strength": "140.648",
+        "soldiers": "4",
+        "enemies": "源氏（頼朝） / 北条氏 / 千葉氏 / 宇都宮氏 / 佐竹氏 / 安達氏 / 土肥氏 / 浅利氏 / 足利氏"
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "28",
+        "faction": "新田氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "0",
+        "successor": "源氏（頼朝）",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "29",
+        "faction": "足利氏",
+        "alive": "true",
+        "seats": "2",
+        "successor_id": "29",
+        "successor": "足利氏",
+        "strength": "638.493",
+        "soldiers": "14",
+        "enemies": "渋谷氏"
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "30",
+        "faction": "大庭氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "7",
+        "successor": "千葉氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "31",
+        "faction": "湯浅氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "1",
+        "successor": "平家",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "32",
+        "faction": "熊野水軍",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "1",
+        "successor": "平家",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "33",
+        "faction": "能登平氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "1",
+        "successor": "平家",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "34",
+        "faction": "妹尾氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "34",
+        "successor": "妹尾氏",
+        "strength": "620.200",
+        "soldiers": "7",
+        "enemies": "河野氏"
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "35",
+        "faction": "田口氏",
+        "alive": "true",
+        "seats": "3",
+        "successor_id": "35",
+        "successor": "田口氏",
+        "strength": "617.876",
+        "soldiers": "10",
+        "enemies": "平家"
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "36",
+        "faction": "山鹿氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "18",
+        "successor": "原田氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "37",
+        "faction": "秋月氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "37",
+        "successor": "秋月氏",
+        "strength": "282.032",
+        "soldiers": "2",
+        "enemies": "原田氏"
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "38",
+        "faction": "阿蘇氏",
+        "alive": "true",
+        "seats": "2",
+        "successor_id": "38",
+        "successor": "阿蘇氏",
+        "strength": "840.810",
+        "soldiers": "14",
+        "enemies": ""
+      },
+      {
+        "seed": "1",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "39",
+        "faction": "平賀氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "39",
+        "successor": "平賀氏",
+        "strength": "470.987",
+        "soldiers": "6",
+        "enemies": "三浦氏"
+      }
+    ],
+    "42": [
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "0",
+        "faction": "源氏（頼朝）",
+        "alive": "true",
+        "seats": "3",
+        "successor_id": "0",
+        "successor": "源氏（頼朝）",
+        "strength": "882.540",
+        "soldiers": "21",
+        "enemies": "朝廷"
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "1",
+        "faction": "平家",
+        "alive": "true",
+        "seats": "2",
+        "successor_id": "1",
+        "successor": "平家",
+        "strength": "954.820",
+        "soldiers": "13",
+        "enemies": "朝廷"
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "2",
+        "faction": "木曽源氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "0",
+        "successor": "源氏（頼朝）",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "3",
+        "faction": "奥州藤原氏",
+        "alive": "true",
+        "seats": "5",
+        "successor_id": "3",
+        "successor": "奥州藤原氏",
+        "strength": "1341.460",
+        "soldiers": "19",
+        "enemies": ""
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "4",
+        "faction": "甲斐源氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "5",
+        "successor": "北条氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "5",
+        "faction": "北条氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "5",
+        "successor": "北条氏",
+        "strength": "816.597",
+        "soldiers": "15",
+        "enemies": "朝廷 / 安達氏"
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "6",
+        "faction": "三浦氏",
+        "alive": "true",
+        "seats": "3",
+        "successor_id": "6",
+        "successor": "三浦氏",
+        "strength": "905.838",
+        "soldiers": "21",
+        "enemies": "安達氏"
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "7",
+        "faction": "千葉氏",
+        "alive": "true",
+        "seats": "3",
+        "successor_id": "7",
+        "successor": "千葉氏",
+        "strength": "1610.094",
+        "soldiers": "21",
+        "enemies": ""
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "8",
+        "faction": "上総氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "0",
+        "successor": "源氏（頼朝）",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "9",
+        "faction": "比企氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "22",
+        "successor": "安達氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "10",
+        "faction": "畠山氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "6",
+        "successor": "三浦氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "11",
+        "faction": "和田氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "14",
+        "successor": "佐竹氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "12",
+        "faction": "小山氏",
+        "alive": "true",
+        "seats": "4",
+        "successor_id": "12",
+        "successor": "小山氏",
+        "strength": "1512.423",
+        "soldiers": "23",
+        "enemies": "安達氏"
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "13",
+        "faction": "宇都宮氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "14",
+        "successor": "佐竹氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "14",
+        "faction": "佐竹氏",
+        "alive": "true",
+        "seats": "4",
+        "successor_id": "14",
+        "successor": "佐竹氏",
+        "strength": "1724.160",
+        "soldiers": "28",
+        "enemies": "安達氏"
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "15",
+        "faction": "那須氏",
+        "alive": "true",
+        "seats": "3",
+        "successor_id": "15",
+        "successor": "那須氏",
+        "strength": "971.800",
+        "soldiers": "17",
+        "enemies": "安達氏"
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "16",
+        "faction": "菊池氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "37",
+        "successor": "秋月氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "17",
+        "faction": "緒方氏",
+        "alive": "true",
+        "seats": "2",
+        "successor_id": "17",
+        "successor": "緒方氏",
+        "strength": "590.920",
+        "soldiers": "10",
+        "enemies": "山鹿氏"
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "18",
+        "faction": "原田氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "18",
+        "successor": "原田氏",
+        "strength": "370.187",
+        "soldiers": "7",
+        "enemies": "山鹿氏"
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "19",
+        "faction": "朝廷",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "19",
+        "successor": "朝廷",
+        "strength": "88.182",
+        "soldiers": "0",
+        "enemies": "源氏（頼朝） / 平家 / 北条氏 / 湯浅氏 / 妹尾氏 / 田口氏"
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "20",
+        "faction": "河野氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "20",
+        "successor": "河野氏",
+        "strength": "433.560",
+        "soldiers": "7",
+        "enemies": "阿蘇氏"
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "21",
+        "faction": "熊谷氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "7",
+        "successor": "千葉氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "22",
+        "faction": "安達氏",
+        "alive": "true",
+        "seats": "2",
+        "successor_id": "22",
+        "successor": "安達氏",
+        "strength": "225.311",
+        "soldiers": "2",
+        "enemies": "北条氏 / 三浦氏 / 小山氏 / 佐竹氏 / 那須氏"
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "23",
+        "faction": "土肥氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "6",
+        "successor": "三浦氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "24",
+        "faction": "佐々木氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "33",
+        "successor": "能登平氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "25",
+        "faction": "浅利氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "12",
+        "successor": "小山氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "26",
+        "faction": "城氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "15",
+        "successor": "那須氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "27",
+        "faction": "渋谷氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "5",
+        "successor": "北条氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "28",
+        "faction": "新田氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "12",
+        "successor": "小山氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "29",
+        "faction": "足利氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "14",
+        "successor": "佐竹氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "30",
+        "faction": "大庭氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "22",
+        "successor": "安達氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "31",
+        "faction": "湯浅氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "31",
+        "successor": "湯浅氏",
+        "strength": "516.808",
+        "soldiers": "7",
+        "enemies": "朝廷"
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "32",
+        "faction": "熊野水軍",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "33",
+        "successor": "能登平氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "33",
+        "faction": "能登平氏",
+        "alive": "true",
+        "seats": "3",
+        "successor_id": "33",
+        "successor": "能登平氏",
+        "strength": "856.590",
+        "soldiers": "19",
+        "enemies": ""
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "34",
+        "faction": "妹尾氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "34",
+        "successor": "妹尾氏",
+        "strength": "568.033",
+        "soldiers": "7",
+        "enemies": "朝廷"
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "35",
+        "faction": "田口氏",
+        "alive": "true",
+        "seats": "2",
+        "successor_id": "35",
+        "successor": "田口氏",
+        "strength": "581.800",
+        "soldiers": "10",
+        "enemies": "朝廷"
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "36",
+        "faction": "山鹿氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "36",
+        "successor": "山鹿氏",
+        "strength": "55.090",
+        "soldiers": "0",
+        "enemies": "緒方氏 / 原田氏 / 秋月氏"
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "37",
+        "faction": "秋月氏",
+        "alive": "true",
+        "seats": "2",
+        "successor_id": "37",
+        "successor": "秋月氏",
+        "strength": "631.311",
+        "soldiers": "14",
+        "enemies": "山鹿氏"
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "38",
+        "faction": "阿蘇氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "38",
+        "successor": "阿蘇氏",
+        "strength": "282.550",
+        "soldiers": "7",
+        "enemies": "河野氏"
+      },
+      {
+        "seed": "42",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "39",
+        "faction": "平賀氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "7",
+        "successor": "千葉氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      }
+    ],
+    "2026": [
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "0",
+        "faction": "源氏（頼朝）",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "14",
+        "successor": "佐竹氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "1",
+        "faction": "平家",
+        "alive": "true",
+        "seats": "5",
+        "successor_id": "1",
+        "successor": "平家",
+        "strength": "2074.280",
+        "soldiers": "23",
+        "enemies": "田口氏"
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "2",
+        "faction": "木曽源氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "19",
+        "successor": "朝廷",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "3",
+        "faction": "奥州藤原氏",
+        "alive": "true",
+        "seats": "6",
+        "successor_id": "3",
+        "successor": "奥州藤原氏",
+        "strength": "2309.940",
+        "soldiers": "26",
+        "enemies": ""
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "4",
+        "faction": "甲斐源氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "39",
+        "successor": "平賀氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "5",
+        "faction": "北条氏",
+        "alive": "true",
+        "seats": "3",
+        "successor_id": "5",
+        "successor": "北条氏",
+        "strength": "750.886",
+        "soldiers": "21",
+        "enemies": "朝廷"
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "6",
+        "faction": "三浦氏",
+        "alive": "true",
+        "seats": "4",
+        "successor_id": "6",
+        "successor": "三浦氏",
+        "strength": "736.719",
+        "soldiers": "25",
+        "enemies": "千葉氏"
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "7",
+        "faction": "千葉氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "7",
+        "successor": "千葉氏",
+        "strength": "471.178",
+        "soldiers": "7",
+        "enemies": "三浦氏"
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "8",
+        "faction": "上総氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "14",
+        "successor": "佐竹氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "9",
+        "faction": "比企氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "6",
+        "successor": "三浦氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "10",
+        "faction": "畠山氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "5",
+        "successor": "北条氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "11",
+        "faction": "和田氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "39",
+        "successor": "平賀氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "12",
+        "faction": "小山氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "12",
+        "successor": "小山氏",
+        "strength": "480.245",
+        "soldiers": "6",
+        "enemies": "渋谷氏"
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "13",
+        "faction": "宇都宮氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "13",
+        "successor": "宇都宮氏",
+        "strength": "538.644",
+        "soldiers": "7",
+        "enemies": "渋谷氏"
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "14",
+        "faction": "佐竹氏",
+        "alive": "true",
+        "seats": "2",
+        "successor_id": "14",
+        "successor": "佐竹氏",
+        "strength": "772.192",
+        "soldiers": "17",
+        "enemies": "朝廷 / 渋谷氏"
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "15",
+        "faction": "那須氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "15",
+        "successor": "那須氏",
+        "strength": "421.340",
+        "soldiers": "7",
+        "enemies": "土肥氏 / 渋谷氏"
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "16",
+        "faction": "菊池氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "18",
+        "successor": "原田氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "17",
+        "faction": "緒方氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "17",
+        "successor": "緒方氏",
+        "strength": "374.006",
+        "soldiers": "7",
+        "enemies": "秋月氏"
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "18",
+        "faction": "原田氏",
+        "alive": "true",
+        "seats": "2",
+        "successor_id": "18",
+        "successor": "原田氏",
+        "strength": "507.128",
+        "soldiers": "14",
+        "enemies": "秋月氏"
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "19",
+        "faction": "朝廷",
+        "alive": "true",
+        "seats": "2",
+        "successor_id": "19",
+        "successor": "朝廷",
+        "strength": "667.526",
+        "soldiers": "14",
+        "enemies": "北条氏 / 佐竹氏"
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "20",
+        "faction": "河野氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "20",
+        "successor": "河野氏",
+        "strength": "433.560",
+        "soldiers": "7",
+        "enemies": "秋月氏"
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "21",
+        "faction": "熊谷氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "5",
+        "successor": "北条氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "22",
+        "faction": "安達氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "29",
+        "successor": "足利氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "23",
+        "faction": "土肥氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "23",
+        "successor": "土肥氏",
+        "strength": "604.293",
+        "soldiers": "7",
+        "enemies": "那須氏"
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "24",
+        "faction": "佐々木氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "33",
+        "successor": "能登平氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "25",
+        "faction": "浅利氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "33",
+        "successor": "能登平氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "26",
+        "faction": "城氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "3",
+        "successor": "奥州藤原氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "27",
+        "faction": "渋谷氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "27",
+        "successor": "渋谷氏",
+        "strength": "132.770",
+        "soldiers": "6",
+        "enemies": "小山氏 / 宇都宮氏 / 佐竹氏 / 那須氏 / 足利氏 / 平賀氏"
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "28",
+        "faction": "新田氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "6",
+        "successor": "三浦氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "29",
+        "faction": "足利氏",
+        "alive": "true",
+        "seats": "2",
+        "successor_id": "29",
+        "successor": "足利氏",
+        "strength": "964.105",
+        "soldiers": "14",
+        "enemies": "渋谷氏"
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "30",
+        "faction": "大庭氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "6",
+        "successor": "三浦氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "31",
+        "faction": "湯浅氏",
+        "alive": "true",
+        "seats": "2",
+        "successor_id": "31",
+        "successor": "湯浅氏",
+        "strength": "1134.100",
+        "soldiers": "14",
+        "enemies": "田口氏"
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "32",
+        "faction": "熊野水軍",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "31",
+        "successor": "湯浅氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "33",
+        "faction": "能登平氏",
+        "alive": "true",
+        "seats": "3",
+        "successor_id": "33",
+        "successor": "能登平氏",
+        "strength": "1189.150",
+        "soldiers": "21",
+        "enemies": ""
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "34",
+        "faction": "妹尾氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "1",
+        "successor": "平家",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "35",
+        "faction": "田口氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "35",
+        "successor": "田口氏",
+        "strength": "437.370",
+        "soldiers": "7",
+        "enemies": "平家 / 湯浅氏"
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "36",
+        "faction": "山鹿氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "36",
+        "successor": "山鹿氏",
+        "strength": "338.159",
+        "soldiers": "7",
+        "enemies": "秋月氏"
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "37",
+        "faction": "秋月氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "37",
+        "successor": "秋月氏",
+        "strength": "73.690",
+        "soldiers": "0",
+        "enemies": "緒方氏 / 原田氏 / 河野氏 / 山鹿氏 / 阿蘇氏"
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "38",
+        "faction": "阿蘇氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "38",
+        "successor": "阿蘇氏",
+        "strength": "134.143",
+        "soldiers": "7",
+        "enemies": "秋月氏"
+      },
+      {
+        "seed": "2026",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "39",
+        "faction": "平賀氏",
+        "alive": "true",
+        "seats": "3",
+        "successor_id": "39",
+        "successor": "平賀氏",
+        "strength": "1000.670",
+        "soldiers": "21",
+        "enemies": "渋谷氏"
+      }
+    ],
+    "12345": [
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "0",
+        "faction": "源氏（頼朝）",
+        "alive": "true",
+        "seats": "5",
+        "successor_id": "0",
+        "successor": "源氏（頼朝）",
+        "strength": "435.827",
+        "soldiers": "10",
+        "enemies": "朝廷 / 浅利氏"
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "1",
+        "faction": "平家",
+        "alive": "true",
+        "seats": "3",
+        "successor_id": "1",
+        "successor": "平家",
+        "strength": "1742.520",
+        "soldiers": "20",
+        "enemies": "田口氏"
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "2",
+        "faction": "木曽源氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "0",
+        "successor": "源氏（頼朝）",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "3",
+        "faction": "奥州藤原氏",
+        "alive": "true",
+        "seats": "3",
+        "successor_id": "3",
+        "successor": "奥州藤原氏",
+        "strength": "816.690",
+        "soldiers": "13",
+        "enemies": ""
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "4",
+        "faction": "甲斐源氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "5",
+        "successor": "北条氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "5",
+        "faction": "北条氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "5",
+        "successor": "北条氏",
+        "strength": "127.115",
+        "soldiers": "0",
+        "enemies": "佐竹氏 / 那須氏 / 朝廷 / 土肥氏 / 浅利氏"
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "6",
+        "faction": "三浦氏",
+        "alive": "true",
+        "seats": "2",
+        "successor_id": "6",
+        "successor": "三浦氏",
+        "strength": "528.333",
+        "soldiers": "18",
+        "enemies": ""
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "7",
+        "faction": "千葉氏",
+        "alive": "true",
+        "seats": "2",
+        "successor_id": "7",
+        "successor": "千葉氏",
+        "strength": "561.031",
+        "soldiers": "12",
+        "enemies": "浅利氏"
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "8",
+        "faction": "上総氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "0",
+        "successor": "源氏（頼朝）",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "9",
+        "faction": "比企氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "14",
+        "successor": "佐竹氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "10",
+        "faction": "畠山氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "6",
+        "successor": "三浦氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "11",
+        "faction": "和田氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "23",
+        "successor": "土肥氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "12",
+        "faction": "小山氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "28",
+        "successor": "新田氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "13",
+        "faction": "宇都宮氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "14",
+        "successor": "佐竹氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "14",
+        "faction": "佐竹氏",
+        "alive": "true",
+        "seats": "3",
+        "successor_id": "14",
+        "successor": "佐竹氏",
+        "strength": "1022.635",
+        "soldiers": "21",
+        "enemies": "北条氏"
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "15",
+        "faction": "那須氏",
+        "alive": "true",
+        "seats": "2",
+        "successor_id": "15",
+        "successor": "那須氏",
+        "strength": "751.500",
+        "soldiers": "14",
+        "enemies": "北条氏"
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "16",
+        "faction": "菊池氏",
+        "alive": "true",
+        "seats": "3",
+        "successor_id": "16",
+        "successor": "菊池氏",
+        "strength": "1087.680",
+        "soldiers": "17",
+        "enemies": "山鹿氏"
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "17",
+        "faction": "緒方氏",
+        "alive": "true",
+        "seats": "2",
+        "successor_id": "17",
+        "successor": "緒方氏",
+        "strength": "462.740",
+        "soldiers": "6",
+        "enemies": "山鹿氏"
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "18",
+        "faction": "原田氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "18",
+        "successor": "原田氏",
+        "strength": "83.730",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "19",
+        "faction": "朝廷",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "19",
+        "successor": "朝廷",
+        "strength": "156.280",
+        "soldiers": "7",
+        "enemies": "源氏（頼朝） / 北条氏"
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "20",
+        "faction": "河野氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "20",
+        "successor": "河野氏",
+        "strength": "433.560",
+        "soldiers": "7",
+        "enemies": "山鹿氏"
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "21",
+        "faction": "熊谷氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "28",
+        "successor": "新田氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "22",
+        "faction": "安達氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "27",
+        "successor": "渋谷氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "23",
+        "faction": "土肥氏",
+        "alive": "true",
+        "seats": "2",
+        "successor_id": "23",
+        "successor": "土肥氏",
+        "strength": "531.255",
+        "soldiers": "13",
+        "enemies": "北条氏"
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "24",
+        "faction": "佐々木氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "33",
+        "successor": "能登平氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "25",
+        "faction": "浅利氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "25",
+        "successor": "浅利氏",
+        "strength": "229.342",
+        "soldiers": "5",
+        "enemies": "源氏（頼朝） / 北条氏 / 千葉氏 / 渋谷氏 / 新田氏 / 能登平氏"
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "26",
+        "faction": "城氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "15",
+        "successor": "那須氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "27",
+        "faction": "渋谷氏",
+        "alive": "true",
+        "seats": "2",
+        "successor_id": "27",
+        "successor": "渋谷氏",
+        "strength": "748.651",
+        "soldiers": "14",
+        "enemies": "浅利氏"
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "28",
+        "faction": "新田氏",
+        "alive": "true",
+        "seats": "5",
+        "successor_id": "28",
+        "successor": "新田氏",
+        "strength": "1092.324",
+        "soldiers": "27",
+        "enemies": "浅利氏"
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "29",
+        "faction": "足利氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "6",
+        "successor": "三浦氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "30",
+        "faction": "大庭氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "25",
+        "successor": "浅利氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "31",
+        "faction": "湯浅氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "1",
+        "successor": "平家",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "32",
+        "faction": "熊野水軍",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "33",
+        "successor": "能登平氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "33",
+        "faction": "能登平氏",
+        "alive": "true",
+        "seats": "2",
+        "successor_id": "33",
+        "successor": "能登平氏",
+        "strength": "519.627",
+        "soldiers": "17",
+        "enemies": "浅利氏"
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "34",
+        "faction": "妹尾氏",
+        "alive": "true",
+        "seats": "2",
+        "successor_id": "34",
+        "successor": "妹尾氏",
+        "strength": "900.260",
+        "soldiers": "10",
+        "enemies": "田口氏"
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "35",
+        "faction": "田口氏",
+        "alive": "true",
+        "seats": "2",
+        "successor_id": "35",
+        "successor": "田口氏",
+        "strength": "351.800",
+        "soldiers": "1",
+        "enemies": "平家 / 妹尾氏"
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "36",
+        "faction": "山鹿氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "36",
+        "successor": "山鹿氏",
+        "strength": "156.818",
+        "soldiers": "3",
+        "enemies": "菊池氏 / 緒方氏 / 河野氏"
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "37",
+        "faction": "秋月氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "16",
+        "successor": "菊池氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "38",
+        "faction": "阿蘇氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "16",
+        "successor": "菊池氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "12345",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "39",
+        "faction": "平賀氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "7",
+        "successor": "千葉氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      }
+    ],
+    "8675309": [
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "0",
+        "faction": "源氏（頼朝）",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "0",
+        "successor": "源氏（頼朝）",
+        "strength": "464.794",
+        "soldiers": "10",
+        "enemies": "朝廷 / 浅利氏"
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "1",
+        "faction": "平家",
+        "alive": "true",
+        "seats": "3",
+        "successor_id": "1",
+        "successor": "平家",
+        "strength": "1382.490",
+        "soldiers": "16",
+        "enemies": ""
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "2",
+        "faction": "木曽源氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "15",
+        "successor": "那須氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "3",
+        "faction": "奥州藤原氏",
+        "alive": "true",
+        "seats": "6",
+        "successor_id": "3",
+        "successor": "奥州藤原氏",
+        "strength": "2023.140",
+        "soldiers": "22",
+        "enemies": ""
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "4",
+        "faction": "甲斐源氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "24",
+        "successor": "佐々木氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "5",
+        "faction": "北条氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "5",
+        "successor": "北条氏",
+        "strength": "524.859",
+        "soldiers": "7",
+        "enemies": "朝廷"
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "6",
+        "faction": "三浦氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "22",
+        "successor": "安達氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "7",
+        "faction": "千葉氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "7",
+        "successor": "千葉氏",
+        "strength": "605.154",
+        "soldiers": "7",
+        "enemies": "浅利氏"
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "8",
+        "faction": "上総氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "0",
+        "successor": "源氏（頼朝）",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "9",
+        "faction": "比企氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "13",
+        "successor": "宇都宮氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "10",
+        "faction": "畠山氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "13",
+        "successor": "宇都宮氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "11",
+        "faction": "和田氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "22",
+        "successor": "安達氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "12",
+        "faction": "小山氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "12",
+        "successor": "小山氏",
+        "strength": "544.760",
+        "soldiers": "7",
+        "enemies": "浅利氏"
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "13",
+        "faction": "宇都宮氏",
+        "alive": "true",
+        "seats": "3",
+        "successor_id": "13",
+        "successor": "宇都宮氏",
+        "strength": "1251.304",
+        "soldiers": "21",
+        "enemies": "浅利氏"
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "14",
+        "faction": "佐竹氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "14",
+        "successor": "佐竹氏",
+        "strength": "521.955",
+        "soldiers": "7",
+        "enemies": "浅利氏"
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "15",
+        "faction": "那須氏",
+        "alive": "true",
+        "seats": "2",
+        "successor_id": "15",
+        "successor": "那須氏",
+        "strength": "1025.744",
+        "soldiers": "18",
+        "enemies": "浅利氏"
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "16",
+        "faction": "菊池氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "38",
+        "successor": "阿蘇氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "17",
+        "faction": "緒方氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "17",
+        "successor": "緒方氏",
+        "strength": "362.185",
+        "soldiers": "7",
+        "enemies": "秋月氏"
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "18",
+        "faction": "原田氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "18",
+        "successor": "原田氏",
+        "strength": "190.211",
+        "soldiers": "6",
+        "enemies": "秋月氏"
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "19",
+        "faction": "朝廷",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "19",
+        "successor": "朝廷",
+        "strength": "104.805",
+        "soldiers": "4",
+        "enemies": "源氏（頼朝） / 北条氏 / 佐々木氏"
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "20",
+        "faction": "河野氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "20",
+        "successor": "河野氏",
+        "strength": "413.560",
+        "soldiers": "7",
+        "enemies": "妹尾氏 / 田口氏 / 山鹿氏"
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "21",
+        "faction": "熊谷氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "27",
+        "successor": "渋谷氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "22",
+        "faction": "安達氏",
+        "alive": "true",
+        "seats": "5",
+        "successor_id": "22",
+        "successor": "安達氏",
+        "strength": "1705.722",
+        "soldiers": "35",
+        "enemies": ""
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "23",
+        "faction": "土肥氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "27",
+        "successor": "渋谷氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "24",
+        "faction": "佐々木氏",
+        "alive": "true",
+        "seats": "4",
+        "successor_id": "24",
+        "successor": "佐々木氏",
+        "strength": "1042.312",
+        "soldiers": "24",
+        "enemies": "朝廷"
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "25",
+        "faction": "浅利氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "25",
+        "successor": "浅利氏",
+        "strength": "205.044",
+        "soldiers": "2",
+        "enemies": "源氏（頼朝） / 千葉氏 / 小山氏 / 宇都宮氏 / 佐竹氏 / 那須氏 / 渋谷氏 / 能登平氏 / 平賀氏"
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "26",
+        "faction": "城氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "15",
+        "successor": "那須氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "27",
+        "faction": "渋谷氏",
+        "alive": "true",
+        "seats": "3",
+        "successor_id": "27",
+        "successor": "渋谷氏",
+        "strength": "702.409",
+        "soldiers": "21",
+        "enemies": "浅利氏"
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "28",
+        "faction": "新田氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "22",
+        "successor": "安達氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "29",
+        "faction": "足利氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "29",
+        "successor": "足利氏",
+        "strength": "619.540",
+        "soldiers": "7",
+        "enemies": ""
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "30",
+        "faction": "大庭氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "22",
+        "successor": "安達氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "31",
+        "faction": "湯浅氏",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "24",
+        "successor": "佐々木氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "32",
+        "faction": "熊野水軍",
+        "alive": "false",
+        "seats": "0",
+        "successor_id": "24",
+        "successor": "佐々木氏",
+        "strength": "0.000",
+        "soldiers": "0",
+        "enemies": ""
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "33",
+        "faction": "能登平氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "33",
+        "successor": "能登平氏",
+        "strength": "618.880",
+        "soldiers": "7",
+        "enemies": "浅利氏"
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "34",
+        "faction": "妹尾氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "34",
+        "successor": "妹尾氏",
+        "strength": "620.200",
+        "soldiers": "7",
+        "enemies": "河野氏"
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "35",
+        "faction": "田口氏",
+        "alive": "true",
+        "seats": "2",
+        "successor_id": "35",
+        "successor": "田口氏",
+        "strength": "624.943",
+        "soldiers": "10",
+        "enemies": "河野氏"
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "36",
+        "faction": "山鹿氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "36",
+        "successor": "山鹿氏",
+        "strength": "373.590",
+        "soldiers": "7",
+        "enemies": "河野氏"
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "37",
+        "faction": "秋月氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "37",
+        "successor": "秋月氏",
+        "strength": "111.721",
+        "soldiers": "4",
+        "enemies": "緒方氏 / 原田氏 / 阿蘇氏"
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "38",
+        "faction": "阿蘇氏",
+        "alive": "true",
+        "seats": "2",
+        "successor_id": "38",
+        "successor": "阿蘇氏",
+        "strength": "835.047",
+        "soldiers": "14",
+        "enemies": "秋月氏"
+      },
+      {
+        "seed": "8675309",
+        "year": "1221",
+        "month": "7",
+        "faction_id": "39",
+        "faction": "平賀氏",
+        "alive": "true",
+        "seats": "1",
+        "successor_id": "39",
+        "successor": "平賀氏",
+        "strength": "579.985",
+        "soldiers": "7",
+        "enemies": "浅利氏"
+      }
+    ]
+  },
+  "travel": {
+    "seed": 12345,
+    "distance_tiles": 166.67633,
+    "cavalry_speed_tiles_per_second": 3.2,
+    "unopposed_straight_line_seconds": 52.086353,
+    "may_to_july_seconds": 7.998047,
+    "travel_game_months": 13.021588,
+    "distance_reachable_tiles": 25.59375,
+    "notes": "Hypothetical army departing Kamakura in May; ignores terrain, combat, pathfinding and transport delays"
+  }
+}

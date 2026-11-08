@@ -47,6 +47,8 @@ Kamakura専用の `YYKM` ヘッダー・v2形式、拡張子 `.yyksav`。Windows
 
 ## 検証
 
+**史実への近さの検証では、現状は不合格です。** 5乱数で承久の乱まで実際に進めたところ、全試行で平家・奥州藤原氏が1221年まで存続し、平安京も朝廷が保持しました。年表・人物退場・朝廷保護の正常動作と、歴史的な勢力変遷の再現を分けて評価した[検証報告](docs/validation/README.md)を参照してください。
+
 ```powershell
 cargo test --release --locked --lib
 npm test

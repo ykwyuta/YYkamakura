@@ -7,6 +7,8 @@ use crate::rng::Rng;
 use std::collections::VecDeque;
 
 mod campaign;
+#[cfg(test)]
+mod audit;
 mod support;
 pub use support::support_of;
 mod history;

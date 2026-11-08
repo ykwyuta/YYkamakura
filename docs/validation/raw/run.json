@@ -1,0 +1,16 @@
+{
+  "source_head": "700fed48ecc02b1ac68ccd07287310a8361f64f5",
+  "seeds": [
+    1,
+    42,
+    2026,
+    12345,
+    8675309
+  ],
+  "checkpoints": 15,
+  "factions": 40,
+  "heroes": 63,
+  "ai_player": true,
+  "dt": 0.03333333333333333,
+  "notes": "700fed4 game behavior plus audit-only test module; no gameplay changes; simulation test completed in 82.05 seconds"
+}
