@@ -5477,6 +5477,7 @@ impl Game {
     }
 
     fn order_text(&self, u: &Unit) -> &'static str {
+        if u.is_recovering() { return t!("拠点で再起中", "Recovering at base", "据点恢复中"); }
         match u.order {
             Order::Idle => t!("待機中", "Idle", "待命"),
             Order::Move(_) => t!("移動中", "Moving", "移动中"),
@@ -5637,6 +5638,9 @@ impl Game {
             let lines = if u.is_company() {
                 tf!("兵員 {}／{}人　能力{:.1}\n状態：{}", "Soldiers {}/{}  Quality {:.1}\nStatus: {}", "兵员{}／{}人　素质{:.1}\n状态：{}",
                     u.personnel(), u.establishment, u.power, self.order_text(u))
+            } else if u.is_recovering() {
+                tf!("拠点で療養中：あと{:.0}秒\n回復 {:.0}/{:.0}（行動・支援不可）", "Recovering: {:.0}s left\nHP {:.0}/{:.0} (no actions or support)", "据点疗养：还需{:.0}秒\n恢复{:.0}/{:.0}（不可行动或支援）",
+                    u.recovery_seconds().ceil(), u.hp, u.max_hp())
             } else { lines };
             let desc = if (u.hero as usize) < HEROES.len() {
                 crate::lang::tx(HEROES[u.hero as usize].desc)
@@ -7101,7 +7105,7 @@ impl Game {
             y0 + ph - 14.0,
         );
         let text = t!(
-            "■ 1179〜1221年の日本。全国の既存拠点を争奪し、1221年7月に最多の拠点を持つ勢力が勝利。同数首位も勝利。併合されると併合先を引き継いで続行する。\n\n■ 新しい邑・街は作れず、拠点の焼き払いも不可。民は田・兵営・要塞・港を建設できる。糧・木・鉄を集め、武士・和弓兵・騎馬武者・軍船団を訓練する。基本は1部隊100人、大軍は百人組をまとめて表示。船団は6部隊を運ぶ。兵員・英雄・船団は別集計。\n\n■ 各家の英雄は固有。敗れると現在所属する勢力の拠点で即時復活し、史実の死去時期に退場する。全拠点を失った勢力は、英雄・兵・資源とともに攻略者へ併合。英雄の無所属召喚はない。\n\n■ 同盟と裏切りは史実の年・月に発生。鎌倉方は共同出兵・共同和平。滅亡済みの家の政治事件は未発生となる。F3で人数と年表。招集規模は史料記載を基準に採用した設定値で実数確定ではない。\n\n■ 朝廷は1221年5月の承久の乱発生まで、最後の拠点を奪われず併合もされない。乱発生後は攻略可能。\n\n■ 左クリックで選択、右クリックで移動・攻撃・採集。選択中は時間停止。矢印・中ドラッグで地図移動、ホイールで拡大縮小、Homeで本拠へ。A進軍、S停止、T訓練、Space一時停止、＋−速度、F2外交、F3歴史、F5保存、F11全画面。補充は自国拠点で糧・鉄を消費。訓練では兵員数は増えない。旧第2版の保存も読込可能。\n\n■ 史実の年表を軸にした仮想戦記です。初期領有・勢力の独立性・不詳人物の活動期間はゲーム上の整理。詳細はdocs/history.md。",
+            "■ 1179〜1221年の日本。全国の既存拠点を争奪し、1221年7月に最多の拠点を持つ勢力が勝利。同数首位も勝利。併合されると併合先を引き継いで続行する。\n\n■ 新しい邑・街は作れず、拠点の焼き払いも不可。民は田・兵営・要塞・港を建設できる。糧・木・鉄を集め、武士・和弓兵・騎馬武者・軍船団を訓練する。基本は1部隊100人、大軍は百人組をまとめて表示。船団は6部隊を運ぶ。兵員・英雄・船団は別集計。\n\n■ 各家の英雄は固有。敗れると現在所属する勢力の拠点へ退避。HPを回復して12秒後に行動・支援へ復帰し、史実の死去時期に退場する。全拠点を失った勢力は、英雄・兵・資源とともに攻略者へ併合。英雄の無所属召喚はない。\n\n■ 同盟と裏切りは史実の年・月に発生。鎌倉方は共同出兵・共同和平。滅亡済みの家の政治事件は未発生となる。F3で人数と年表。招集規模は史料記載を基準に採用した設定値で実数確定ではない。\n\n■ 朝廷は1221年5月の承久の乱発生まで、最後の拠点を奪われず併合もされない。乱発生後は攻略可能。\n\n■ 左クリックで選択、右クリックで移動・攻撃・採集。選択中は時間停止。矢印・中ドラッグで地図移動、ホイールで拡大縮小、Homeで本拠へ。A進軍、S停止、T訓練、Space一時停止、＋−速度、F2外交、F3歴史、F5保存、F11全画面。補充は自国拠点で糧・鉄を消費。訓練では兵員数は増えない。旧第2版の保存も読込可能。\n\n■ 史実の年表を軸にした仮想戦記です。初期領有・勢力の独立性・不詳人物の活動期間はゲーム上の整理。詳細はdocs/history.md。",
             "1179–1221 Japan. Capture fixed bases; no new towns or razing. The house with most bases at July 1221 wins (ties win). Heroes revive at their current house's base until their historical death. Losing all bases transfers the house and heroes to the conqueror; you continue with the successor. Alliances and betrayals occur on their historical month. The Court cannot be annexed before May 1221. Left click select; right click orders; arrows pan; wheel zoom; Home capital; Space pause; F2 diplomacy; F3 history; F5 save. Selected troops pause time. Normal formations have 100 soldiers; campaign levies group larger formations. Losses reduce headcount and firepower. Replacements need a base, food and equipment. Heroes and fleets are separate. See docs/manpower.md for source-based scenario strengths.",
             "1179至1221年的日本。争夺固定据点，不能新建或烧毁城邑。1221年7月据点最多者获胜（并列也胜）。英雄战败后在所属势力据点复活，史实死期退场。失去全部据点则连同英雄被兼并，玩家接续兼并者。史实月份发生同盟与背叛。朝廷至1221年5月前不能灭亡。左键选择、右键指令、方向键移动、滚轮缩放、Space暂停、F2外交、F3历史、F5存档。"
         );

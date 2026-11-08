@@ -90,7 +90,11 @@ impl Game {
             let (home, entry, death) = HERO_LIVES[k];
             let ad = START_AD + self.world.years;
             let state = if let Some(n) = owner {
-                format!("所属：{}", self.world.nations[n].name)
+                let recovering = self.world.units.iter().find(|u| u.alive && u.hero as usize == k)
+                    .map_or(0.0, |u| u.recovery_seconds());
+                if recovering > 0.0 {
+                    format!("療養中：あと{:.0}秒　{}", recovering.ceil(), self.world.nations[n].name)
+                } else { format!("所属：{}", self.world.nations[n].name) }
             } else if ad < entry {
                 format!("{}年に登場", entry.floor() as i32)
             } else if ad >= death {

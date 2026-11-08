@@ -22,6 +22,26 @@ mod campaign_tests {
             Order::AttackMove(p) if p.dist(home) > 100.0)).count();
         assert!(expedition >= 6, "only {expedition} troops received the expedition objective");
     }
+
+    #[test]
+    fn diplomacy_counts_the_defenders_allies_before_starting_a_war() {
+        use crate::geo::{CHIBA, MIURA, MINAMOTO, OBA, WADA};
+        let mut w = World::new(42);
+        w.years = 1192.0 - START_AD;
+        let bloc = [MINAMOTO, HOJO, MIURA, CHIBA, WADA];
+        for n in 0..NATIONS.len() {
+            w.nations[n].alive = bloc.contains(&n) || n == OBA;
+            w.nations[n].strength = 500.0;
+        }
+        w.nations[WADA].strength = 10.0;
+        w.nations[OBA].strength = 1000.0;
+        assert!(w.defensive_strength(WADA) > w.nations[OBA].strength);
+        let mut a = AiState::new(42);
+        a.aggr = 100.0;
+        diplomacy(&mut w, OBA, &mut a, 10);
+        assert!(bloc.into_iter().all(|n| !w.at_war(OBA, n)));
+        assert!(w.declare_war(OBA, WADA, true));
+    }
 }
 
 use crate::geo::{Map, NATIONS};
@@ -503,8 +523,9 @@ fn diplomacy(w: &mut World, n: usize, a: &mut AiState, nsold: usize) {
         if !w.same_land(on.home, home) && !w.can_build_ships(n) {
             continue;
         }
-        if on.strength < my * 0.75 {
-            let score = on.strength + d * 2.0;
+        let defended = w.defensive_strength(o);
+        if defended < my * 0.75 {
+            let score = defended + d * 2.0;
             if best.map_or(true, |b| score < b.0) {
                 best = Some((score, o));
             }

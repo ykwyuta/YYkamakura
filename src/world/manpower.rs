@@ -388,6 +388,11 @@ impl World {
             if !Map::inb(x, y) || self.owner[Map::idx(x, y)] as usize != n {
                 continue;
             }
+            // No replacing casualties while enemy troops are within engagement distance.
+            if self.units.iter().any(|enemy| enemy.on_map() && enemy.kind.military()
+                && self.at_war(n, enemy.nation as usize) && enemy.pos.dist(u.pos) <= 12.0) {
+                continue;
+            }
             if !self.blds.iter().any(|b| {
                 b.alive
                     && b.done()

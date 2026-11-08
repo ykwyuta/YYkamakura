@@ -211,13 +211,15 @@ impl World {
         }
         let u = &mut self.units[i];
         u.pos = p;
-        u.hp = u.max_hp();
+        u.hp = u.max_hp() * super::balance::HERO_RECOVERY_HP;
         u.order = Order::Idle;
-        u.path.clear();
+        u.reset_nav();
+        u.path_pending = false;
+        u.resume = None;
         u.build_queue.clear();
         u.last_attacker = None;
-        u.cooldown = 8.0;
-        self.push_msg(format!("{}が拠点で復活", HEROES[h].name), [0.8, 0.9, 0.65]);
+        u.cooldown = u.def().cd + super::balance::HERO_RECOVERY_SECONDS;
+        self.push_msg(format!("{}が拠点で療養（12秒後に復帰）", HEROES[h].name), [0.8, 0.9, 0.65]);
         true
     }
 
@@ -319,7 +321,8 @@ mod tests {
             w.units[h].hp = -1.0;
             w.kill_unit(h);
             assert!(w.unit(handle).is_some());
-            assert_eq!(w.units[h].hp, w.units[h].max_hp());
+            assert!(w.units[h].hp > 0.0 && w.units[h].hp < w.units[h].max_hp());
+            assert!(w.units[h].is_recovering());
         }
         date(&mut w, 1199, 1);
         assert!(w.unit(handle).is_none());

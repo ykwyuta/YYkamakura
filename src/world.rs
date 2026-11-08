@@ -9,6 +9,7 @@ use std::collections::VecDeque;
 mod campaign;
 mod allegiance;
 mod manpower;
+mod balance;
 pub use manpower::{ArmyStrength, COMPANY_MEN};
 #[cfg(test)]
 mod audit;
@@ -355,7 +356,7 @@ impl Unit {
     }
     /// 地図の上にいる（船に乗っていない）
     pub fn on_map(&self) -> bool {
-        self.alive && self.aboard.is_none()
+        self.alive && self.aboard.is_none() && !self.is_recovering()
     }
 }
 
@@ -755,6 +756,7 @@ impl World {
         w.update_campaign_heroes();
         w.refresh_traits();
         w.update_stats();
+        w.fund_starting_armies();
         w
     }
 
@@ -1506,7 +1508,9 @@ impl World {
             let n = &mut self.nations[u.nation as usize];
             if u.merc_until > 0.0 || u.divine || u.hero != NONE {
                 // 傭兵は銭で雇われており、天の兵は天のもの。兵数の上限・維持費の外
-                n.mil_power += u.power * (u.hp / u.max_hp()).max(0.2);
+                if !u.is_recovering() {
+                    n.mil_power += u.power * (u.hp / u.max_hp()).max(0.2);
+                }
             } else if u.kind.military() {
                 n.soldiers += 1;
                 n.mil_power += u.power * u.fighting_mass();
@@ -1969,7 +1973,7 @@ impl World {
             for gx in g0x..=g1x {
                 for &i in self.grid[(gy * GW + gx) as usize].iter() {
                     let u = &self.units[i as usize];
-                    if !u.alive || !self.at_war(nation, u.nation as usize) {
+                    if !u.on_map() || !self.at_war(nation, u.nation as usize) {
                         continue;
                     }
                     let d = u.pos.dist(p);
@@ -2106,7 +2110,7 @@ impl World {
 
     pub fn target_info(&self, t: Target) -> Option<(V2, f32, usize)> {
         match t {
-            Target::Unit(h) => self.unit(h).filter(|u| u.aboard.is_none()).map(|u| {
+            Target::Unit(h) => self.unit(h).filter(|u| u.on_map()).map(|u| {
                 (
                     u.pos,
                     if u.kind.naval() { 0.6 } else { 0.3 },
@@ -2126,7 +2130,7 @@ impl World {
             .map_or(false, |a| a.hero != NONE);
         {
             let u = &mut self.units[ti];
-            if !u.alive || (u.divine && !by_hero) {
+            if !u.alive || u.is_recovering() || (u.divine && !by_hero) {
                 return;
             }
             // 英霊の一撃は天の兵によく効く
@@ -2462,10 +2466,10 @@ impl World {
             n.aggression = (n.aggression - dt * 2.0 / spy).max(0.0);
         }
         for u in self.units.iter_mut() {
-            if u.alive && u.hero != NONE {
+            if u.alive && u.hero != NONE && !u.is_recovering() {
                 // 英霊は傷が癒える
                 u.hp = (u.hp + u.max_hp() * 0.015 * dt).min(u.max_hp());
-            } else if u.alive && u.kind.military() && !u.divine && starving[u.nation as usize] {
+            } else if u.alive && u.hero == NONE && u.kind.military() && !u.divine && starving[u.nation as usize] {
                 u.hp -= u.max_hp() * 0.01 * dt;
             }
         }
@@ -2877,7 +2881,12 @@ impl World {
 
     fn update_units(&mut self, dt: f32) {
         for i in 0..self.units.len() {
-            if self.units[i].on_map() {
+            if self.units[i].alive && self.units[i].is_recovering() {
+                let u = &mut self.units[i];
+                u.cooldown = (u.cooldown - dt).max(u.def().cd);
+                u.hp = (u.hp + u.max_hp() * (1.0 - balance::HERO_RECOVERY_HP) * dt / balance::HERO_RECOVERY_SECONDS).min(u.max_hp());
+                if !u.is_recovering() { u.hp = u.max_hp(); }
+            } else if self.units[i].on_map() {
                 self.update_unit(i, dt);
             }
         }
@@ -2998,7 +3007,10 @@ impl World {
                         } else {
                             1.0
                         };
-                        let atk = def.atk * self.units[i].power * self.units[i].fighting_mass() * mods * self.rng.range(0.85, 1.15);
+                        let mass = if matches!(t, Target::Bld(_)) {
+                            self.units[i].siege_mass()
+                        } else { self.units[i].fighting_mass() };
+                        let atk = def.atk * self.units[i].power * mass * mods * self.rng.range(0.85, 1.15);
                         let me = self.uh(i);
                         if def.range > 1.5 {
                             self.shots.push(Shot {

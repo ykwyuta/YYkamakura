@@ -95,7 +95,7 @@ impl World {
         for u in self
             .units
             .iter()
-            .filter(|u| u.alive && u.nation as usize == n)
+            .filter(|u| u.alive && !u.is_recovering() && u.nation as usize == n)
         {
             if let Some(s) = support_of(u.hero as usize) {
                 m.eco *= s.eco;
@@ -142,6 +142,11 @@ mod tests {
         w.annex(CHIBA, HOJO);
         w.refresh_traits();
         assert_eq!(w.units[h].nation as usize, CHIBA);
+        assert_eq!(w.nations[CHIBA].tm.atk[3], 1.0);
+        for _ in 0..((super::super::balance::HERO_RECOVERY_SECONDS + 0.1) / DT) as usize {
+            w.update_units(DT);
+        }
+        w.refresh_traits();
         assert!(w.nations[CHIBA].tm.atk[3] > 1.0);
         assert_eq!(w.nations[HOJO].tm.atk[3], 1.0);
     }

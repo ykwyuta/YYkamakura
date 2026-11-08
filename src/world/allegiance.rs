@@ -82,22 +82,25 @@ impl World {
     /// Shared strategic objective; tactical movement and combat still resolve normally.
     pub fn campaign_target(&self, n: usize) -> Option<usize> {
         let ad = START_AD + self.years;
-        let target = if self.campaign_leader(n).is_some() {
-            if ad >= 1221.0 + 4.0 / 12.0 {
-                COURT
-            } else if ad >= 1189.0 + 3.0 / 12.0 && self.nations[FUJIWARA].alive {
-                FUJIWARA
-            } else if ad >= 1183.0 + 10.0 / 12.0 && self.nations[KISO].alive {
-                KISO
-            } else {
-                TAIRA
+        if self.campaign_leader(n).is_some() {
+            // Resolve current internal conflicts before continuing an old distant expedition.
+            for (target, from) in [
+                (COURT, 1221.0 + 4.0 / 12.0),
+                (WADA, 1213.0 + 4.0 / 12.0),
+                (HATAKEYAMA, 1205.0 + 5.0 / 12.0),
+                (HIKI, 1203.0 + 8.0 / 12.0),
+                (FUJIWARA, 1189.0 + 3.0 / 12.0),
+                (KISO, 1183.0 + 10.0 / 12.0),
+                (TAIRA, 1180.0),
+            ] {
+                if ad >= from && self.nations[target].alive && self.at_war(n, target) {
+                    return Some(target);
+                }
             }
-        } else if n == KISO {
-            TAIRA
+            None
         } else {
-            return None;
-        };
-        (self.nations[target].alive && self.at_war(n, target)).then_some(target)
+            (n == KISO && self.nations[TAIRA].alive && self.at_war(n, TAIRA)).then_some(TAIRA)
+        }
     }
 
     /// Give short, geographically large campaigns enough real time for marching and battle.
@@ -141,7 +144,7 @@ mod tests {
         w.update_campaign_allegiance();
         assert!(w.at_war(MIURA, WADA));
         assert!(!w.at_war(MIURA, HOJO));
-        assert_eq!(w.campaign_target(HOJO), Some(FUJIWARA));
+        assert_eq!(w.campaign_target(HOJO), Some(WADA));
         assert_eq!(w.campaign_leader(WADA), None);
     }
     #[test]
