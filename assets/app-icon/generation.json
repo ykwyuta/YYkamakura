@@ -1,0 +1,15 @@
+{
+  "mode": "built-in image_gen",
+  "date": "2026-11-09",
+  "asset": "Kamakura dedicated app icon",
+  "original": "kamakura.png",
+  "source": "exec-1531cf51-841a-4dac-b983-1d1b64ca1b02.png",
+  "prompt": "Use case: stylized-concept\nAsset type: final square application icon for Kamakura, a Japanese historical strategy game set in 1179–1221. Create one finished icon, not a mockup or sheet.\nPrimary request: an iconic late Heian / early Kamakura samurai kabuto helmet, front view, proud and formidable. Broad sweeping antique-gold kuwagata crest, a dark lacquered riveted helmet bowl, layered vermilion shikoro neck guards and deep indigo lacing. The empty shadow inside the helmet is a simple strong dark shape, no face, no skull, no modern menpo. Historically inspired early samurai armor, not Sengoku fantasy.\nStyle: premium hand-painted historical game emblem, sculptural metal and lacquer with restrained brush texture, bold simplified masses and clean silhouette. Carefully lit gold crest against an ink-indigo background, warm vermilion accents. Subtle round vermilion sun behind helmet, kept simple and subordinate.\nComposition: one centered symmetrical helmet fills about 75 percent of canvas; all meaningful parts inside central 78 percent square for app icon safe area. Huge readable forms, minimal fine detail, clearly recognizable at 32 pixels. Fully opaque square canvas edge to edge in deep ink indigo, no rounded outer corners, no external border, no padding outside the canvas. 1024 by 1024 preferred.\nConstraints: no text, letters, numbers, title, monogram, watermark, modern logos, weapons crossing behind, people, scenery, dragons, excessive ornament. Single finished square icon.",
+  "processing": "Resize and encode only with tools/import_app_icon.py; no creative changes.",
+  "outputs": [
+    "web/icon-512.png",
+    "web/icon-192.png",
+    "web/apple-touch-icon.png",
+    "assets/app_icon.ico"
+  ]
+}

@@ -4,6 +4,8 @@ YYシリーズのリアルタイムストラテジー。**1179年1月から1221�
 
 ![英雄63人の固有画像](assets/heroes/catalog.jpg)
 
+専用アプリアイコンは画像生成で制作した金の鍬形・朱色の兜です。[原画](assets/app-icon/kamakura.png)・[生成プロンプト](assets/app-icon/generation.json)を保存し、Web/PWA・Appleホーム画面・Windows実行ファイルに共通使用します。各サイズの再出力は `python tools/import_app_icon.py`（Pillowが必要）。
+
 ## 遊ぶ
 
 Windows版：
