@@ -1,8 +1,10 @@
 import {spawnSync} from 'node:child_process';
 import {mkdirSync, copyFileSync, writeFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
+import {prepareRust} from './rust-toolchain.mjs';
 const root=fileURLToPath(new URL('../',import.meta.url));
-const build=spawnSync('cargo',['build','--release','--locked','--lib','--target','wasm32-unknown-unknown','--config','profile.release.debug=false'],{cwd:root,stdio:'inherit'});
+const env=await prepareRust();
+const build=spawnSync('cargo',['build','--release','--locked','--lib','--target','wasm32-unknown-unknown','--config','profile.release.debug=false'],{cwd:root,env,stdio:'inherit'});
 if(build.error) throw build.error;
 if(build.status) process.exit(build.status);
 mkdirSync(new URL('../dist/',import.meta.url),{recursive:true});

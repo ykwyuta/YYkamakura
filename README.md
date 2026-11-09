@@ -22,6 +22,8 @@ npm run preview
 
 <http://localhost:8766/> を開きます。Linuxでは `bash build.sh` も利用できます。`dist/` が静的配信成果物です。
 
+Cloudflareのビルドコマンドは `npm run build`、Pagesの出力ディレクトリは `dist` を指定します。Workersのデプロイコマンドは `npx wrangler deploy` です。Linux/macOSではCargoが見つからなければ公式rustupで最小構成のRustを導入し、Wasmターゲットがなければ追加します。既存の `$CARGO_HOME/bin`（未指定なら `~/.cargo/bin`）も検出します。初回はRustのダウンロードにネットワーク接続が必要です。WindowsではRustを事前にインストールしてください。`bash build.sh` も同じ処理を呼び出します。
+
 ## ルール
 
 - **拠点は固定**：蛭ヶ小島、鎌倉、六波羅、福原、屋島、彦島、平泉、胆沢、多賀国府、各武家の館・荘園など。邑・街の新設と焼き払いはできません。田・兵営・要塞・港は建設できます。

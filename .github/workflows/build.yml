@@ -6,6 +6,19 @@ on:
   workflow_dispatch:
 
 jobs:
+  # Reproduce hosting images that have Node but no Rust installation.
+  web-bootstrap:
+    runs-on: ubuntu-latest
+    container: node:24-bookworm
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test Node build setup
+        run: npm test
+      - name: Build without preinstalled Rust
+        run: npm run build
+      - name: Production Wasm smoke
+        run: npm run smoke
+
   web:
     runs-on: ubuntu-latest
     steps:

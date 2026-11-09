@@ -164,13 +164,15 @@ test('a failed save blocks reload; a successful retry allows it', async () => {
 
 test('HTML, Wasm and build packaging use the recovery path', () => {
   const html = fs.readFileSync(path.join(root, 'web/index.html'), 'utf8');
-  const build = fs.readFileSync(path.join(root, 'build.sh'), 'utf8').replace(/\r\n/g, '\n');
+  const shellBuild = fs.readFileSync(path.join(root, 'build.sh'), 'utf8');
+  const build = fs.readFileSync(path.join(root, 'tools/build.mjs'), 'utf8');
   const filename = main.match(/new URL\('\.\/([^']+\.wasm)'/)[1];
   assert.ok(html.includes(`data-game-wasm="${filename}"`));
   assert.ok(html.includes('src="./browser-recovery.js"'));
   assert.ok(html.includes("url.searchParams.set('_yyrefresh', refresh)"));
   assert.ok(main.includes("url.searchParams.set('_yyrefresh', refresh)"));
   assert.ok(main.includes("cache: refresh ? 'reload' : 'no-cache'"));
-  assert.ok(build.includes('web/browser-recovery.js'));
-  assert.ok(build.includes('/browser-recovery.js\n  Cache-Control: no-cache'));
+  assert.ok(shellBuild.includes('node tools/build.mjs'));
+  assert.ok(build.includes("'browser-recovery.js'"));
+  assert.ok(build.includes('/browser-recovery.js\\n  Cache-Control: no-cache'));
 });
