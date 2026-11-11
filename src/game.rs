@@ -144,6 +144,8 @@ enum Act {
     TutQuit,
     Scale(i32),
     Fullscreen,
+    #[cfg(target_arch = "wasm32")]
+    RefreshCache,
     /// 表示言語を切り替える
     Lang,
     SaveMenu,
@@ -2382,6 +2384,8 @@ impl Game {
                 ));
             }
             Act::Fullscreen => self.gfx.toggle_fullscreen(),
+            #[cfg(target_arch = "wasm32")]
+            Act::RefreshCache => unsafe { crate::platform::js::js_refresh_cache() },
             Act::Lang => {
                 let l = crate::lang::lang().next();
                 crate::lang::set_lang(l);
@@ -7084,6 +7088,23 @@ impl Game {
             34.0,
             Font::Big,
             [1.0, 0.85, 0.5, 1.0],
+        );
+        #[cfg(target_arch = "wasm32")]
+        self.add_button(
+            x0 + pw - 310.0,
+            y0 + 10.0,
+            x0 + pw - 100.0,
+            y0 + 40.0,
+            t!(
+                "キャッシュを更新して再読み込み",
+                "Refresh cache and reload",
+                "刷新缓存并重新加载"
+            ),
+            "",
+            0,
+            true,
+            Act::RefreshCache,
+            "",
         );
         self.add_button(
             x0 + pw - 90.0,

@@ -2,11 +2,12 @@
 import {readFileSync} from 'node:fs';
 import assert from 'node:assert/strict';
 const module=new WebAssembly.Module(readFileSync(new URL('../dist/yykamakura.wasm',import.meta.url)));
-let wasm,labels=[],nextTexture=1,nextBitmap=1,saved=null,draws=0,ui=1;
+let wasm,labels=[],nextTexture=1,nextBitmap=1,saved=null,draws=0,ui=1,refreshes=0;
 const decode=(p,n)=>new TextDecoder().decode(new Uint8Array(wasm.memory.buffer,p,n));
 const env=Object.fromEntries(WebAssembly.Module.imports(module).map(({name})=>[name,()=>0]));
 Object.assign(env,{
  js_random:()=>12345,js_lang_get:()=>0,
+ js_refresh_cache:()=>{refreshes++;},
  js_tex_create:()=>nextTexture++,js_bmp_create:()=>nextBitmap++,
  js_gl_begin:()=>{labels=[];draws=0;},js_2d_begin:s=>{ui=s;},
  js_gl_draw:(p,n)=>{assert.ok(Array.from(new Float32Array(wasm.memory.buffer,p,n*8)).every(Number.isFinite));draws++;},
@@ -34,7 +35,11 @@ key(72);has('英雄図鑑');has('源頼朝');
 for(let p=0;p<5;p++)click('次の九人');
 has('妹尾兼康');has('平知盛');has('平重盛');
 click('次の九人');has('北条政子');has('静御前');has('巴御前');has('建礼門院徳子');
-key(27);key(112);has('1221');has('新しい邑');key(27);
+key(27);
+assert.ok(!labels.some(l=>l.text.includes('キャッシュを更新して再読み込み')));
+key(112);has('1221');has('新しい邑');
+click('キャッシュを更新して再読み込み');assert.equal(refreshes,1);
+key(27);assert.ok(!labels.some(l=>l.text.includes('キャッシュを更新して再読み込み')));
 key(114);has('歴史');has('兵員');has('100');key(27);
 key(116);has('保存');click('保存');assert.ok(saved?.length>1000);
 assert.equal(new TextDecoder().decode(saved.slice(0,4)),'YYKM');
